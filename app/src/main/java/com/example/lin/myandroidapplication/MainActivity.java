@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button button3 = (Button) findViewById(R.id.btn_03);
         button3.setOnClickListener(this);
+
+        Button button2 = (Button) findViewById(R.id.btn_02);
+        button2.setOnClickListener(this);
     }
 
     @Override
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent2Text);
                 break;
             case R.id.btn_02:
+                Intent intent2Btn = new Intent(this, ButtonStudy.class);
+                startActivity(intent2Btn);
                 break;
             case R.id.btn_03:
                 Intent intent2Edit = new Intent(this, EditTextStudy.class);
