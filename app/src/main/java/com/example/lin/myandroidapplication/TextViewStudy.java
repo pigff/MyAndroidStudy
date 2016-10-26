@@ -34,6 +34,7 @@ public class TextViewStudy extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_textview_layout);
         init();
+
     }
 
     private void init() {

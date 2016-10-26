@@ -17,6 +17,8 @@
         </activity>
 
         <activity android:name=".TextViewStudy"/>
+
+        <activity android:name=".EditTextStudy"/>
     </application>
 
 </manifest>

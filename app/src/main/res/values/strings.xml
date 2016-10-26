@@ -5,4 +5,6 @@
     <string name="text_bold">bold属性</string>
     <string name="shadow_text">shadow_text</string>
     <string name="test_text">哈哈哈哈哈哈哈哈哈嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻恩恩恩恩恩恩恩恩</string>
+    <string name="edittext">EditText</string>
+    <string name="add">add</string>
 </resources>

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void init() {
         Button button = (Button) findViewById(R.id.btn_01);
         button.setOnClickListener(this);
+
+        Button button3 = (Button) findViewById(R.id.btn_03);
+        button3.setOnClickListener(this);
     }
 
     @Override
@@ -30,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_02:
                 break;
             case R.id.btn_03:
+                Intent intent2Edit = new Intent(this, EditTextStudy.class);
+                startActivity(intent2Edit);
                 break;
             case R.id.btn_04:
                 break;
