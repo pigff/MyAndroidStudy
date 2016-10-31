@@ -21,6 +21,8 @@
         <activity android:name=".EditTextStudy"/>
 
         <activity android:name=".ButtonStudy"/>
+
+        <activity android:name=".ImageViewStudy"/>
     </application>
 
 </manifest>
