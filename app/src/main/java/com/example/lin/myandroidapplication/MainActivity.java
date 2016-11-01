@@ -30,6 +30,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button button5 = (Button) findViewById(R.id.btn_05);
         button5.setOnClickListener(this);
+
+        Button button6 = (Button) findViewById(R.id.btn_06);
+        button6.setOnClickListener(this);
+
+        Button button7 = (Button) findViewById(R.id.btn_07);
+        button7.setOnClickListener(this);
     }
 
     @Override
@@ -54,6 +60,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_05:
                 Intent intent2Radio = new Intent(this, RadioAndCheckBtnStudy.class);
                 startActivity(intent2Radio);
+                break;
+            case R.id.btn_06:
+                Intent intent2Tog = new Intent(this, ToggleStudy.class);
+                startActivity(intent2Tog);
+                break;
+            case R.id.btn_07:
+                Intent intent2Pro = new Intent(this, ProgressStudy.class);
+                startActivity(intent2Pro);
                 break;
             default:
                 break;

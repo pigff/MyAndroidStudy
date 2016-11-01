@@ -23,5 +23,7 @@ public class ImageViewStudy extends Activity{
         MyCircleImg roundImg = (MyCircleImg) findViewById(R.id.round_img);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.image);
         roundImg.setBitmap(bitmap);
+        ImageView imageView2 = (ImageView) findViewById(R.id.glide_img);
+        Glide.with(this).load("http://img4.imgtn.bdimg.com/it/u=3217962789,3430649993&fm=21&gp=0.jpg").into(imageView2);
     }
 }

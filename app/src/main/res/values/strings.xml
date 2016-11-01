@@ -17,4 +17,6 @@
     <string name="orange">橘子</string>
     <string name="banana">香蕉</string>
     <string name="count">统计</string>
+    <string name="togglebtn_switchbtn"><![CDATA[ToggleBtn & SwitchBtn]]></string>
+    <string name="progress">progress</string>
 </resources>
