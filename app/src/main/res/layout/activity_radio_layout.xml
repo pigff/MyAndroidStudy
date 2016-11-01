@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choice_notice"/>
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/btnMan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/man"/>
+
+        <RadioButton
+            android:id="@+id/btnWoman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/woman"
+            android:button="@drawable/check_bg"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/post"/>
+
+    <CheckBox
+        android:id="@+id/apple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/check_bg"
+        android:padding="10dp"
+        android:text="@string/apple"/>
+
+    <CheckBox
+        android:id="@+id/orange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/orange"
+        android:button="@null"
+        android:drawableTop="@drawable/check_bg"/>
+
+    <CheckBox
+        android:id="@+id/banana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/banana"
+        style="@style/MyCheckBox"/>
+
+    <Button
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/count"/>
+
+</LinearLayout>

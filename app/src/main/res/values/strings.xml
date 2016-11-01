@@ -8,4 +8,13 @@
     <string name="add">add</string>
     <string name="button">Button</string>
     <string name="imageview">imageview</string>
+    <string name="radiobtn_checkbox"><![CDATA[RadioBtn & CheckBox]]></string>
+    <string name="choice_notice">您选择的性别是:</string>
+    <string name="man">男</string>
+    <string name="woman">女</string>
+    <string name="post">提交</string>
+    <string name="apple">苹果</string>
+    <string name="orange">橘子</string>
+    <string name="banana">香蕉</string>
+    <string name="count">统计</string>
 </resources>

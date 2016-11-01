@@ -28,4 +28,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/imageview"/>
+
+    <Button
+        android:id="@+id/btn_05"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/radiobtn_checkbox"/>
 </LinearLayout>

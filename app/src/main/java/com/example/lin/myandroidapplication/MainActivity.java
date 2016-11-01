@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button button4 = (Button) findViewById(R.id.btn_04);
         button4.setOnClickListener(this);
+
+        Button button5 = (Button) findViewById(R.id.btn_05);
+        button5.setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_04:
                 Intent intent2Img = new Intent(this, ImageViewStudy.class);
                 startActivity(intent2Img);
+                break;
+            case R.id.btn_05:
+                Intent intent2Radio = new Intent(this, RadioAndCheckBtnStudy.class);
+                startActivity(intent2Radio);
                 break;
             default:
                 break;
