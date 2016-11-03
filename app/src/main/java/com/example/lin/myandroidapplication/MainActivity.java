@@ -36,6 +36,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button button7 = (Button) findViewById(R.id.btn_07);
         button7.setOnClickListener(this);
+
+        Button button8 = (Button) findViewById(R.id.btn_08);
+        button8.setOnClickListener(this);
+
+        Button button9 = (Button) findViewById(R.id.btn_09);
+        button9.setOnClickListener(this);
+
+        Button button10 = (Button) findViewById(R.id.btn_10);
+        button10.setOnClickListener(this);
+
+        Button button11 = (Button) findViewById(R.id.btn_11);
+        button11.setOnClickListener(this);
     }
 
     @Override
@@ -69,6 +81,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent2Pro = new Intent(this, ProgressStudy.class);
                 startActivity(intent2Pro);
                 break;
+            case R.id.btn_08:
+                Intent intent2Seek = new Intent(this, SeekBarStudy.class);
+                startActivity(intent2Seek);
+                break;
+            case R.id.btn_09:
+                Intent intent2Scroll = new Intent(this, ScrollViewStudy.class);
+                startActivity(intent2Scroll);
+                break;
+            case R.id.btn_10:
+                Intent intent2List = new Intent(this, ListViewStudy.class);
+                startActivity(intent2List);
+                break;
+            case R.id.btn_11:
+                Intent intent2Service = new Intent(this, ServiceStudy.class);
+                startActivity(intent2Service);
             default:
                 break;
         }

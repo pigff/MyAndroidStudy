@@ -31,6 +31,20 @@
         <activity android:name=".ToggleStudy"/>
 
         <activity android:name=".ProgressStudy"/>
+
+        <activity android:name=".SeekBarStudy"/>
+
+        <activity android:name=".ScrollViewStudy"/>
+
+        <activity android:name=".ListViewStudy"/>
+
+        <activity android:name=".ServiceStudy"/>
+
+        <service android:name=".service.MyService">
+
+        </service>
+
+        <receiver android:name=".receiver.MyReceiver"/>
     </application>
 
 </manifest>

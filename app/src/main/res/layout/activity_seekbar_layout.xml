@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <SeekBar
+        android:id="@+id/seekbar_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:thumb="@drawable/ic_action_emo_cool"/>
+
+    <TextView
+        android:id="@+id/show_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"/>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/bar_bg"
+        android:thumb="@drawable/thumb_bg"/>
+
+    <RatingBar
+        android:id="@+id/rating_01"
+        style="@style/MyRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="1.0"
+        android:stepSize="0.5"/>
+</LinearLayout>
+
+    <!--
+    ——相关属性：
+    android:isIndicator：是否用作指示，用户无法更改，默认false
+    android:numStars：显示多少个星星，必须为整数   .. match_parent 情况下 无效
+    android:rating：默认评分值，必须为浮点数
+    android:stepSize： 评分每次增加的值，必须为浮点数
+    除了上面这些，还有两种样式供我们选择咧，但是不建议使用，因为这两种样式都好丑... 他们分别是：
+    style="?android:attr/ratingBarStyleSmall"
+    style="?android:attr/ratingBarStyleIndicator"
+    ——事件处理： 只需为RatingBar设置OnRatingBarChangeListener事件，然后重写下onRatingChanged()方法即可！
+    -->
