@@ -15,7 +15,7 @@ import com.example.lin.myandroidapplication.service.MyService;
 /**
  * Created by lin on 2016/11/3.
  */
-public class ServiceStudy extends Activity implements View.OnClickListener{
+public class ServiceStudy extends Activity implements View.OnClickListener {
 
     private static final String TAG = "ServiceStudy";
     private Intent mIntent;
@@ -43,12 +43,14 @@ public class ServiceStudy extends Activity implements View.OnClickListener{
         Button stopBtn = (Button) findViewById(R.id.stop_service);
         Button bindBtn = (Button) findViewById(R.id.bind_service);
         Button unbindBtn = (Button) findViewById(R.id.unbind_service);
+        Button checkBtn = (Button) findViewById(R.id.check);
+        Button intentBtn = (Button) findViewById(R.id.intent_service);
+        intentBtn.setOnClickListener(this);
+        checkBtn.setOnClickListener(this);
         startBtn.setOnClickListener(this);
         stopBtn.setOnClickListener(this);
         bindBtn.setOnClickListener(this);
         unbindBtn.setOnClickListener(this);
-        Button checkBtn = (Button) findViewById(R.id.check);
-        checkBtn.setOnClickListener(this);
         mIntent = new Intent(this, MyService.class);
     }
 
@@ -69,6 +71,9 @@ public class ServiceStudy extends Activity implements View.OnClickListener{
                 break;
             case R.id.check:
                 Log.d(TAG, "mBinder.getCount():" + mBinder.getCount());
+                break;
+            case R.id.intent_service:
+                startService(mIntent);
                 break;
             default:
                 break;

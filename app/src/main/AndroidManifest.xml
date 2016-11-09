@@ -40,6 +40,10 @@
 
         <activity android:name=".ServiceStudy"/>
 
+        <activity android:name=".SpinnerStudy"/>
+
+        <activity android:name=".DialogStudy"/>
+
         <service android:name=".service.MyService">
 
         </service>

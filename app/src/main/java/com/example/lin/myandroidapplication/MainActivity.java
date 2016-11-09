@@ -1,8 +1,8 @@
 package com.example.lin.myandroidapplication;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -48,6 +48,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button button11 = (Button) findViewById(R.id.btn_11);
         button11.setOnClickListener(this);
+
+        Button button12 =(Button) findViewById(R.id.btn_12);
+        button12.setOnClickListener(this);
+
+        Button button13 = (Button) findViewById(R.id.btn_13);
+        button13.setOnClickListener(this);
     }
 
     @Override
@@ -96,6 +102,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_11:
                 Intent intent2Service = new Intent(this, ServiceStudy.class);
                 startActivity(intent2Service);
+                break;
+            case R.id.btn_12:
+                Intent intent2Spin = new Intent(this, SpinnerStudy.class);
+                startActivity(intent2Spin);
+                break;
+            case R.id.btn_13:
+                Intent intent2Dialog = new Intent(this, DialogStudy.class);
+                startActivity(intent2Dialog);
             default:
                 break;
         }

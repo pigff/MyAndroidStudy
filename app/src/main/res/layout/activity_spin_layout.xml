@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="你最喜欢的漫画: "
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+    <Spinner
+        android:id="@+id/spin_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:entries="@array/data"
+        android:spinnerMode="dialog"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="你最喜欢的人物:"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+    <Spinner
+        android:id="@+id/spin_02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        />
+
+    <AutoCompleteTextView
+        android:id="@+id/complete_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionThreshold="1"/>
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/complete_02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionThreshold="1"/>
+</LinearLayout>
+
+    <!--
+    android:completionHint：设置下拉菜单中的提示标题
+    android:completionHintView：定义提示视图中显示下拉菜单
+    android:completionThreshold：指定用户至少输入多少个字符才会显示提示
+    android:dropDownAnchor：设置下拉菜单的定位"锚点"组件，如果没有指定改属性， 将使用该TextView作为定位"锚点"组件
+    android:dropDownHeight：设置下拉菜单的高度
+    android:dropDownWidth：设置下拉菜单的宽度
+    android:dropDownHorizontalOffset：指定下拉菜单与文本之间的水平间距
+    android:dropDownVerticalOffset：指定下拉菜单与文本之间的竖直间距
+    android:dropDownSelector：设置下拉菜单点击效果
+    android:popupBackground：设置下拉菜单的背景-->

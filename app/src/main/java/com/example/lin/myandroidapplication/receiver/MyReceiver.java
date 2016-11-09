@@ -14,11 +14,6 @@ public class MyReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Intent intent1 = new Intent(context, MyService.class);
-        if (intent.getIntExtra("stop", -1) == 10) {
-            context.stopService(intent1);
-        } else {
-            context.startService(intent1);
-        }
-
+        context.startService(intent1);
     }
 }

@@ -30,4 +30,7 @@
     <string name="bind_service">绑定服务</string>
     <string name="unbind_service">解绑服务</string>
     <string name="check">查询</string>
+    <string name="intentservice">IntentService</string>
+    <string name="spinner"><![CDATA[Spinner & AutoCompleteTextView]]></string>
+    <string name="dialog">Dialog</string>
 </resources>

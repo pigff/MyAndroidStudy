@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <Button
+        android:id="@+id/show_dialog_btn_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示一个普通的dialog"/>
+
+    <Button
+        android:id="@+id/show_dialog_btn_02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示一个普通列表的dialog"/>
+
+    <Button
+        android:id="@+id/show_dialog_btn_03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示一个普通单选列表的dialog"/>
+
+    <Button
+        android:id="@+id/show_dialog_btn_04"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示一个多选列表的dialog"/>
+
+    <Button
+        android:id="@+id/show_dialog_btn_05"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示自定义dialog"/>
+
+    <Button
+        android:id="@+id/show_dialog_btn_06"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="普通的圆形进度条对话框"/>
+
+    <Button
+        android:id="@+id/show_dialog_btn_07"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="条形进度条对话框,但不带自动更新"/>
+
+    <Button
+        android:id="@+id/show_dialog_btn_08"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="条形进度条对话框,带自动更新"/>
+
+    <Button
+        android:id="@+id/show_dialog_btn_09"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="日期选择对话框"/>
+
+    <Button
+        android:id="@+id/show_dialog_btn_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="时间选择对话框"/>
+
+</LinearLayout>

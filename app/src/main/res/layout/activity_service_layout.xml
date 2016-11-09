@@ -50,5 +50,16 @@
         android:layout_height="wrap_content"
         android:text="@string/check"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/grey"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/intent_service"
+        android:text="@string/intentservice"/>
+
 
 </LinearLayout>

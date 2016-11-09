@@ -1,6 +1,7 @@
 package com.example.lin.myandroidapplication.service;
 
 import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.receiver.MyReceiver;
 
 /**
@@ -23,6 +25,9 @@ public class MyService extends Service {
     private boolean quit;
 
     private MyBinder mBinder = new MyBinder();
+    private AlarmManager mManager;
+    private PendingIntent mPendingIntent;
+
     public class MyBinder extends Binder {
 
         public int getCount() {
@@ -33,6 +38,13 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setAutoCancel(true);
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setTicker("前台服务");
+        builder.setContentTitle("提示");
+        builder.setContentText("loading");
+        startForeground(1, builder.build());
         Log.d(TAG, "onCreate() called with: " + "create!");
 
     }
@@ -55,12 +67,12 @@ public class MyService extends Service {
 //        }.start();
         count++;
         Log.d(TAG, "count:" + count);
-        AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        mManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         int anHour = 2 * 1000;
         long triggerAtTime = anHour;
         Intent i = new Intent(this, MyReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, i, 0);
-        manager.set(AlarmManager.ELAPSED_REALTIME, triggerAtTime, pendingIntent);
+        mPendingIntent = PendingIntent.getBroadcast(this, 0, i, 0);
+        mManager.set(AlarmManager.ELAPSED_REALTIME, triggerAtTime, mPendingIntent);
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -81,9 +93,7 @@ public class MyService extends Service {
     public void onDestroy() {
         Log.d(TAG, "onDestroy() called with: " + "destroy!");
         super.onDestroy();
-        Intent intent = new Intent(this, MyReceiver.class);
-        intent.putExtra("stop", 10);
-        sendBroadcast(intent);
+        mManager.cancel(mPendingIntent);
         quit = true;
     }
 
