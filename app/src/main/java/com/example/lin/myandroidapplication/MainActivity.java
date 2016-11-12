@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button button13 = (Button) findViewById(R.id.btn_13);
         button13.setOnClickListener(this);
+
+        Button button14 = (Button) findViewById(R.id.btn_14);
+        button14.setOnClickListener(this);
     }
 
     @Override
@@ -110,6 +113,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_13:
                 Intent intent2Dialog = new Intent(this, DialogStudy.class);
                 startActivity(intent2Dialog);
+                break;
+            case R.id.btn_14:
+                Intent intent2Pop = new Intent(this, PopWindowStudy.class);
+                startActivity(intent2Pop);
+                break;
             default:
                 break;
         }

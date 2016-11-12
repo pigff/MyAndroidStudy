@@ -2,7 +2,9 @@ package com.example.lin.myandroidapplication;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,10 +12,14 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+
+import java.util.Calendar;
 
 /**
  * Created by lin on 2016/11/4.
@@ -41,7 +47,8 @@ public class DialogStudy extends Activity implements View.OnClickListener {
         Button button6 = (Button) findViewById(R.id.show_dialog_btn_06);
         Button button7 = (Button) findViewById(R.id.show_dialog_btn_07);
         Button button8 = (Button) findViewById(R.id.show_dialog_btn_08);
-        Button button9 = findViewById(R)
+        Button button9 = (Button) findViewById(R.id.show_dialog_btn_09);
+        Button button10 = (Button) findViewById(R.id.show_dialog_btn_10);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
@@ -50,22 +57,21 @@ public class DialogStudy extends Activity implements View.OnClickListener {
         button6.setOnClickListener(this);
         button7.setOnClickListener(this);
         button8.setOnClickListener(this);
+        button9.setOnClickListener(this);
+        button10.setOnClickListener(this);
     }
 
     //定义一个用于更新进度的Handler,因为只能由主线程更新界面,所以要用Handler传递信息
-    final Handler hand = new Handler()
-    {
+    final Handler hand = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             //这里的话如果接受到信息码是123
-            if(msg.what == 123)
-            {
+            if (msg.what == 123) {
                 //设置进度条的当前值
                 pd2.setProgress(progressStart);
             }
             //如果当前大于或等于进度条的最大值,调用dismiss()方法关闭对话框
-            if(progressStart >= MAXVALUE)
-            {
+            if (progressStart >= MAXVALUE) {
                 pd2.dismiss();
             }
         }
@@ -131,6 +137,24 @@ public class DialogStudy extends Activity implements View.OnClickListener {
                         }
                     }
                 }.start();
+                break;
+            case R.id.show_dialog_btn_09:
+                Calendar calendar = Calendar.getInstance();
+                new DatePickerDialog(DialogStudy.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        Toast.makeText(DialogStudy.this, "你选择的是" + year + "年" + month + "月" + dayOfMonth + "日", Toast.LENGTH_SHORT).show();
+                    }
+                }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+                break;
+            case R.id.show_dialog_btn_10:
+                Calendar calendar1 = Calendar.getInstance();
+                new TimePickerDialog(DialogStudy.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        Toast.makeText(DialogStudy.this, "你选择的时间是:" + hourOfDay + "时" + minute + "分", Toast.LENGTH_SHORT).show();
+                    }
+                }, calendar1.get(Calendar.HOUR_OF_DAY), calendar1.get(Calendar.MINUTE), true).show();
                 break;
             default:
                 break;

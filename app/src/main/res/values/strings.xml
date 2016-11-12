@@ -33,4 +33,6 @@
     <string name="intentservice">IntentService</string>
     <string name="spinner"><![CDATA[Spinner & AutoCompleteTextView]]></string>
     <string name="dialog">Dialog</string>
+    <string name="popupwindow_menu"><![CDATA[popupwindow&menu]]></string>
+    <string name="popupwindow">显示PopupWindow</string>
 </resources>
