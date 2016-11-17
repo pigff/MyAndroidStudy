@@ -93,6 +93,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/popupwindow_menu"/>
+
+        <Button
+            android:id="@+id/btn_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/webview"/>
+
+        <Button
+            android:id="@+id/btn_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/webview2"/>
+
+        <Button
+            android:id="@+id/btn_17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/webview3"/>
+
+        <Button
+            android:id="@+id/btn_18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/turn"/>
     </LinearLayout>
 
 

@@ -17,41 +17,30 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".TextViewStudy"/>
-
         <activity android:name=".EditTextStudy"/>
-
         <activity android:name=".ButtonStudy"/>
-
         <activity android:name=".ImageViewStudy"/>
-
         <activity android:name=".RadioAndCheckBtnStudy"/>
-
         <activity android:name=".ToggleStudy"/>
-
         <activity android:name=".ProgressStudy"/>
-
         <activity android:name=".SeekBarStudy"/>
-
         <activity android:name=".ScrollViewStudy"/>
-
         <activity android:name=".ListViewStudy"/>
-
         <activity android:name=".ServiceStudy"/>
-
         <activity android:name=".SpinnerStudy"/>
-
         <activity android:name=".DialogStudy"/>
-
         <activity android:name=".PopWindowStudy"/>
-
+        <activity android:name=".WebViewStudy"/>
+        <activity android:name=".WebViewStudy2"/>
+        <activity android:name=".WebViewStudy3"/>
+        <activity android:name=".TurnSaveStudy"/>
 
         <service android:name=".service.MyService">
-
         </service>
 
         <receiver android:name=".receiver.MyReceiver"/>
+
     </application>
 
 </manifest>

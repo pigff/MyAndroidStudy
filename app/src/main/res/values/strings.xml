@@ -35,4 +35,9 @@
     <string name="dialog">Dialog</string>
     <string name="popupwindow_menu"><![CDATA[popupwindow&menu]]></string>
     <string name="popupwindow">显示PopupWindow</string>
+    <string name="webview">webview</string>
+    <string name="log_out_notice">再按一次退出程序</string>
+    <string name="webview2">webview2</string>
+    <string name="webview3">webview3</string>
+    <string name="turn">旋转</string>
 </resources>

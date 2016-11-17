@@ -57,6 +57,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button button14 = (Button) findViewById(R.id.btn_14);
         button14.setOnClickListener(this);
+
+        Button button15 = (Button) findViewById(R.id.btn_15);
+        button15.setOnClickListener(this);
+
+        Button button16 = (Button) findViewById(R.id.btn_16);
+        button16.setOnClickListener(this);
+
+        Button button17 = (Button) findViewById(R.id.btn_17);
+        button17.setOnClickListener(this);
+
+        Button button18 = (Button) findViewById(R.id.btn_18);
+        button18.setOnClickListener(this);
     }
 
     @Override
@@ -117,6 +129,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_14:
                 Intent intent2Pop = new Intent(this, PopWindowStudy.class);
                 startActivity(intent2Pop);
+                break;
+            case R.id.btn_15:
+                Intent intent2Web = new Intent(this, WebViewStudy.class);
+                startActivity(intent2Web);
+                break;
+            case R.id.btn_16:
+                Intent intent2Web2 = new Intent(this, WebViewStudy2.class);
+                startActivity(intent2Web2);
+                break;
+            case R.id.btn_17:
+                Intent intent2Web3 = new Intent(this, WebViewStudy3.class);
+                startActivity(intent2Web3);
+                break;
+            case R.id.btn_18:
+                Intent intent2Turn = new Intent(this, TurnSaveStudy.class);
+                startActivity(intent2Turn);
                 break;
             default:
                 break;
