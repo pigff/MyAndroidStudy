@@ -41,6 +41,18 @@
 
         <receiver android:name=".receiver.MyReceiver"/>
 
+        <activity android:name=".LoadingActivity">
+        </activity>
+        <activity android:name=".DrawableActivity">
+        </activity>
+        <activity android:name=".ToolbarActivity">
+        </activity>
+        <activity android:name=".view.MultiRecyclerActivity">
+        </activity>
+        <activity android:name=".CoordinaLayoutActivity">
+        </activity>
+        <activity android:name=".CoordinaLayout2Activity">
+        </activity>
     </application>
 
 </manifest>

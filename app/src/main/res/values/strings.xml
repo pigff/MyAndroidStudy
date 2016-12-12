@@ -40,4 +40,11 @@
     <string name="webview2">webview2</string>
     <string name="webview3">webview3</string>
     <string name="turn">旋转</string>
+    <string name="loading">第三方loading</string>
+    <string name="drawable">drawable</string>
+    <string name="toolbar">toolbar</string>
+    <string name="multirv">multiRv</string>
+    <string name="coordinatorlayout">CoordinatorLayout</string>
+
+    <string name="coordinatorlayout2">CoordinatorLayout2</string>
 </resources>

@@ -117,6 +117,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/turn"/>
+
+        <Button
+            android:id="@+id/btn_19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"/>
+
+        <Button
+            android:id="@+id/btn_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/drawable"/>
+
+        <Button
+            android:id="@+id/btn_21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/toolbar"/>
+
+        <Button
+            android:id="@+id/btn_22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/multirv"/>
+
+        <Button
+            android:id="@+id/btn_23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/coordinatorlayout"/>
+
+        <Button
+            android:id="@+id/btn_24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/coordinatorlayout2"/>
     </LinearLayout>
 
 

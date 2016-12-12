@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.lin.myandroidapplication.view.MultiRecyclerActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button button11 = (Button) findViewById(R.id.btn_11);
         button11.setOnClickListener(this);
 
-        Button button12 =(Button) findViewById(R.id.btn_12);
+        Button button12 = (Button) findViewById(R.id.btn_12);
         button12.setOnClickListener(this);
 
         Button button13 = (Button) findViewById(R.id.btn_13);
@@ -69,6 +71,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button button18 = (Button) findViewById(R.id.btn_18);
         button18.setOnClickListener(this);
+        Button button19 = (Button) findViewById(R.id.btn_19);
+        button19.setOnClickListener(this);
+        Button button20 = (Button) findViewById(R.id.btn_20);
+        button20.setOnClickListener(this);
+        Button button21 = (Button) findViewById(R.id.btn_21);
+        button21.setOnClickListener(this);
+        Button button22 = (Button) findViewById(R.id.btn_22);
+        button22.setOnClickListener(this);
+        Button button23 = (Button) findViewById(R.id.btn_23);
+        button23.setOnClickListener(this);
+        Button button24 = (Button) findViewById(R.id.btn_24);
+        button24.setOnClickListener(this);
     }
 
     @Override
@@ -145,6 +159,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_18:
                 Intent intent2Turn = new Intent(this, TurnSaveStudy.class);
                 startActivity(intent2Turn);
+                break;
+            case R.id.btn_19:
+                Intent intent2Loading = new Intent(this, LoadingActivity.class);
+                startActivity(intent2Loading);
+                break;
+            case R.id.btn_20:
+                Intent intent2Drawable = new Intent(this, DrawableActivity.class);
+                startActivity(intent2Drawable);
+                break;
+            case R.id.btn_21:
+                Intent intent2Tool = new Intent(this, ToolbarActivity.class);
+                startActivity(intent2Tool);
+                break;
+            case R.id.btn_22:
+                Intent intent2Rv = new Intent(this, MultiRecyclerActivity.class);
+                startActivity(intent2Rv);
+                break;
+            case R.id.btn_23:
+                Intent intent2Coo = new Intent(this, CoordinaLayoutActivity.class);
+                startActivity(intent2Coo);
+                break;
+            case R.id.btn_24:
+                Intent intent2Coo2 = new Intent(this, CoordinaLayout2Activity.class);
+                startActivity(intent2Coo2);
                 break;
             default:
                 break;
