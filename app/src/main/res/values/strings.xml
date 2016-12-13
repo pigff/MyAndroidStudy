@@ -47,4 +47,5 @@
     <string name="coordinatorlayout">CoordinatorLayout</string>
 
     <string name="coordinatorlayout2">CoordinatorLayout2</string>
+    <string name="disklrucache">DiskLruCache</string>
 </resources>

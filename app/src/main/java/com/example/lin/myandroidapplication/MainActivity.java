@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button23.setOnClickListener(this);
         Button button24 = (Button) findViewById(R.id.btn_24);
         button24.setOnClickListener(this);
+        Button button25 = (Button) findViewById(R.id.btn_25);
+        button25.setOnClickListener(this);
     }
 
     @Override
@@ -183,6 +185,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_24:
                 Intent intent2Coo2 = new Intent(this, CoordinaLayout2Activity.class);
                 startActivity(intent2Coo2);
+                break;
+            case R.id.btn_25:
+                Intent intent2Cache = new Intent(this, LruCacheStudyActivity.class);
+                startActivity(intent2Cache);
                 break;
             default:
                 break;

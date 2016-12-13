@@ -153,6 +153,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/coordinatorlayout2"/>
+
+        <Button
+            android:id="@+id/btn_25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/disklrucache"/>
     </LinearLayout>
 
 

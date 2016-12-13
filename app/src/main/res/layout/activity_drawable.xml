@@ -7,7 +7,8 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="100dp"
@@ -18,6 +19,24 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/gradient_linear"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gradient_sweep"/>
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/clib_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/clib_img"/>
+
+    <ImageView
+        android:id="@+id/rotate_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rotate"/>
 
 </LinearLayout>
