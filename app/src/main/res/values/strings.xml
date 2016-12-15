@@ -48,4 +48,6 @@
 
     <string name="coordinatorlayout2">CoordinatorLayout2</string>
     <string name="disklrucache">DiskLruCache</string>
+    <string name="retrofit">retrofit</string>
+    <string name="expandlv">ExpandLv</string>
 </resources>

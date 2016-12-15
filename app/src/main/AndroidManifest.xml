@@ -55,6 +55,10 @@
         </activity>
         <activity android:name=".LruCacheStudyActivity">
         </activity>
+        <activity android:name=".RetrofitActivity">
+        </activity>
+        <activity android:name=".ExpandActivity">
+        </activity>
     </application>
 
 </manifest>

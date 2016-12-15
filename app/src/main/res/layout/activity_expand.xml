@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/expan_01"/>
+
+    <!-- cacheColorHint：系统默认拖动过程中列表背景是黑的,设置为透明 -->
+    <!-- android:childDivider  -->
+    <!-- android:groupIndicator="@null" 去掉默认的箭头图 -->
+</LinearLayout>

@@ -85,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button24.setOnClickListener(this);
         Button button25 = (Button) findViewById(R.id.btn_25);
         button25.setOnClickListener(this);
+        Button button26 = (Button) findViewById(R.id.btn_26);
+        button26.setOnClickListener(this);
+        Button button27 = (Button) findViewById(R.id.btn_27);
+        button27.setOnClickListener(this);
     }
 
     @Override
@@ -189,6 +193,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_25:
                 Intent intent2Cache = new Intent(this, LruCacheStudyActivity.class);
                 startActivity(intent2Cache);
+                break;
+            case R.id.btn_26:
+                Intent intent2Retro = new Intent(this, RetrofitActivity.class);
+                startActivity(intent2Retro);
+                break;
+            case R.id.btn_27:
+                Intent intent2Expand = new Intent(this, ExpandActivity.class);
+                startActivity(intent2Expand);
                 break;
             default:
                 break;

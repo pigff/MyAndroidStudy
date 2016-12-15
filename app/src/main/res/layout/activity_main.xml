@@ -159,6 +159,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/disklrucache"/>
+
+        <Button
+            android:id="@+id/btn_26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/retrofit"/>
+
+        <Button
+            android:id="@+id/btn_27"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/expandlv"/>
     </LinearLayout>
 
 
