@@ -50,4 +50,8 @@
     <string name="disklrucache">DiskLruCache</string>
     <string name="retrofit">retrofit</string>
     <string name="expandlv">ExpandLv</string>
+    <string name="popright">PopRight</string>
+    <string name="animstudy">AnimStudy</string>
+    <string name="proanimstudy">ProAnimStudy</string>
+    <string name="proanimstudy2">proanimstudy2</string>
 </resources>

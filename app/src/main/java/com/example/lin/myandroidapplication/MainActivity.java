@@ -89,6 +89,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button26.setOnClickListener(this);
         Button button27 = (Button) findViewById(R.id.btn_27);
         button27.setOnClickListener(this);
+        Button button28 = (Button) findViewById(R.id.btn_28);
+        button28.setOnClickListener(this);
+        Button button29 = (Button) findViewById(R.id.btn_29);
+        button29.setOnClickListener(this);
+        Button button30 = (Button) findViewById(R.id.btn_30);
+        button30.setOnClickListener(this);
+        Button button31 = (Button) findViewById(R.id.btn_31);
+        button31.setOnClickListener(this);
     }
 
     @Override
@@ -202,6 +210,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent2Expand = new Intent(this, ExpandActivity.class);
                 startActivity(intent2Expand);
                 break;
+            case R.id.btn_28:
+                Intent intent2PopRight = new Intent(this, PopRightActivity.class);
+                startActivity(intent2PopRight);
+                break;
+            case R.id.btn_29:
+                Intent intent2Anim = new Intent(this, AnimStudyActivity.class);
+                startActivity(intent2Anim);
+                break;
+            case R.id.btn_30:
+                Intent intent2ProAnim = new Intent(this, PropertyAnimStudyActivity.class);
+                startActivity(intent2ProAnim);
+                break;
+            case R.id.btn_31:
+                Intent intent2ProAnim2 = new Intent(this, PropertyAnim2Activity.class);
+                startActivity(intent2ProAnim2);
             default:
                 break;
         }

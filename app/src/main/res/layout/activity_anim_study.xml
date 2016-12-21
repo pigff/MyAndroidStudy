@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/anim_btn_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="透明度"/>
+
+    <Button
+        android:id="@+id/anim_btn_02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="旋转"/>
+
+    <Button
+        android:id="@+id/anim_btn_03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="缩放"/>
+
+    <Button
+        android:id="@+id/anim_btn_04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="位移"/>
+
+    <Button
+        android:id="@+id/anim_btn_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="组合"/>
+
+    <ImageView
+        android:id="@+id/anim_test_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/image"
+        android:layout_gravity="center"/>
+</LinearLayout>

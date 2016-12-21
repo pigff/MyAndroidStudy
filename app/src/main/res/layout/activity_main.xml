@@ -171,6 +171,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/expandlv"/>
+
+        <Button
+            android:id="@+id/btn_28"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/popright"/>
+
+        <Button
+            android:id="@+id/btn_29"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/animstudy"/>
+
+        <Button
+            android:id="@+id/btn_30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/proanimstudy"/>
+
+        <Button
+            android:id="@+id/btn_31"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/proanimstudy2"/>
     </LinearLayout>
 
 

@@ -59,6 +59,14 @@
         </activity>
         <activity android:name=".ExpandActivity">
         </activity>
+        <activity android:name=".PopRightActivity">
+        </activity>
+        <activity android:name=".AnimStudyActivity">
+        </activity>
+        <activity android:name=".PropertyAnimStudyActivity">
+        </activity>
+        <activity android:name=".PropertyAnim2Activity">
+        </activity>
     </application>
 
 </manifest>
