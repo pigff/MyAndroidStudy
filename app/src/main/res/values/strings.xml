@@ -54,4 +54,9 @@
     <string name="animstudy">AnimStudy</string>
     <string name="proanimstudy">ProAnimStudy</string>
     <string name="proanimstudy2">proanimstudy2</string>
+    <string name="eventstudy">eventstudy</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="animviewpager">AnimViewPager</string>
 </resources>

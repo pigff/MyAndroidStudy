@@ -1,4 +1,4 @@
-package com.example.lin.myandroidapplication.view;
+package com.example.lin.myandroidapplication;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.adapter.RecyclerAdapter;
 import com.example.lin.myandroidapplication.bean.Category;
 import com.example.lin.myandroidapplication.bean.Multi;
@@ -33,8 +32,11 @@ public class MultiRecyclerActivity extends AppCompatActivity {
 
     private void initView() {
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        mRecyclerView.setLayoutManager(layoutManager);
+
         mRecyclerView.setAdapter(mAdapter);
+
     }
 
     private void initAdapter() {
@@ -50,7 +52,7 @@ public class MultiRecyclerActivity extends AppCompatActivity {
 
     private void initData() {
         mMultis = new ArrayList<>();
-        List<Category> categories  = new ArrayList<>();
+        List<Category> categories = new ArrayList<>();
         Category category = new Category(R.mipmap.ic_launcher, "第一个");
         Category category2 = new Category(R.mipmap.ic_launcher, "第二个");
         Category category3 = new Category(R.mipmap.ic_launcher, "第三个");

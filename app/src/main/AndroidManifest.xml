@@ -47,7 +47,7 @@
         </activity>
         <activity android:name=".ToolbarActivity">
         </activity>
-        <activity android:name=".view.MultiRecyclerActivity">
+        <activity android:name=".MultiRecyclerActivity">
         </activity>
         <activity android:name=".CoordinaLayoutActivity">
         </activity>
@@ -66,6 +66,12 @@
         <activity android:name=".PropertyAnimStudyActivity">
         </activity>
         <activity android:name=".PropertyAnim2Activity">
+        </activity>
+        <activity android:name=".EventStudyActivity">
+        </activity>
+        <activity android:name=".AnimViewPagerActivity">
+        </activity>
+        <activity android:name=".TestEventActivity">
         </activity>
     </application>
 

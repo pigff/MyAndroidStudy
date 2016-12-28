@@ -195,6 +195,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/proanimstudy2"/>
+
+        <Button
+            android:id="@+id/btn_32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/eventstudy"/>
+
+        <Button
+            android:id="@+id/btn_33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/animviewpager"/>
     </LinearLayout>
 
 

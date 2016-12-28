@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.lin.myandroidapplication.view.MultiRecyclerActivity;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -97,6 +95,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button30.setOnClickListener(this);
         Button button31 = (Button) findViewById(R.id.btn_31);
         button31.setOnClickListener(this);
+        Button button32 = (Button) findViewById(R.id.btn_32);
+        button32.setOnClickListener(this);
+        Button button33 = (Button) findViewById(R.id.btn_33);
+        button33.setOnClickListener(this);
     }
 
     @Override
@@ -225,6 +227,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_31:
                 Intent intent2ProAnim2 = new Intent(this, PropertyAnim2Activity.class);
                 startActivity(intent2ProAnim2);
+                break;
+            case R.id.btn_32:
+                Intent intent2Event = new Intent(this, EventStudyActivity.class);
+                startActivity(intent2Event);
+                break;
+            case R.id.btn_33:
+                Intent intent2VP = new Intent(this, AnimViewPagerActivity.class);
+                startActivity(intent2VP);
+                break;
             default:
                 break;
         }
