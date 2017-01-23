@@ -1,19 +1,18 @@
 package com.example.lin.myandroidapplication;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.lin.myandroidapplication.view.fragment.BlankFragment;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,13 +29,11 @@ public class EventStudyActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_study);
-        EventBus.getDefault().register(this);
         init();
     }
 
     @Override
     protected void onDestroy() {
-        EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
 
@@ -62,10 +59,6 @@ public class EventStudyActivity extends AppCompatActivity implements View.OnClic
         viewPager.setAdapter(adapter);
     }
 
-    @Subscribe
-    public void onEventMainThread(int content){
-
-    }
 
     @Override
     public void onClick(View v) {

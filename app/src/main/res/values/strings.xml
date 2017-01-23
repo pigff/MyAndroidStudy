@@ -59,4 +59,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="animviewpager">AnimViewPager</string>
+    <string name="behaviorstudy1">BehaviorStudy1</string>
+    <string name="viewfilpperstudy">ViewFilpperStudy</string>
+    <string name="rvscrollstudy">RVScrollStudy</string>
+    <string name="rvloadstudy">RvLoadStudy</string>
+    <string name="mpchartstudy">MPChartStudy</string>
+    <string name="mpchartstudy2">MPChartStudy2</string>
 </resources>

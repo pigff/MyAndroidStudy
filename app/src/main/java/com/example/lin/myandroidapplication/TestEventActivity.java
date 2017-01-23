@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
 
 public class TestEventActivity extends AppCompatActivity {
 
@@ -14,7 +13,6 @@ public class TestEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_event);
-        EventBus.getDefault().register(this);
         Button button = (Button) findViewById(R.id.add_event_btn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,14 +22,8 @@ public class TestEventActivity extends AppCompatActivity {
         });
     }
 
-    @Subscribe
-    public void onEventMainThread(int content){
-
-    }
-
     @Override
     protected void onDestroy() {
-        EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
 

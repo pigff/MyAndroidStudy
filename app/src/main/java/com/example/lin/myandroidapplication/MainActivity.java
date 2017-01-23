@@ -99,6 +99,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button32.setOnClickListener(this);
         Button button33 = (Button) findViewById(R.id.btn_33);
         button33.setOnClickListener(this);
+        Button button34 = (Button) findViewById(R.id.btn_34);
+        button34.setOnClickListener(this);
+        Button button35 = (Button) findViewById(R.id.btn_35);
+        button35.setOnClickListener(this);
+        Button button36 = (Button) findViewById(R.id.btn_36);
+        button36.setOnClickListener(this);
+        Button button37 = (Button) findViewById(R.id.btn_37);
+        button37.setOnClickListener(this);
+        Button button38 = (Button) findViewById(R.id.btn_38);
+        button38.setOnClickListener(this);
     }
 
     @Override
@@ -235,6 +245,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_33:
                 Intent intent2VP = new Intent(this, AnimViewPagerActivity.class);
                 startActivity(intent2VP);
+                break;
+            case R.id.btn_34:
+                Intent intent2Behavior = new Intent(this, BehaviorStudyActivity.class);
+                startActivity(intent2Behavior);
+                break;
+            case R.id.btn_35:
+                Intent intent2VF = new Intent(this, VFStudyActivity.class);
+                startActivity(intent2VF);
+                break;
+            case R.id.btn_36:
+                Intent intent2RvScroll = new Intent(this, RVScrollActivity.class);
+                startActivity(intent2RvScroll);
+                break;
+            case R.id.btn_37:
+                Intent intent2RvLoad = new Intent(this, LoadTestActivity.class);
+                startActivity(intent2RvLoad);
+                break;
+            case R.id.btn_38:
+                Intent intent2Mp = new Intent(this, MPchartActivity.class);
+                startActivity(intent2Mp);
                 break;
             default:
                 break;

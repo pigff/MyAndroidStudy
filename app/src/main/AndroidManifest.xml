@@ -73,6 +73,20 @@
         </activity>
         <activity android:name=".TestEventActivity">
         </activity>
+        <activity android:name=".BehaviorStudyActivity">
+        </activity>
+        <activity android:name=".BehaviorStudy2Activity">
+        </activity>
+        <activity android:name=".VFStudyActivity">
+        </activity>
+        <activity android:name=".RVScrollActivity">
+        </activity>
+        <activity android:name=".LoadTestActivity">
+        </activity>
+        <activity android:name=".MPchartActivity">
+        </activity>
+        <activity android:name=".MPChartStudy2Activity">
+        </activity>
     </application>
 
 </manifest>
