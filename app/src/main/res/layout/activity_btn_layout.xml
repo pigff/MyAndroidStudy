@@ -9,12 +9,12 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn"/>
 
-            <com.example.lin.myandroidapplication.view.CustomButton
+            <com.example.lin.myandroidapplication.widget.CustomButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_mood"/>
 
-            <com.example.lin.myandroidapplication.view.MyButton
+            <com.example.lin.myandroidapplication.widget.MyButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_tur_icon"/>

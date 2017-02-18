@@ -2,7 +2,7 @@ package com.example.lin.myandroidapplication.evaluator;
 
 import android.animation.TypeEvaluator;
 
-import com.example.lin.myandroidapplication.bean.Point;
+import com.example.lin.myandroidapplication.data.Point;
 
 /**
  * Created by lin on 2016/12/21.

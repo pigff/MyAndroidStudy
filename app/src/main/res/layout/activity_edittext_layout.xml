@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <com.example.lin.myandroidapplication.view.EditTextWithDel
+    <com.example.lin.myandroidapplication.widget.EditTextWithDel
         android:id="@+id/cancle_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

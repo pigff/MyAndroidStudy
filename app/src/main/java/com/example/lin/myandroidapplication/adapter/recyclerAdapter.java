@@ -9,8 +9,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.lin.myandroidapplication.R;
-import com.example.lin.myandroidapplication.bean.Category;
-import com.example.lin.myandroidapplication.bean.Multi;
+import com.example.lin.myandroidapplication.data.Category;
+import com.example.lin.myandroidapplication.data.Multi;
 
 import java.util.List;
 

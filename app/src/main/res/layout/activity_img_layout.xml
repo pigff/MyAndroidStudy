@@ -219,7 +219,7 @@
                 android:text="matrix"/>
         </LinearLayout>
 
-        <com.example.lin.myandroidapplication.view.MyCircleImg
+        <com.example.lin.myandroidapplication.widget.MyCircleImg
             android:id="@+id/round_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

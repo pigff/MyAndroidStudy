@@ -11,84 +11,84 @@
         android:supportsRtl="true"
         android:name=".App"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".TextViewStudy"/>
-        <activity android:name=".EditTextStudy"/>
-        <activity android:name=".ButtonStudy"/>
-        <activity android:name=".ImageViewStudy"/>
-        <activity android:name=".RadioAndCheckBtnStudy"/>
-        <activity android:name=".ToggleStudy"/>
-        <activity android:name=".ProgressStudy"/>
-        <activity android:name=".SeekBarStudy"/>
-        <activity android:name=".ScrollViewStudy"/>
-        <activity android:name=".ListViewStudy"/>
-        <activity android:name=".ServiceStudy"/>
-        <activity android:name=".SpinnerStudy"/>
-        <activity android:name=".DialogStudy"/>
-        <activity android:name=".PopWindowStudy"/>
-        <activity android:name=".WebViewStudy"/>
-        <activity android:name=".WebViewStudy2"/>
-        <activity android:name=".WebViewStudy3"/>
-        <activity android:name=".TurnSaveStudy"/>
+        <activity android:name=".ui.activity.TextViewStudy"/>
+        <activity android:name=".ui.activity.EditTextStudy"/>
+        <activity android:name=".ui.activity.ButtonStudy"/>
+        <activity android:name=".ui.activity.ImageViewStudy"/>
+        <activity android:name=".ui.activity.RadioAndCheckBtnStudy"/>
+        <activity android:name=".ui.activity.ToggleStudy"/>
+        <activity android:name=".ui.activity.ProgressStudy"/>
+        <activity android:name=".ui.activity.SeekBarStudy"/>
+        <activity android:name=".ui.activity.ScrollViewStudy"/>
+        <activity android:name=".ui.activity.ListViewStudy"/>
+        <activity android:name=".ui.activity.ServiceStudy"/>
+        <activity android:name=".ui.activity.SpinnerStudy"/>
+        <activity android:name=".ui.activity.DialogStudy"/>
+        <activity android:name=".ui.activity.PopWindowStudy"/>
+        <activity android:name=".ui.activity.WebViewStudy"/>
+        <activity android:name=".ui.activity.WebViewStudy2"/>
+        <activity android:name=".ui.activity.WebViewStudy3"/>
+        <activity android:name=".ui.activity.TurnSaveStudy"/>
 
         <service android:name=".service.MyService">
         </service>
 
         <receiver android:name=".receiver.MyReceiver"/>
 
-        <activity android:name=".LoadingActivity">
+        <activity android:name=".ui.activity.LoadingActivity">
         </activity>
-        <activity android:name=".DrawableActivity">
+        <activity android:name=".ui.activity.DrawableActivity">
         </activity>
-        <activity android:name=".ToolbarActivity">
+        <activity android:name=".ui.activity.ToolbarActivity">
         </activity>
-        <activity android:name=".MultiRecyclerActivity">
+        <activity android:name=".ui.activity.MultiRecyclerActivity">
         </activity>
-        <activity android:name=".CoordinaLayoutActivity">
+        <activity android:name=".ui.activity.CoordinaLayoutActivity">
         </activity>
-        <activity android:name=".CoordinaLayout2Activity">
+        <activity android:name=".ui.activity.CoordinaLayout2Activity">
         </activity>
-        <activity android:name=".LruCacheStudyActivity">
+        <activity android:name=".ui.activity.LruCacheStudyActivity">
         </activity>
-        <activity android:name=".RetrofitActivity">
+        <activity android:name=".ui.activity.RetrofitActivity">
         </activity>
-        <activity android:name=".ExpandActivity">
+        <activity android:name=".ui.activity.ExpandActivity">
         </activity>
-        <activity android:name=".PopRightActivity">
+        <activity android:name=".ui.activity.PopRightActivity">
         </activity>
-        <activity android:name=".AnimStudyActivity">
+        <activity android:name=".ui.activity.AnimStudyActivity">
         </activity>
-        <activity android:name=".PropertyAnimStudyActivity">
+        <activity android:name=".ui.activity.PropertyAnimStudyActivity">
         </activity>
-        <activity android:name=".PropertyAnim2Activity">
+        <activity android:name=".ui.activity.PropertyAnim2Activity">
         </activity>
-        <activity android:name=".EventStudyActivity">
+        <activity android:name=".ui.activity.EventStudyActivity">
         </activity>
-        <activity android:name=".AnimViewPagerActivity">
+        <activity android:name=".ui.activity.AnimViewPagerActivity">
         </activity>
-        <activity android:name=".TestEventActivity">
+        <activity android:name=".ui.activity.TestEventActivity">
         </activity>
-        <activity android:name=".BehaviorStudyActivity">
+        <activity android:name=".ui.activity.BehaviorStudyActivity">
         </activity>
-        <activity android:name=".BehaviorStudy2Activity">
+        <activity android:name=".ui.activity.BehaviorStudy2Activity">
         </activity>
-        <activity android:name=".VFStudyActivity">
+        <activity android:name=".ui.activity.VFStudyActivity">
         </activity>
-        <activity android:name=".RVScrollActivity">
+        <activity android:name=".ui.activity.RVScrollActivity">
         </activity>
-        <activity android:name=".LoadTestActivity">
+        <activity android:name=".ui.activity.LoadTestActivity">
         </activity>
-        <activity android:name=".MPchartActivity">
+        <activity android:name=".ui.activity.MPchartActivity">
         </activity>
-        <activity android:name=".MPChartStudy2Activity">
+        <activity android:name=".ui.activity.MPChartStudy2Activity">
         </activity>
-        <activity android:name=".TabStudyActivity">
+        <activity android:name=".ui.activity.TabStudyActivity">
         </activity>
     </application>
 
