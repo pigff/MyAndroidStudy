@@ -243,6 +243,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/mpchartstudy2"/>
+
+        <Button
+            android:id="@+id/btn_40"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tabstudy"/>
     </LinearLayout>
 
 

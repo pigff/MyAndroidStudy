@@ -109,6 +109,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button37.setOnClickListener(this);
         Button button38 = (Button) findViewById(R.id.btn_38);
         button38.setOnClickListener(this);
+        Button button39 = (Button) findViewById(R.id.btn_39);
+        button39.setOnClickListener(this);
+        Button button40 = (Button) findViewById(R.id.btn_40);
+        button40.setOnClickListener(this);
     }
 
     @Override
@@ -265,6 +269,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_38:
                 Intent intent2Mp = new Intent(this, MPchartActivity.class);
                 startActivity(intent2Mp);
+                break;
+            case R.id.btn_39:
+                Intent intent2Mp2 = new Intent(this, MPChartStudy2Activity.class);
+                startActivity(intent2Mp2);
+                break;
+            case R.id.btn_40:
+                Intent intent2Tab = new Intent(this, TabStudyActivity.class);
+                startActivity(intent2Tab);
                 break;
             default:
                 break;
