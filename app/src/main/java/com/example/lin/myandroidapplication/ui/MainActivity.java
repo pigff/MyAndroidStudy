@@ -1,4 +1,4 @@
-package com.example.lin.myandroidapplication.ui.activity;
+package com.example.lin.myandroidapplication.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,47 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.lin.myandroidapplication.R;
+import com.example.lin.myandroidapplication.ui.activity.AnimStudyActivity;
+import com.example.lin.myandroidapplication.ui.activity.AnimViewPagerActivity;
+import com.example.lin.myandroidapplication.ui.activity.BehaviorStudyActivity;
+import com.example.lin.myandroidapplication.ui.activity.ButtonStudy;
+import com.example.lin.myandroidapplication.ui.activity.CoordinaLayout2Activity;
+import com.example.lin.myandroidapplication.ui.activity.CoordinaLayoutActivity;
+import com.example.lin.myandroidapplication.ui.activity.DialogStudy;
+import com.example.lin.myandroidapplication.ui.activity.DrawableActivity;
+import com.example.lin.myandroidapplication.ui.activity.EditTextStudy;
+import com.example.lin.myandroidapplication.ui.activity.EventStudyActivity;
+import com.example.lin.myandroidapplication.ui.activity.ExpandActivity;
+import com.example.lin.myandroidapplication.ui.activity.ImageViewStudy;
+import com.example.lin.myandroidapplication.ui.activity.ListViewStudy;
+import com.example.lin.myandroidapplication.ui.activity.LoadTestActivity;
+import com.example.lin.myandroidapplication.ui.activity.LoadingActivity;
+import com.example.lin.myandroidapplication.ui.activity.LruCacheStudyActivity;
+import com.example.lin.myandroidapplication.ui.activity.MPChartStudy2Activity;
+import com.example.lin.myandroidapplication.ui.activity.MPchartActivity;
+import com.example.lin.myandroidapplication.ui.activity.MultiRecyclerActivity;
+import com.example.lin.myandroidapplication.ui.activity.PopRightActivity;
+import com.example.lin.myandroidapplication.ui.activity.PopWindowStudy;
+import com.example.lin.myandroidapplication.ui.activity.ProgressStudy;
+import com.example.lin.myandroidapplication.ui.activity.PropertyAnim2Activity;
+import com.example.lin.myandroidapplication.ui.activity.PropertyAnimStudyActivity;
+import com.example.lin.myandroidapplication.ui.activity.RVScrollActivity;
+import com.example.lin.myandroidapplication.ui.activity.RadioAndCheckBtnStudy;
+import com.example.lin.myandroidapplication.ui.activity.RetrofitActivity;
+import com.example.lin.myandroidapplication.ui.activity.RxJavaStudyActivity;
+import com.example.lin.myandroidapplication.ui.activity.ScrollViewStudy;
+import com.example.lin.myandroidapplication.ui.activity.SeekBarStudy;
+import com.example.lin.myandroidapplication.ui.activity.ServiceStudy;
+import com.example.lin.myandroidapplication.ui.activity.SpinnerStudy;
+import com.example.lin.myandroidapplication.ui.activity.TabStudyActivity;
+import com.example.lin.myandroidapplication.ui.activity.TextViewStudy;
+import com.example.lin.myandroidapplication.ui.activity.ToggleStudy;
+import com.example.lin.myandroidapplication.ui.activity.ToolbarActivity;
+import com.example.lin.myandroidapplication.ui.activity.TurnSaveStudy;
+import com.example.lin.myandroidapplication.ui.activity.VFStudyActivity;
+import com.example.lin.myandroidapplication.ui.activity.WebViewStudy;
+import com.example.lin.myandroidapplication.ui.activity.WebViewStudy2;
+import com.example.lin.myandroidapplication.ui.activity.WebViewStudy3;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -115,6 +156,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button39.setOnClickListener(this);
         Button button40 = (Button) findViewById(R.id.btn_40);
         button40.setOnClickListener(this);
+        Button button41 = (Button) findViewById(R.id.btn_41);
+        button41.setOnClickListener(this);
     }
 
     @Override
@@ -279,6 +322,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_40:
                 Intent intent2Tab = new Intent(this, TabStudyActivity.class);
                 startActivity(intent2Tab);
+                break;
+            case R.id.btn_41:
+                Intent intent2RxJava = new Intent(this, RxJavaStudyActivity.class);
+                startActivity(intent2RxJava);
                 break;
             default:
                 break;
