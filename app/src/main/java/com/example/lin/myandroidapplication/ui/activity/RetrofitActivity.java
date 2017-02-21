@@ -30,10 +30,6 @@ public class RetrofitActivity extends AppCompatActivity {
     }
 
     private void initCon() {
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl("http://apis.baidu.com/")
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://route.showapi.com/")
                 .addConverterFactory(GsonConverterFactory.create())

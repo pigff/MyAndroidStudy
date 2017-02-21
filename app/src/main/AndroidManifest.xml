@@ -92,6 +92,12 @@
         </activity>
         <activity android:name=".ui.activity.RxJavaStudyActivity">
         </activity>
+        <activity android:name=".ui.JuniorActivity">
+        </activity>
+        <activity android:name=".ui.MiddleLvActivity">
+        </activity>
+        <activity android:name=".ui.HighLvActivity">
+        </activity>
     </application>
 
 </manifest>

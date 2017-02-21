@@ -107,6 +107,7 @@ public class RxJavaStudyActivity extends AppCompatActivity {
                         return Observable.from(student.getCourses());
                     }
                 })
+
                 .subscribe(new Action1<Student.Course>() {
                     @Override
                     public void call(Student.Course course) {
@@ -114,7 +115,6 @@ public class RxJavaStudyActivity extends AppCompatActivity {
                     }
                 });
         /////
-
 
     }
 

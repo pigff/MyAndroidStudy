@@ -3,53 +3,25 @@ package com.example.lin.myandroidapplication.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
+import android.widget.Toast;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.lin.myandroidapplication.R;
-import com.example.lin.myandroidapplication.ui.activity.AnimStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.AnimViewPagerActivity;
-import com.example.lin.myandroidapplication.ui.activity.BehaviorStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.ButtonStudy;
-import com.example.lin.myandroidapplication.ui.activity.CoordinaLayout2Activity;
-import com.example.lin.myandroidapplication.ui.activity.CoordinaLayoutActivity;
-import com.example.lin.myandroidapplication.ui.activity.DialogStudy;
-import com.example.lin.myandroidapplication.ui.activity.DrawableActivity;
-import com.example.lin.myandroidapplication.ui.activity.EditTextStudy;
-import com.example.lin.myandroidapplication.ui.activity.EventStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.ExpandActivity;
-import com.example.lin.myandroidapplication.ui.activity.ImageViewStudy;
-import com.example.lin.myandroidapplication.ui.activity.ListViewStudy;
-import com.example.lin.myandroidapplication.ui.activity.LoadTestActivity;
-import com.example.lin.myandroidapplication.ui.activity.LoadingActivity;
-import com.example.lin.myandroidapplication.ui.activity.LruCacheStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.MPChartStudy2Activity;
-import com.example.lin.myandroidapplication.ui.activity.MPchartActivity;
-import com.example.lin.myandroidapplication.ui.activity.MultiRecyclerActivity;
-import com.example.lin.myandroidapplication.ui.activity.PopRightActivity;
-import com.example.lin.myandroidapplication.ui.activity.PopWindowStudy;
-import com.example.lin.myandroidapplication.ui.activity.ProgressStudy;
-import com.example.lin.myandroidapplication.ui.activity.PropertyAnim2Activity;
-import com.example.lin.myandroidapplication.ui.activity.PropertyAnimStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.RVScrollActivity;
-import com.example.lin.myandroidapplication.ui.activity.RadioAndCheckBtnStudy;
-import com.example.lin.myandroidapplication.ui.activity.RetrofitActivity;
-import com.example.lin.myandroidapplication.ui.activity.RxJavaStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.ScrollViewStudy;
-import com.example.lin.myandroidapplication.ui.activity.SeekBarStudy;
-import com.example.lin.myandroidapplication.ui.activity.ServiceStudy;
-import com.example.lin.myandroidapplication.ui.activity.SpinnerStudy;
-import com.example.lin.myandroidapplication.ui.activity.TabStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.TextViewStudy;
-import com.example.lin.myandroidapplication.ui.activity.ToggleStudy;
-import com.example.lin.myandroidapplication.ui.activity.ToolbarActivity;
-import com.example.lin.myandroidapplication.ui.activity.TurnSaveStudy;
-import com.example.lin.myandroidapplication.ui.activity.VFStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.WebViewStudy;
-import com.example.lin.myandroidapplication.ui.activity.WebViewStudy2;
-import com.example.lin.myandroidapplication.ui.activity.WebViewStudy3;
+import com.example.lin.myandroidapplication.adapter.ShowAdapter;
+import com.example.lin.myandroidapplication.data.ActivityData;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity{
+
+    private RecyclerView mRecyclerView;
+    private ShowAdapter mAdapter;
+    private List<ActivityData> mContents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,276 +31,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void init() {
-        Button button = (Button) findViewById(R.id.btn_01);
-        button.setOnClickListener(this);
+        initData();
 
-        Button button3 = (Button) findViewById(R.id.btn_03);
-        button3.setOnClickListener(this);
+        initAdapter();
 
-        Button button2 = (Button) findViewById(R.id.btn_02);
-        button2.setOnClickListener(this);
+        initView();
 
-        Button button4 = (Button) findViewById(R.id.btn_04);
-        button4.setOnClickListener(this);
-
-        Button button5 = (Button) findViewById(R.id.btn_05);
-        button5.setOnClickListener(this);
-
-        Button button6 = (Button) findViewById(R.id.btn_06);
-        button6.setOnClickListener(this);
-
-        Button button7 = (Button) findViewById(R.id.btn_07);
-        button7.setOnClickListener(this);
-
-        Button button8 = (Button) findViewById(R.id.btn_08);
-        button8.setOnClickListener(this);
-
-        Button button9 = (Button) findViewById(R.id.btn_09);
-        button9.setOnClickListener(this);
-
-        Button button10 = (Button) findViewById(R.id.btn_10);
-        button10.setOnClickListener(this);
-
-        Button button11 = (Button) findViewById(R.id.btn_11);
-        button11.setOnClickListener(this);
-
-        Button button12 = (Button) findViewById(R.id.btn_12);
-        button12.setOnClickListener(this);
-
-        Button button13 = (Button) findViewById(R.id.btn_13);
-        button13.setOnClickListener(this);
-
-        Button button14 = (Button) findViewById(R.id.btn_14);
-        button14.setOnClickListener(this);
-
-        Button button15 = (Button) findViewById(R.id.btn_15);
-        button15.setOnClickListener(this);
-
-        Button button16 = (Button) findViewById(R.id.btn_16);
-        button16.setOnClickListener(this);
-
-        Button button17 = (Button) findViewById(R.id.btn_17);
-        button17.setOnClickListener(this);
-
-        Button button18 = (Button) findViewById(R.id.btn_18);
-        button18.setOnClickListener(this);
-        Button button19 = (Button) findViewById(R.id.btn_19);
-        button19.setOnClickListener(this);
-        Button button20 = (Button) findViewById(R.id.btn_20);
-        button20.setOnClickListener(this);
-        Button button21 = (Button) findViewById(R.id.btn_21);
-        button21.setOnClickListener(this);
-        Button button22 = (Button) findViewById(R.id.btn_22);
-        button22.setOnClickListener(this);
-        Button button23 = (Button) findViewById(R.id.btn_23);
-        button23.setOnClickListener(this);
-        Button button24 = (Button) findViewById(R.id.btn_24);
-        button24.setOnClickListener(this);
-        Button button25 = (Button) findViewById(R.id.btn_25);
-        button25.setOnClickListener(this);
-        Button button26 = (Button) findViewById(R.id.btn_26);
-        button26.setOnClickListener(this);
-        Button button27 = (Button) findViewById(R.id.btn_27);
-        button27.setOnClickListener(this);
-        Button button28 = (Button) findViewById(R.id.btn_28);
-        button28.setOnClickListener(this);
-        Button button29 = (Button) findViewById(R.id.btn_29);
-        button29.setOnClickListener(this);
-        Button button30 = (Button) findViewById(R.id.btn_30);
-        button30.setOnClickListener(this);
-        Button button31 = (Button) findViewById(R.id.btn_31);
-        button31.setOnClickListener(this);
-        Button button32 = (Button) findViewById(R.id.btn_32);
-        button32.setOnClickListener(this);
-        Button button33 = (Button) findViewById(R.id.btn_33);
-        button33.setOnClickListener(this);
-        Button button34 = (Button) findViewById(R.id.btn_34);
-        button34.setOnClickListener(this);
-        Button button35 = (Button) findViewById(R.id.btn_35);
-        button35.setOnClickListener(this);
-        Button button36 = (Button) findViewById(R.id.btn_36);
-        button36.setOnClickListener(this);
-        Button button37 = (Button) findViewById(R.id.btn_37);
-        button37.setOnClickListener(this);
-        Button button38 = (Button) findViewById(R.id.btn_38);
-        button38.setOnClickListener(this);
-        Button button39 = (Button) findViewById(R.id.btn_39);
-        button39.setOnClickListener(this);
-        Button button40 = (Button) findViewById(R.id.btn_40);
-        button40.setOnClickListener(this);
-        Button button41 = (Button) findViewById(R.id.btn_41);
-        button41.setOnClickListener(this);
+        initListener();
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_01:
-                Intent intent2Text = new Intent(this, TextViewStudy.class);
-                startActivity(intent2Text);
-                break;
-            case R.id.btn_02:
-                Intent intent2Btn = new Intent(this, ButtonStudy.class);
-                startActivity(intent2Btn);
-                break;
-            case R.id.btn_03:
-                Intent intent2Edit = new Intent(this, EditTextStudy.class);
-                startActivity(intent2Edit);
-                break;
-            case R.id.btn_04:
-                Intent intent2Img = new Intent(this, ImageViewStudy.class);
-                startActivity(intent2Img);
-                break;
-            case R.id.btn_05:
-                Intent intent2Radio = new Intent(this, RadioAndCheckBtnStudy.class);
-                startActivity(intent2Radio);
-                break;
-            case R.id.btn_06:
-                Intent intent2Tog = new Intent(this, ToggleStudy.class);
-                startActivity(intent2Tog);
-                break;
-            case R.id.btn_07:
-                Intent intent2Pro = new Intent(this, ProgressStudy.class);
-                startActivity(intent2Pro);
-                break;
-            case R.id.btn_08:
-                Intent intent2Seek = new Intent(this, SeekBarStudy.class);
-                startActivity(intent2Seek);
-                break;
-            case R.id.btn_09:
-                Intent intent2Scroll = new Intent(this, ScrollViewStudy.class);
-                startActivity(intent2Scroll);
-                break;
-            case R.id.btn_10:
-                Intent intent2List = new Intent(this, ListViewStudy.class);
-                startActivity(intent2List);
-                break;
-            case R.id.btn_11:
-                Intent intent2Service = new Intent(this, ServiceStudy.class);
-                startActivity(intent2Service);
-                break;
-            case R.id.btn_12:
-                Intent intent2Spin = new Intent(this, SpinnerStudy.class);
-                startActivity(intent2Spin);
-                break;
-            case R.id.btn_13:
-                Intent intent2Dialog = new Intent(this, DialogStudy.class);
-                startActivity(intent2Dialog);
-                break;
-            case R.id.btn_14:
-                Intent intent2Pop = new Intent(this, PopWindowStudy.class);
-                startActivity(intent2Pop);
-                break;
-            case R.id.btn_15:
-                Intent intent2Web = new Intent(this, WebViewStudy.class);
-                startActivity(intent2Web);
-                break;
-            case R.id.btn_16:
-                Intent intent2Web2 = new Intent(this, WebViewStudy2.class);
-                startActivity(intent2Web2);
-                break;
-            case R.id.btn_17:
-                Intent intent2Web3 = new Intent(this, WebViewStudy3.class);
-                startActivity(intent2Web3);
-                break;
-            case R.id.btn_18:
-                Intent intent2Turn = new Intent(this, TurnSaveStudy.class);
-                startActivity(intent2Turn);
-                break;
-            case R.id.btn_19:
-                Intent intent2Loading = new Intent(this, LoadingActivity.class);
-                startActivity(intent2Loading);
-                break;
-            case R.id.btn_20:
-                Intent intent2Drawable = new Intent(this, DrawableActivity.class);
-                startActivity(intent2Drawable);
-                break;
-            case R.id.btn_21:
-                Intent intent2Tool = new Intent(this, ToolbarActivity.class);
-                startActivity(intent2Tool);
-                break;
-            case R.id.btn_22:
-                Intent intent2Rv = new Intent(this, MultiRecyclerActivity.class);
-                startActivity(intent2Rv);
-                break;
-            case R.id.btn_23:
-                Intent intent2Coo = new Intent(this, CoordinaLayoutActivity.class);
-                startActivity(intent2Coo);
-                break;
-            case R.id.btn_24:
-                Intent intent2Coo2 = new Intent(this, CoordinaLayout2Activity.class);
-                startActivity(intent2Coo2);
-                break;
-            case R.id.btn_25:
-                Intent intent2Cache = new Intent(this, LruCacheStudyActivity.class);
-                startActivity(intent2Cache);
-                break;
-            case R.id.btn_26:
-                Intent intent2Retro = new Intent(this, RetrofitActivity.class);
-                startActivity(intent2Retro);
-                break;
-            case R.id.btn_27:
-                Intent intent2Expand = new Intent(this, ExpandActivity.class);
-                startActivity(intent2Expand);
-                break;
-            case R.id.btn_28:
-                Intent intent2PopRight = new Intent(this, PopRightActivity.class);
-                startActivity(intent2PopRight);
-                break;
-            case R.id.btn_29:
-                Intent intent2Anim = new Intent(this, AnimStudyActivity.class);
-                startActivity(intent2Anim);
-                break;
-            case R.id.btn_30:
-                Intent intent2ProAnim = new Intent(this, PropertyAnimStudyActivity.class);
-                startActivity(intent2ProAnim);
-                break;
-            case R.id.btn_31:
-                Intent intent2ProAnim2 = new Intent(this, PropertyAnim2Activity.class);
-                startActivity(intent2ProAnim2);
-                break;
-            case R.id.btn_32:
-                Intent intent2Event = new Intent(this, EventStudyActivity.class);
-                startActivity(intent2Event);
-                break;
-            case R.id.btn_33:
-                Intent intent2VP = new Intent(this, AnimViewPagerActivity.class);
-                startActivity(intent2VP);
-                break;
-            case R.id.btn_34:
-                Intent intent2Behavior = new Intent(this, BehaviorStudyActivity.class);
-                startActivity(intent2Behavior);
-                break;
-            case R.id.btn_35:
-                Intent intent2VF = new Intent(this, VFStudyActivity.class);
-                startActivity(intent2VF);
-                break;
-            case R.id.btn_36:
-                Intent intent2RvScroll = new Intent(this, RVScrollActivity.class);
-                startActivity(intent2RvScroll);
-                break;
-            case R.id.btn_37:
-                Intent intent2RvLoad = new Intent(this, LoadTestActivity.class);
-                startActivity(intent2RvLoad);
-                break;
-            case R.id.btn_38:
-                Intent intent2Mp = new Intent(this, MPchartActivity.class);
-                startActivity(intent2Mp);
-                break;
-            case R.id.btn_39:
-                Intent intent2Mp2 = new Intent(this, MPChartStudy2Activity.class);
-                startActivity(intent2Mp2);
-                break;
-            case R.id.btn_40:
-                Intent intent2Tab = new Intent(this, TabStudyActivity.class);
-                startActivity(intent2Tab);
-                break;
-            case R.id.btn_41:
-                Intent intent2RxJava = new Intent(this, RxJavaStudyActivity.class);
-                startActivity(intent2RxJava);
-                break;
-            default:
-                break;
-        }
+    private void initListener() {
+        mRecyclerView.addOnItemTouchListener(new OnItemChildClickListener() {
+            @Override
+            public void SimpleOnItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                ActivityData item = (ActivityData) baseQuickAdapter.getItem(i);
+                switch (view.getId()) {
+                    case R.id.rv_card:
+                        Intent intent = new Intent(MainActivity.this, item.getClassName());
+                        startActivity(intent);
+                        break;
+                    case R.id.rv_card_des:
+                        Toast.makeText(MainActivity.this, item.getDescription(), Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
+    }
+
+    private void initView() {
+        mRecyclerView = (RecyclerView) findViewById(R.id.main_rv);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        mRecyclerView.setAdapter(mAdapter);
+    }
+
+    private void initAdapter() {
+        mAdapter = new ShowAdapter(R.layout.rv_card_item, mContents);
+    }
+
+    private void initData() {
+        mContents = new ArrayList<>();
+        mContents.add(new ActivityData("Junior", "......", JuniorActivity.class));
+        mContents.add(new ActivityData("Middle", "......", MiddleLvActivity.class));
+        mContents.add(new ActivityData("High", "......", HighLvActivity.class));
     }
 }
