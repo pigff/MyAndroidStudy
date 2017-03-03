@@ -45,4 +45,13 @@
         android:layout_toRightOf="@+id/avi3"
         app:indicatorName="BallClipRotatePulseIndicator"/>
 
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avi5"
+        style="@style/AVLoadingIndicatorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/avi4"
+        app:indicatorName="PacmanIndicator"/>
+
 </RelativeLayout>

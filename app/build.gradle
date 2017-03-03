@@ -45,4 +45,8 @@ dependencies {
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.1'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+
+    compile "com.mikepenz:iconics-core:2.8.1@aar"
+    compile 'com.mikepenz:material-design-iconic-typeface:2.2.0.2@aar'
+    compile 'com.mikepenz:fontawesome-typeface:4.5.0.1@aar'
 }

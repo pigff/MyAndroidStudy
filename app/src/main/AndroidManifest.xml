@@ -98,6 +98,8 @@
         </activity>
         <activity android:name=".ui.HighLvActivity">
         </activity>
+        <activity android:name=".ui.TestActivity">
+        </activity>
     </application>
 
 </manifest>

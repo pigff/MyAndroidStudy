@@ -16,17 +16,8 @@
             android:layout_height="250dp"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleGravity="bottom"
+            app:expandedTitleGravity="top"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="?attr/colorPrimary"
-                android:scaleType="fitXY"
-                android:src="@drawable/image"
-                app:layout_collapseMode="parallax"
-                app:layout_scrollFlags="scroll|enterAlways"/>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/coordin3_toolbar3"
@@ -34,6 +25,16 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+            <ImageView
+                android:layout_width="384dp"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
+                android:scaleType="fitXY"
+                android:src="@drawable/image"
+                app:layout_collapseMode="parallax"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:id="@+id/imageView"/>
         </android.support.design.widget.CollapsingToolbarLayout>
 
 

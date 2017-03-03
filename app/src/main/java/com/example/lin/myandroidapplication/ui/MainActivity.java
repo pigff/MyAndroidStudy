@@ -74,5 +74,6 @@ public class MainActivity extends AppCompatActivity{
         mContents.add(new ActivityData("Junior", "......", JuniorActivity.class));
         mContents.add(new ActivityData("Middle", "......", MiddleLvActivity.class));
         mContents.add(new ActivityData("High", "......", HighLvActivity.class));
+        mContents.add(new ActivityData("Test", "......", TestActivity.class));
     }
 }

@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.example.lin.myandroidapplication.R;
+import com.example.lin.myandroidapplication.data.net.BaseBean;
+import com.example.lin.myandroidapplication.network.ErrorAction;
+import com.example.lin.myandroidapplication.network.SuccessAction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,10 +118,24 @@ public class RxJavaStudyActivity extends AppCompatActivity {
                     }
                 });
         /////
+        StudentBean studentBean = new StudentBean();
+        Observable.just(studentBean)
+                .subscribe(new SuccessAction<StudentBean>() {
+
+                    @Override
+                    public void success(StudentBean studentBean) {
+
+                    }
+                }, new ErrorAction() {
+                    @Override
+                    public void error(Throwable throwable) {
+
+                    }
+                });
 
     }
 
-    static class Student {
+    static class Student{
         private String name;
         private int age;
         List<Course> courses;
@@ -167,6 +184,20 @@ public class RxJavaStudyActivity extends AppCompatActivity {
             public void setName(String name) {
                 this.name = name;
             }
+        }
+    }
+
+    class StudentBean extends BaseBean<Student> {
+
+
+        private Student student;
+
+        public Student getStudent() {
+            return student;
+        }
+
+        public void setStudent(Student student) {
+            this.student = student;
         }
     }
 }
