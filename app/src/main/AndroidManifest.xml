@@ -107,6 +107,8 @@
         </activity>
         <activity android:name=".ui.activity.RealmActivity">
         </activity>
+        <activity android:name=".ui.activity.ExpandRvActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -1,9 +1,12 @@
 package com.example.lin.myandroidapplication.data;
 
+import com.chad.library.adapter.base.entity.MultiItemEntity;
+import com.example.lin.myandroidapplication.adapter.ExpandMultiAdapter;
+
 /**
  * Created by lin on 2016/11/2.
  */
-public class Student {
+public class Student implements MultiItemEntity {
 
     private String name;
 
@@ -28,5 +31,10 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public int getItemType() {
+        return ExpandMultiAdapter.TYPE_STUDENT;
     }
 }

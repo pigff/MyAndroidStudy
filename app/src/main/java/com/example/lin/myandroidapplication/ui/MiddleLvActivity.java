@@ -17,6 +17,7 @@ import com.example.lin.myandroidapplication.ui.activity.AnimStudyActivity;
 import com.example.lin.myandroidapplication.ui.activity.DialogStudy;
 import com.example.lin.myandroidapplication.ui.activity.DrawableActivity;
 import com.example.lin.myandroidapplication.ui.activity.ExpandActivity;
+import com.example.lin.myandroidapplication.ui.activity.ExpandRvActivity;
 import com.example.lin.myandroidapplication.ui.activity.LoadTestActivity;
 import com.example.lin.myandroidapplication.ui.activity.PopRightActivity;
 import com.example.lin.myandroidapplication.ui.activity.PopWindowStudy;
@@ -96,6 +97,7 @@ public class MiddleLvActivity extends AppCompatActivity {
         mContents.add(new ActivityData("PropertyAnim2", "属性动画学习", PropertyAnim2Activity.class));
         mContents.add(new ActivityData("ViewFlipper", "ViewFlipper使用学习", VFStudyActivity.class));
         mContents.add(new ActivityData("RvScroll-Glide", "RecyclerView滑动时停止加载图片", RVScrollActivity.class));
+        mContents.add(new ActivityData("Rv-Expand", "可以展开的RecyclerView联系", ExpandRvActivity.class));
         mContents.add(new ActivityData("Load-Rv", "进入界面时的加载练习", LoadTestActivity.class));
     }
 }
