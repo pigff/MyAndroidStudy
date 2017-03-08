@@ -6,12 +6,15 @@ import com.example.lin.myandroidapplication.data.TextJokeResponse;
 import com.example.lin.myandroidapplication.data.net.CameraBean;
 import com.example.lin.myandroidapplication.data.net.CameraCategoryBean;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import retrofit2.http.Streaming;
+import retrofit2.http.Url;
 import rx.Observable;
 
 /**
@@ -37,4 +40,8 @@ public interface TestService {
 
     @POST("camera/findByCameraModel.json")
     Observable<CameraBean> getCamera(@Query("cameraModelId") Integer cameraModelId);
+
+    @Streaming
+    @GET
+    Observable<ResponseBody> download(@Url String url);
 }

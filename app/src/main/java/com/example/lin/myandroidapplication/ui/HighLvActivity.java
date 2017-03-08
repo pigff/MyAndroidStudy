@@ -17,6 +17,7 @@ import com.example.lin.myandroidapplication.ui.activity.AnimViewPagerActivity;
 import com.example.lin.myandroidapplication.ui.activity.BehaviorStudyActivity;
 import com.example.lin.myandroidapplication.ui.activity.CoordinaLayout2Activity;
 import com.example.lin.myandroidapplication.ui.activity.CoordinaLayoutActivity;
+import com.example.lin.myandroidapplication.ui.activity.DownloadActivity;
 import com.example.lin.myandroidapplication.ui.activity.EventStudyActivity;
 import com.example.lin.myandroidapplication.ui.activity.LoadingActivity;
 import com.example.lin.myandroidapplication.ui.activity.LruCacheStudyActivity;
@@ -97,5 +98,6 @@ public class HighLvActivity extends AppCompatActivity {
         mContents.add(new ActivityData("MPChart2", "......", MPChartStudy2Activity.class));
         mContents.add(new ActivityData("Tab", "......", TabStudyActivity.class));
         mContents.add(new ActivityData("RxJava", "......", RxJavaStudyActivity.class));
+        mContents.add(new ActivityData("Download", "......", DownloadActivity.class));
     }
 }

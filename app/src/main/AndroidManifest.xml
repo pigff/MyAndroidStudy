@@ -18,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <service android:name=".service.MyService">
+        </service>
+        <service android:name=".service.DownloadService">
+        </service>
+
         <activity android:name=".ui.activity.TextViewStudy"/>
         <activity android:name=".ui.activity.EditTextStudy"/>
         <activity android:name=".ui.activity.ButtonStudy"/>
@@ -36,9 +42,6 @@
         <activity android:name=".ui.activity.WebViewStudy2"/>
         <activity android:name=".ui.activity.WebViewStudy3"/>
         <activity android:name=".ui.activity.TurnSaveStudy"/>
-
-        <service android:name=".service.MyService">
-        </service>
 
         <receiver android:name=".receiver.MyReceiver"/>
 
@@ -99,6 +102,10 @@
         <activity android:name=".ui.HighLvActivity">
         </activity>
         <activity android:name=".ui.TestActivity">
+        </activity>
+        <activity android:name=".ui.activity.DownloadActivity">
+        </activity>
+        <activity android:name=".ui.activity.RealmActivity">
         </activity>
     </application>
 
