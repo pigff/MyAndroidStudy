@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.lin.myandroidapplication.R;
-import com.example.lin.myandroidapplication.ui.activity.TestEventActivity;
+import com.example.lin.myandroidapplication.ui.casual.TestEventActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

@@ -1,52 +1,41 @@
-package com.example.lin.myandroidapplication.ui.fragment;
+package com.example.lin.myandroidapplication.ui.casual;
 
-
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v7.widget.Toolbar;
+import android.view.Window;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.example.lin.myandroidapplication.ui.casual.CoordinaLayout2Activity;
 import com.example.lin.myandroidapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class Blank1Fragment extends Fragment {
-
+public class CoordinaLayoutActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private List<String> mStrings;
     private CoordinAdapter mAdapter;
-
-    public Blank1Fragment() {
-        // Required empty public constructor
-    }
-
+    private List<String> mStrings;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_blank1, container, false);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.blank_fm_rv);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_coordina_layout);
+        mRecyclerView = (RecyclerView) findViewById(R.id.coordin_rv);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.coodin_toolbar);
+        toolbar.setTitle("toolbar");
         initData();
         initAdapter();
         initView();
-        return view;
     }
 
     private void initView() {
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(mAdapter);
     }
 
@@ -55,11 +44,9 @@ public class Blank1Fragment extends Fragment {
     }
 
     private void initData() {
-        Bundle bundle = getArguments();
-        String title = bundle.getString(CoordinaLayout2Activity.DATA);
         mStrings = new ArrayList<>();
-        for (int i = 0; i < 40; i++) {
-            mStrings.add(title + i + "个item");
+        for (int i = 0; i < 30; i++) {
+            mStrings.add("第" + i + "个item");
         }
     }
 
@@ -73,5 +60,4 @@ public class Blank1Fragment extends Fragment {
             baseViewHolder.setText(R.id.tv, s);
         }
     }
-
 }

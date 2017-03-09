@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity{
 
     private void initData() {
         mContents = new ArrayList<>();
-        mContents.add(new ActivityData("Junior", "......", JuniorActivity.class));
-        mContents.add(new ActivityData("Middle", "......", MiddleLvActivity.class));
+        mContents.add(new ActivityData("学习code-pig系列", "......", CodePigActivity.class));
+        mContents.add(new ActivityData("自己随意的学习", "......", CasualActivity.class));
         mContents.add(new ActivityData("High", "......", HighLvActivity.class));
         mContents.add(new ActivityData("Test", "......", TestActivity.class));
     }

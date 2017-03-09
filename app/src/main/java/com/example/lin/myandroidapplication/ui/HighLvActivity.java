@@ -13,20 +13,6 @@ import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.adapter.ShowAdapter;
 import com.example.lin.myandroidapplication.data.ActivityData;
-import com.example.lin.myandroidapplication.ui.activity.AnimViewPagerActivity;
-import com.example.lin.myandroidapplication.ui.activity.BehaviorStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.CoordinaLayout2Activity;
-import com.example.lin.myandroidapplication.ui.activity.CoordinaLayoutActivity;
-import com.example.lin.myandroidapplication.ui.activity.DownloadActivity;
-import com.example.lin.myandroidapplication.ui.activity.EventStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.LoadingActivity;
-import com.example.lin.myandroidapplication.ui.activity.LruCacheStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.MPChartStudy2Activity;
-import com.example.lin.myandroidapplication.ui.activity.MPchartActivity;
-import com.example.lin.myandroidapplication.ui.activity.MultiRecyclerActivity;
-import com.example.lin.myandroidapplication.ui.activity.RetrofitActivity;
-import com.example.lin.myandroidapplication.ui.activity.RxJavaStudyActivity;
-import com.example.lin.myandroidapplication.ui.activity.TabStudyActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,19 +71,6 @@ public class HighLvActivity extends AppCompatActivity {
 
     private void initData() {
         mContents = new ArrayList<>();
-        mContents.add(new ActivityData("Loading-anim", "......", LoadingActivity.class));
-        mContents.add(new ActivityData("MultiRecycler", "......", MultiRecyclerActivity.class));
-        mContents.add(new ActivityData("CoordinaLayout", "......", CoordinaLayoutActivity.class));
-        mContents.add(new ActivityData("CoordinaLayout2", "......", CoordinaLayout2Activity.class));
-        mContents.add(new ActivityData("LruCache", "......", LruCacheStudyActivity.class));
-        mContents.add(new ActivityData("Retrofit", "......", RetrofitActivity.class));
-        mContents.add(new ActivityData("EventBus", "......", EventStudyActivity.class));
-        mContents.add(new ActivityData("ViewPager-Anim", "......", AnimViewPagerActivity.class));
-        mContents.add(new ActivityData("Behavior", "......", BehaviorStudyActivity.class));
-        mContents.add(new ActivityData("MPChart", "......", MPchartActivity.class));
-        mContents.add(new ActivityData("MPChart2", "......", MPChartStudy2Activity.class));
-        mContents.add(new ActivityData("Tab", "......", TabStudyActivity.class));
-        mContents.add(new ActivityData("RxJava", "......", RxJavaStudyActivity.class));
-        mContents.add(new ActivityData("Download", "......", DownloadActivity.class));
+
     }
 }

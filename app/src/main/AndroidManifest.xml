@@ -24,90 +24,90 @@
         <service android:name=".service.DownloadService">
         </service>
 
-        <activity android:name=".ui.activity.TextViewStudy"/>
-        <activity android:name=".ui.activity.EditTextStudy"/>
-        <activity android:name=".ui.activity.ButtonStudy"/>
-        <activity android:name=".ui.activity.ImageViewStudy"/>
-        <activity android:name=".ui.activity.RadioAndCheckBtnStudy"/>
-        <activity android:name=".ui.activity.ToggleStudy"/>
-        <activity android:name=".ui.activity.ProgressStudy"/>
-        <activity android:name=".ui.activity.SeekBarStudy"/>
-        <activity android:name=".ui.activity.ScrollViewStudy"/>
-        <activity android:name=".ui.activity.ListViewStudy"/>
-        <activity android:name=".ui.activity.ServiceStudy"/>
-        <activity android:name=".ui.activity.SpinnerStudy"/>
-        <activity android:name=".ui.activity.DialogStudy"/>
-        <activity android:name=".ui.activity.PopWindowStudy"/>
-        <activity android:name=".ui.activity.WebViewStudy"/>
-        <activity android:name=".ui.activity.WebViewStudy2"/>
-        <activity android:name=".ui.activity.WebViewStudy3"/>
-        <activity android:name=".ui.activity.TurnSaveStudy"/>
+        <activity android:name=".ui.pig.TextViewStudy"/>
+        <activity android:name=".ui.pig.EditTextStudy"/>
+        <activity android:name=".ui.pig.ButtonStudy"/>
+        <activity android:name=".ui.pig.ImageViewStudy"/>
+        <activity android:name=".ui.pig.RadioAndCheckBtnStudy"/>
+        <activity android:name=".ui.casual.ToggleStudy"/>
+        <activity android:name=".ui.pig.ProgressStudy"/>
+        <activity android:name=".ui.pig.SeekBarStudy"/>
+        <activity android:name=".ui.pig.ScrollViewStudy"/>
+        <activity android:name=".ui.pig.ListViewStudy"/>
+        <activity android:name=".ui.pig.ServiceStudy"/>
+        <activity android:name=".ui.pig.SpinnerStudy"/>
+        <activity android:name=".ui.pig.DialogStudy"/>
+        <activity android:name=".ui.pig.PopWindowStudy"/>
+        <activity android:name=".ui.pig.WebViewStudy"/>
+        <activity android:name=".ui.pig.WebViewStudy2"/>
+        <activity android:name=".ui.pig.WebViewStudy3"/>
+        <activity android:name=".ui.casual.TurnSaveStudy"/>
 
         <receiver android:name=".receiver.MyReceiver"/>
 
-        <activity android:name=".ui.activity.LoadingActivity">
+        <activity android:name=".ui.casual.LoadingActivity">
         </activity>
-        <activity android:name=".ui.activity.DrawableActivity">
+        <activity android:name=".ui.pig.DrawableActivity">
         </activity>
-        <activity android:name=".ui.activity.ToolbarActivity">
+        <activity android:name=".ui.casual.ToolbarActivity">
         </activity>
-        <activity android:name=".ui.activity.MultiRecyclerActivity">
+        <activity android:name=".ui.casual.MultiRecyclerActivity">
         </activity>
-        <activity android:name=".ui.activity.CoordinaLayoutActivity">
+        <activity android:name=".ui.casual.CoordinaLayoutActivity">
         </activity>
-        <activity android:name=".ui.activity.CoordinaLayout2Activity">
+        <activity android:name=".ui.casual.CoordinaLayout2Activity">
         </activity>
-        <activity android:name=".ui.activity.LruCacheStudyActivity">
+        <activity android:name=".ui.casual.LruCacheStudyActivity">
         </activity>
-        <activity android:name=".ui.activity.RetrofitActivity">
+        <activity android:name=".ui.casual.RetrofitActivity">
         </activity>
-        <activity android:name=".ui.activity.ExpandActivity">
+        <activity android:name=".ui.pig.ExpandActivity">
         </activity>
-        <activity android:name=".ui.activity.PopRightActivity">
+        <activity android:name=".ui.casual.PopRightActivity">
         </activity>
-        <activity android:name=".ui.activity.AnimStudyActivity">
+        <activity android:name=".ui.pig.AnimStudyActivity">
         </activity>
-        <activity android:name=".ui.activity.PropertyAnimStudyActivity">
+        <activity android:name=".ui.pig.PropertyAnimStudyActivity">
         </activity>
-        <activity android:name=".ui.activity.PropertyAnim2Activity">
+        <activity android:name=".ui.pig.PropertyAnim2Activity">
         </activity>
-        <activity android:name=".ui.activity.EventStudyActivity">
+        <activity android:name=".ui.casual.EventStudyActivity">
         </activity>
-        <activity android:name=".ui.activity.AnimViewPagerActivity">
+        <activity android:name=".ui.casual.AnimViewPagerActivity">
         </activity>
-        <activity android:name=".ui.activity.TestEventActivity">
+        <activity android:name=".ui.casual.TestEventActivity">
         </activity>
-        <activity android:name=".ui.activity.BehaviorStudyActivity">
+        <activity android:name=".ui.casual.BehaviorStudyActivity">
         </activity>
-        <activity android:name=".ui.activity.BehaviorStudy2Activity">
+        <activity android:name=".ui.casual.BehaviorStudy2Activity">
         </activity>
-        <activity android:name=".ui.activity.VFStudyActivity">
+        <activity android:name=".ui.casual.VFStudyActivity">
         </activity>
-        <activity android:name=".ui.activity.RVScrollActivity">
+        <activity android:name=".ui.casual.RVScrollActivity">
         </activity>
-        <activity android:name=".ui.activity.LoadTestActivity">
+        <activity android:name=".ui.casual.LoadTestActivity">
         </activity>
-        <activity android:name=".ui.activity.MPchartActivity">
+        <activity android:name=".ui.casual.MPchartActivity">
         </activity>
-        <activity android:name=".ui.activity.MPChartStudy2Activity">
+        <activity android:name=".ui.casual.MPChartStudy2Activity">
         </activity>
-        <activity android:name=".ui.activity.TabStudyActivity">
+        <activity android:name=".ui.casual.TabStudyActivity">
         </activity>
-        <activity android:name=".ui.activity.RxJavaStudyActivity">
+        <activity android:name=".ui.casual.RxJavaStudyActivity">
         </activity>
-        <activity android:name=".ui.JuniorActivity">
+        <activity android:name=".ui.CodePigActivity">
         </activity>
-        <activity android:name=".ui.MiddleLvActivity">
+        <activity android:name=".ui.CasualActivity">
         </activity>
         <activity android:name=".ui.HighLvActivity">
         </activity>
         <activity android:name=".ui.TestActivity">
         </activity>
-        <activity android:name=".ui.activity.DownloadActivity">
+        <activity android:name=".ui.casual.DownloadActivity">
         </activity>
         <activity android:name=".ui.activity.RealmActivity">
         </activity>
-        <activity android:name=".ui.activity.ExpandRvActivity">
+        <activity android:name=".ui.casual.ExpandRvActivity">
         </activity>
     </application>
 
