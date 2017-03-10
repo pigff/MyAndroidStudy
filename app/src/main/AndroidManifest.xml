@@ -109,6 +109,8 @@
         </activity>
         <activity android:name=".ui.casual.ExpandRvActivity">
         </activity>
+        <activity android:name=".ui.casual.CheckinActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -15,6 +15,7 @@ import com.example.lin.myandroidapplication.adapter.ShowAdapter;
 import com.example.lin.myandroidapplication.data.ActivityData;
 import com.example.lin.myandroidapplication.ui.casual.AnimViewPagerActivity;
 import com.example.lin.myandroidapplication.ui.casual.BehaviorStudyActivity;
+import com.example.lin.myandroidapplication.ui.casual.CheckinActivity;
 import com.example.lin.myandroidapplication.ui.casual.CoordinaLayout2Activity;
 import com.example.lin.myandroidapplication.ui.casual.CoordinaLayoutActivity;
 import com.example.lin.myandroidapplication.ui.casual.DownloadActivity;
@@ -113,5 +114,6 @@ public class CasualActivity extends AppCompatActivity {
         mContents.add(new ActivityData("Tab", "......", TabStudyActivity.class));
         mContents.add(new ActivityData("RxJava", "......", RxJavaStudyActivity.class));
         mContents.add(new ActivityData("Download", "......", DownloadActivity.class));
+        mContents.add(new ActivityData("Check In", "......", CheckinActivity.class));
     }
 }
