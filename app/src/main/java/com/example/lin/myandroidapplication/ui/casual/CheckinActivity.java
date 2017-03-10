@@ -13,7 +13,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.lin.myandroidapplication.R;
-import com.example.lin.myandroidapplication.adapter.SignInAdapter;
+import com.example.lin.myandroidapplication.adapter.SignInQuickAdapter;
 import com.example.lin.myandroidapplication.data.SignDayListBean;
 import com.example.lin.myandroidapplication.widget.RecyclerViewItemDecoration;
 
@@ -31,17 +31,18 @@ public class CheckinActivity extends AppCompatActivity {
 
     private void init() {
         List<SignDayListBean> listBeen = new ArrayList<>();
-        for (int i = 0; i < 31; i++) {
+        for (int i = 0; i < 36; i++) {
             listBeen.add(new SignDayListBean());
         }
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_checkin);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 6));
         recyclerView.addItemDecoration(new RecyclerViewItemDecoration(RecyclerViewItemDecoration.MODE_GRID, Color.LTGRAY, 2, 0, 0));
-        SignInAdapter adapter = new SignInAdapter(this);
+//        SignInAdapter adapter = new SignInAdapter(this);
+        SignInQuickAdapter adapter = new SignInQuickAdapter(R.layout.item_sign_in2, listBeen);
         recyclerView.setAdapter(adapter);
-        adapter.setData(listBeen);
-        adapter.notifyDataSetChanged();
+//        adapter.setData(listBeen);
+//        adapter.notifyDataSetChanged();
 
         Button button1 = (Button) findViewById(R.id.btn_success);
         button1.setOnClickListener(new View.OnClickListener() {

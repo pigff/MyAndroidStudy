@@ -48,15 +48,16 @@ public class SignInAdapter extends RecyclerView.Adapter<SignInAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        SignDayListBean signDayListBean = signDayListBeenList.get(position);
-        if (signDayListBean.isSigned()) {
-            holder.img.setBackgroundResource(R.drawable.sign_in_done_2);
-        } else {
-            if (position + 1 < today) {
-                holder.img.setBackgroundResource(R.drawable.sign_in_undo);
-            } else if (0 <= position & position < GOLD_DAY) {
-                holder.img.setBackgroundResource(R.drawable.sign_in_nor_gold);
+        if (position < signDayListBeenList.size()) {
+            SignDayListBean signDayListBean = signDayListBeenList.get(position);
+            if (signDayListBean.isSigned()) {
+                holder.img.setBackgroundResource(R.drawable.sign_in_done_2);
             } else {
+                if (position + 1 < today) {
+                    holder.img.setBackgroundResource(R.drawable.sign_in_undo);
+                } else if (0 <= position & position < GOLD_DAY) {
+                    holder.img.setBackgroundResource(R.drawable.sign_in_nor_gold);
+                } else {
 //                if (signDayListBean.getPrizeList() != null) {
 //                    if (signDayListBean.getPrizeList().size() > 0) {
 //                        bindImg(holder.img, ServiceUrl.img_service + signDayListBean.getPrizeList().get(0).getPrize().getImageUrl());
@@ -64,19 +65,21 @@ public class SignInAdapter extends RecyclerView.Adapter<SignInAdapter.MyViewHold
 //                    }
 //                } else {
 //                    //没有奖品，默认图片
-                holder.img.setBackgroundResource(R.drawable.sign_in_nor_gold);
+                    holder.img.setBackgroundResource(R.drawable.sign_in_nor_gold);
 //                }
+                }
             }
+
+            holder.tvValue.setText("" + (position + 1));
+
+            holder.position = position;
         }
 
-        holder.tvValue.setText("" + (position + 1));
-
-        holder.position = position;
     }
 
     @Override
     public int getItemCount() {
-        return signDayListBeenList.size();
+        return 6 * 6;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -91,24 +94,15 @@ public class SignInAdapter extends RecyclerView.Adapter<SignInAdapter.MyViewHold
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (itemClickListener != null) {
-                        itemClickListener.onItemClick(position, signDayListBeenList.get(position));
-                    }
+//                    if (itemClickListener != null) {
+//                        itemClickListener.onItemClick(position, signDayListBeenList.get(position));
+//                    }
                 }
             });
         }
     }
 
 
-    public void setSignIn(int position, RecyclerView rvSign) {
-        SignInAdapter.MyViewHolder viewHolder = (SignInAdapter.MyViewHolder) rvSign.findViewHolderForAdapterPosition(position);
-        viewHolder.img.setBackgroundResource(R.drawable.sign_in_done_2);
-    }
-
-    public void setReSign(int position, RecyclerView rvSign) {
-        SignInAdapter.MyViewHolder viewHolder = (SignInAdapter.MyViewHolder) rvSign.findViewHolderForAdapterPosition(position);
-        viewHolder.img.setBackgroundResource(R.drawable.sign_in_done_2);
-    }
 
 
     //获取当前时间
@@ -117,13 +111,23 @@ public class SignInAdapter extends RecyclerView.Adapter<SignInAdapter.MyViewHold
         return calendar.get(Calendar.DATE);
     }
 
-    private ItemClickListener itemClickListener;
+//    private ItemClickListener itemClickListener;
+//
+//    public interface ItemClickListener {
+//        void onItemClick(int position, SignDayListBean signDayListBean);
+//    }
+//
+//    public void addItemClickListener(ItemClickListener itemClickListener) {
+//        this.itemClickListener = itemClickListener;
+//    }
 
-    public interface ItemClickListener {
-        void onItemClick(int position, SignDayListBean signDayListBean);
-    }
-
-    public void addItemClickListener(ItemClickListener itemClickListener) {
-        this.itemClickListener = itemClickListener;
-    }
+//    public void setSignIn(int position, RecyclerView rvSign) {
+//        SignInAdapter.MyViewHolder viewHolder = (SignInAdapter.MyViewHolder) rvSign.findViewHolderForAdapterPosition(position);
+//        viewHolder.img.setBackgroundResource(R.drawable.sign_in_done_2);
+//    }
+//
+//    public void setReSign(int position, RecyclerView rvSign) {
+//        SignInAdapter.MyViewHolder viewHolder = (SignInAdapter.MyViewHolder) rvSign.findViewHolderForAdapterPosition(position);
+//        viewHolder.img.setBackgroundResource(R.drawable.sign_in_done_2);
+//    }
 }
