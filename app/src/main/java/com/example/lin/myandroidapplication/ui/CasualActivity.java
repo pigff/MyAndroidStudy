@@ -26,6 +26,7 @@ import com.example.lin.myandroidapplication.ui.casual.LoadingActivity;
 import com.example.lin.myandroidapplication.ui.casual.LruCacheStudyActivity;
 import com.example.lin.myandroidapplication.ui.casual.MPChartStudy2Activity;
 import com.example.lin.myandroidapplication.ui.casual.MPchartActivity;
+import com.example.lin.myandroidapplication.ui.casual.MdActivity;
 import com.example.lin.myandroidapplication.ui.casual.MultiRecyclerActivity;
 import com.example.lin.myandroidapplication.ui.casual.PopRightActivity;
 import com.example.lin.myandroidapplication.ui.casual.RVScrollActivity;
@@ -115,5 +116,6 @@ public class CasualActivity extends AppCompatActivity {
         mContents.add(new ActivityData("RxJava", "......", RxJavaStudyActivity.class));
         mContents.add(new ActivityData("Download", "......", DownloadActivity.class));
         mContents.add(new ActivityData("Check In", "......", CheckinActivity.class));
+        mContents.add(new ActivityData("Test MD", "......", MdActivity.class));
     }
 }

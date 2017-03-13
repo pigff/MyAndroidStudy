@@ -13,11 +13,13 @@ import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.adapter.ShowAdapter;
 import com.example.lin.myandroidapplication.data.ActivityData;
+import com.example.lin.myandroidapplication.ui.aige.AigeViewOneActivity;
+import com.example.lin.myandroidapplication.ui.aige.AigeViewSecondActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HighLvActivity extends AppCompatActivity {
+public class AigeViewListActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private ShowAdapter mAdapter;
@@ -26,7 +28,7 @@ public class HighLvActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_high_lv);
+        setContentView(R.layout.activity_aige);
         init();
     }
 
@@ -47,11 +49,11 @@ public class HighLvActivity extends AppCompatActivity {
                 ActivityData item = (ActivityData) baseQuickAdapter.getItem(i);
                 switch (view.getId()) {
                     case R.id.rv_card:
-                        Intent intent = new Intent(HighLvActivity.this, item.getClassName());
+                        Intent intent = new Intent(AigeViewListActivity.this, item.getClassName());
                         startActivity(intent);
                         break;
                     case R.id.rv_card_des:
-                        Toast.makeText(HighLvActivity.this, item.getDescription(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AigeViewListActivity.this, item.getDescription(), Toast.LENGTH_SHORT).show();
                         break;
                 }
             }
@@ -59,7 +61,7 @@ public class HighLvActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mRecyclerView = (RecyclerView) findViewById(R.id.high_rv);
+        mRecyclerView = (RecyclerView) findViewById(R.id.rv_aige);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(mAdapter);
@@ -71,6 +73,7 @@ public class HighLvActivity extends AppCompatActivity {
 
     private void initData() {
         mContents = new ArrayList<>();
-
+        mContents.add(new ActivityData("第一个自定义View", "圆形", AigeViewOneActivity.class));
+        mContents.add(new ActivityData("第二个自定义View", "色彩偏移矩阵", AigeViewSecondActivity.class));
     }
 }
