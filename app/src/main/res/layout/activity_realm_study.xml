@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:id="@+id/btn_add_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="增"/>
+
+    <Button
+        android:id="@+id/btn_delete_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删"/>
+
+    <Button
+        android:id="@+id/btn_update_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="改"/>
+
+    <Button
+        android:id="@+id/btn_query_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查"/>
+
+    <Button
+        android:id="@+id/btn_clear_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清空"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/colorAccent"/>
+
+    <Button
+        android:id="@+id/btn_sync_add_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="异步增"/>
+
+    <Button
+        android:id="@+id/btn_sync_delete_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="异步删"/>
+
+    <Button
+        android:id="@+id/btn_sync_update_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="异步改"/>
+
+    <Button
+        android:id="@+id/btn_sync_query_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="异步查"/>
+
+</LinearLayout>

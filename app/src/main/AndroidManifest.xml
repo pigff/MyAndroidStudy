@@ -119,6 +119,8 @@
         </activity>
         <activity android:name=".ui.CustomizeViewActivity">
         </activity>
+        <activity android:name=".ui.casual.RealmStudyActivity">
+        </activity>
     </application>
 
 </manifest>

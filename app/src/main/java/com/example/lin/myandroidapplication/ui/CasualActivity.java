@@ -29,6 +29,7 @@ import com.example.lin.myandroidapplication.ui.casual.MPchartActivity;
 import com.example.lin.myandroidapplication.ui.casual.MultiRecyclerActivity;
 import com.example.lin.myandroidapplication.ui.casual.PopRightActivity;
 import com.example.lin.myandroidapplication.ui.casual.RVScrollActivity;
+import com.example.lin.myandroidapplication.ui.casual.RealmStudyActivity;
 import com.example.lin.myandroidapplication.ui.casual.RetrofitActivity;
 import com.example.lin.myandroidapplication.ui.casual.RxJavaStudyActivity;
 import com.example.lin.myandroidapplication.ui.casual.TabStudyActivity;
@@ -115,5 +116,6 @@ public class CasualActivity extends AppCompatActivity {
         mContents.add(new ActivityData("RxJava", "......", RxJavaStudyActivity.class));
         mContents.add(new ActivityData("Download", "......", DownloadActivity.class));
         mContents.add(new ActivityData("Check In", "......", CheckinActivity.class));
+        mContents.add(new ActivityData("RealmStudy", "Realm数据库的使用练习", RealmStudyActivity.class));
     }
 }
