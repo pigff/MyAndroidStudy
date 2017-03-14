@@ -1,4 +1,4 @@
-package com.example.lin.myandroidapplication.ui;
+package com.example.lin.myandroidapplication.ui.aige;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +17,7 @@ import com.example.lin.myandroidapplication.data.ActivityData;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class AigeViewListActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private ShowAdapter mAdapter;
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_aige);
         init();
     }
 
@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 ActivityData item = (ActivityData) baseQuickAdapter.getItem(i);
                 switch (view.getId()) {
                     case R.id.rv_card:
-                        Intent intent = new Intent(MainActivity.this, item.getClassName());
+                        Intent intent = new Intent(AigeViewListActivity.this, item.getClassName());
                         startActivity(intent);
                         break;
                     case R.id.rv_card_des:
-                        Toast.makeText(MainActivity.this, item.getDescription(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AigeViewListActivity.this, item.getDescription(), Toast.LENGTH_SHORT).show();
                         break;
                 }
             }
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mRecyclerView = (RecyclerView) findViewById(R.id.main_rv);
+        mRecyclerView = (RecyclerView) findViewById(R.id.rv_aige);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(mAdapter);
@@ -71,9 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData() {
         mContents = new ArrayList<>();
-        mContents.add(new ActivityData("学习code-pig系列", "code-pig Android入门系列的学习", CodePigActivity.class));
-        mContents.add(new ActivityData("自己随意的学习", "网上的一些相关文章的学习", CasualActivity.class));
-        mContents.add(new ActivityData("自定义View相关的学习", "自定义View那些事", CustomizeViewActivity.class));
-        mContents.add(new ActivityData("Test", "......", TestActivity.class));
+        mContents.add(new ActivityData("第一个自定义View", "圆形", AigeViewOneActivity.class));
+        mContents.add(new ActivityData("第二个自定义View", "色彩偏移矩阵", AigeViewSecondActivity.class));
     }
 }

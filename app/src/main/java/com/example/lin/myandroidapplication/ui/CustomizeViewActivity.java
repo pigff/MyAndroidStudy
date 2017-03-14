@@ -13,13 +13,12 @@ import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.adapter.ShowAdapter;
 import com.example.lin.myandroidapplication.data.ActivityData;
-import com.example.lin.myandroidapplication.ui.aige.AigeViewOneActivity;
-import com.example.lin.myandroidapplication.ui.aige.AigeViewSecondActivity;
+import com.example.lin.myandroidapplication.ui.aige.AigeViewListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AigeViewListActivity extends AppCompatActivity {
+public class CustomizeViewActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private ShowAdapter mAdapter;
@@ -28,11 +27,7 @@ public class AigeViewListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aige);
-        init();
-    }
-
-    private void init() {
+        setContentView(R.layout.activity_customize_view);
         initData();
 
         initAdapter();
@@ -49,11 +44,11 @@ public class AigeViewListActivity extends AppCompatActivity {
                 ActivityData item = (ActivityData) baseQuickAdapter.getItem(i);
                 switch (view.getId()) {
                     case R.id.rv_card:
-                        Intent intent = new Intent(AigeViewListActivity.this, item.getClassName());
+                        Intent intent = new Intent(CustomizeViewActivity.this, item.getClassName());
                         startActivity(intent);
                         break;
                     case R.id.rv_card_des:
-                        Toast.makeText(AigeViewListActivity.this, item.getDescription(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CustomizeViewActivity.this, item.getDescription(), Toast.LENGTH_SHORT).show();
                         break;
                 }
             }
@@ -61,7 +56,7 @@ public class AigeViewListActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mRecyclerView = (RecyclerView) findViewById(R.id.rv_aige);
+        mRecyclerView = (RecyclerView) findViewById(R.id.rv_customize);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(mAdapter);
@@ -73,7 +68,6 @@ public class AigeViewListActivity extends AppCompatActivity {
 
     private void initData() {
         mContents = new ArrayList<>();
-        mContents.add(new ActivityData("第一个自定义View", "圆形", AigeViewOneActivity.class));
-        mContents.add(new ActivityData("第二个自定义View", "色彩偏移矩阵", AigeViewSecondActivity.class));
+        mContents.add(new ActivityData("爱哥的自定义", "爱哥的自定义文章学习", AigeViewListActivity.class));
     }
 }

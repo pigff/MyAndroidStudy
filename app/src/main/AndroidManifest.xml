@@ -99,7 +99,7 @@
         </activity>
         <activity android:name=".ui.CasualActivity">
         </activity>
-        <activity android:name=".ui.AigeViewListActivity">
+        <activity android:name=".ui.aige.AigeViewListActivity">
         </activity>
         <activity android:name=".ui.TestActivity">
         </activity>
@@ -116,6 +116,8 @@
         <activity android:name=".ui.aige.AigeViewOneActivity">
         </activity>
         <activity android:name=".ui.aige.AigeViewSecondActivity">
+        </activity>
+        <activity android:name=".ui.CustomizeViewActivity">
         </activity>
     </application>
 

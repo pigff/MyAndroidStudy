@@ -26,7 +26,11 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"/>-->
 
-    <com.example.lin.myandroidapplication.widget.aigeWidget.EraserViewView
+    <!--<com.example.lin.myandroidapplication.widget.aigeWidget.EraserViewView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+
+    <com.example.lin.myandroidapplication.widget.aigeWidget.BeautyGirlView
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>
