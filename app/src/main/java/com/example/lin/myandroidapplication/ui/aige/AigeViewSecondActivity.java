@@ -19,9 +19,11 @@ import com.example.lin.myandroidapplication.R;
  * setColorFilter(ColorFilter filter)
  * 设置颜色过滤 这个方法需要我们传入一个ColorFilter参数同样也会返回一个ColorFilter实例。
  * ColorFilter三个子类:
- * 1、ColorMatrixColorFilter
- * 2、LightingColorFilter
- * 3、PorterDuffColorFilter
+ * 1、ColorMatrixColorFilter : 色彩矩阵过滤
+ * 2、LightingColorFilter : 光照颜色过滤
+ * 3、PorterDuffColorFilter :
+ *
+ * PorterDuffXfermode
  */
 public class AigeViewSecondActivity extends AppCompatActivity {
 

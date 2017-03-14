@@ -6,7 +6,27 @@
     android:orientation="vertical">
 
 
-    <com.example.lin.myandroidapplication.widget.aigeWidget.SecondCustomView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <!--<com.example.lin.myandroidapplication.widget.aigeWidget.SecondCustomView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+    <!--<com.example.lin.myandroidapplication.widget.aigeWidget.ThirdCustomView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+
+    <!--<com.example.lin.myandroidapplication.widget.aigeWidget.FourthCustomView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+
+    <!--<com.example.lin.myandroidapplication.widget.aigeWidget.PorterDuffColorFilterView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+
+    <!--<com.example.lin.myandroidapplication.widget.aigeWidget.PorterDuffXmodView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+
+    <com.example.lin.myandroidapplication.widget.aigeWidget.EraserViewView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

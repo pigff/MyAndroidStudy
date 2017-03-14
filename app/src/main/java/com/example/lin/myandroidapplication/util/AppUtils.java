@@ -8,6 +8,7 @@ import android.graphics.Point;
 import android.net.Uri;
 import android.os.Environment;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
 import com.example.lin.myandroidapplication.App;
@@ -46,7 +47,23 @@ public class AppUtils {
                 .getSystemService(Context.WINDOW_SERVICE);
         Point point = new Point();
         wm.getDefaultDisplay().getSize(point);
+
         return point;
+    }
+
+    private static DisplayMetrics getScreenMetrics() {
+        WindowManager wm = (WindowManager) App.getInstance().getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics metrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(metrics);
+        return metrics;
+    }
+
+    public static int getScreenWidthM(){
+        return getScreenMetrics().widthPixels;
+    }
+
+    public static int getScreenHeightM() {
+        return getScreenMetrics().heightPixels;
     }
 
     public static int getScreenWidth() {
@@ -88,5 +105,10 @@ public class AppUtils {
         shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
         shareIntent.setType("image/jpeg");
         context.startActivity(Intent.createChooser(shareIntent, title));
+    }
+
+    public static void test() {
+
+
     }
 }

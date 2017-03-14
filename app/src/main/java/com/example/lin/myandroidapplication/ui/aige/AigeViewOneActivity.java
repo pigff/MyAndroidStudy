@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.lin.myandroidapplication.R;
-import com.example.lin.myandroidapplication.widget.aigeWidget.FirstCustomView;
+import com.example.lin.myandroidapplication.widget.aigeWidget.CircleView;
 
 public class AigeViewOneActivity extends AppCompatActivity {
 
@@ -12,7 +12,7 @@ public class AigeViewOneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aige_view_one);
-        FirstCustomView firstCustomView = (FirstCustomView) findViewById(R.id.first_view);
+        CircleView firstCustomView = (CircleView) findViewById(R.id.first_view);
         new Thread(firstCustomView).start();
     }
 }
