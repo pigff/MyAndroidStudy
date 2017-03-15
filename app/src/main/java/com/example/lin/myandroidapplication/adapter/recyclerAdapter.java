@@ -39,11 +39,12 @@ public class RecyclerAdapter extends BaseMultiItemQuickAdapter<Multi, BaseViewHo
                 recyclerView.setAdapter(adapter);
                 recyclerView.addOnItemTouchListener(new OnItemChildClickListener() {
                     @Override
-                    public void SimpleOnItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                    public void onSimpleItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                         if (mHoriListener != null) {
-                            mHoriListener.onItemClick(i, ((Category) baseQuickAdapter.getItem(i)));
+                            mHoriListener.onItemClick(position, ((Category) baseQuickAdapter.getItem(position)));
                         }
                     }
+
                 });
                 break;
             case Multi.IMAGE:

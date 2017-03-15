@@ -50,9 +50,9 @@ public class DrawerPopWindow extends PopupWindow {
         });
         mRecyclerView.addOnItemTouchListener(new OnItemChildClickListener() {
             @Override
-            public void SimpleOnItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                Toast.makeText(context, "baseQuickAdapter.getItem(i):" + baseQuickAdapter.getItem(i), Toast.LENGTH_SHORT).show();
+            public void onSimpleItemChildClick(BaseQuickAdapter adapter, View view, int position) {
             }
+
         });
     }
 
@@ -71,9 +71,10 @@ public class DrawerPopWindow extends PopupWindow {
         });
         mRecyclerView.addOnItemTouchListener(new OnItemChildClickListener() {
             @Override
-            public void SimpleOnItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                Toast.makeText(context, "baseQuickAdapter.getItem(i):" + baseQuickAdapter.getItem(i), Toast.LENGTH_SHORT).show();
+            public void onSimpleItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                Toast.makeText(context, "baseQuickAdapter.getItem(i):" + baseQuickAdapter.getItem(position), Toast.LENGTH_SHORT).show();
             }
+
         });
     }
 

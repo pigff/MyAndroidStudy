@@ -42,6 +42,8 @@ public abstract class BaseRecyclerActivity<T> extends BaseToolbarActivity {
 
     @Override
     public void initView() {
+        mToolbar.setTitle(getToolbarTitle());
+
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_custom);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -55,4 +57,5 @@ public abstract class BaseRecyclerActivity<T> extends BaseToolbarActivity {
 
     protected abstract BaseQuickAdapter<T, BaseViewHolder> getAdapter();
     protected abstract void getData();
+    protected abstract String getToolbarTitle();
 }

@@ -52,7 +52,7 @@
         <item name="android:layout_margin">@dimen/activity_horizontal_margin</item>
         <item name="android:textOff"></item>
         <item name="android:textOn"></item>
-        <item name="android:thumb">@mipmap/ekong_swith_thumb</item>
+        <item name="android:thumb">@mipmap/ic_ekong_swith_thumb</item>
         <item name="android:track">@drawable/ekong_switch_selector</item>
     </style>
 
