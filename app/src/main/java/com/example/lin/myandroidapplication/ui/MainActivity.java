@@ -1,8 +1,10 @@
 package com.example.lin.myandroidapplication.ui;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -47,7 +49,10 @@ public class MainActivity extends BaseRecyclerActivity<ActivityData> {
                         startActivity(intent);
                         break;
                     case R.id.rv_card_des:
-                        Toast.makeText(MainActivity.this, item.getDescription(), Toast.LENGTH_SHORT).show();
+                        new AlertDialog.Builder(MainActivity.this)
+                                .setTitle(item.getName())
+                                .setView(getDialogView(item.getDescription()))
+                                .show();
                         break;
                 }
             }
@@ -57,6 +62,13 @@ public class MainActivity extends BaseRecyclerActivity<ActivityData> {
     @Override
     protected String getToolbarTitle() {
         return "我的首页列表";
+    }
+
+    private  View getDialogView(String des) {
+        View view = LayoutInflater.from(this).inflate(R.layout.dialog_text_item, null, false);
+        TextView textView = (TextView) view.findViewById(R.id.tv_dialog);
+        textView.setText(des);
+        return view;
     }
 
 }
