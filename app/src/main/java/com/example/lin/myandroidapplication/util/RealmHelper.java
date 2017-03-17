@@ -3,11 +3,6 @@ package com.example.lin.myandroidapplication.util;
 import com.example.lin.myandroidapplication.realm.CommonCallBack;
 import com.example.lin.myandroidapplication.realm.ResultCallBack;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Collection;
 import java.util.List;
 
@@ -48,96 +43,8 @@ public class RealmHelper {
         return Realm.getDefaultInstance();
     }
 
-    // ------------------------  增/改 --------------------------//
 
-    public void createAllFromJson(Class<? extends RealmObject> clazz, JSONArray jsonArray) {
-        mRealm.beginTransaction();
-        mRealm.createAllFromJson(clazz, jsonArray);
-        mRealm.commitTransaction();
-    }
-
-    public void createAllFromJson(Class<? extends RealmObject> clazz, String jsonArray) {
-        mRealm.beginTransaction();
-        mRealm.createAllFromJson(clazz, jsonArray);
-        mRealm.commitTransaction();
-    }
-
-    public void createAllFromJson(Class<? extends RealmObject> clazz, InputStream inputStream) {
-        mRealm.beginTransaction();
-        try {
-            mRealm.createAllFromJson(clazz, inputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        mRealm.commitTransaction();
-    }
-
-    /**
-     * @param clazz
-     * @param jsonArray
-     * @see #createAllFromJson(Class, JSONArray) 不同的是这个的RealmObject 必须要有主键
-     */
-    public void createOrUpdateAllFromJson(Class<? extends RealmObject> clazz, JSONArray jsonArray) {
-        mRealm.beginTransaction();
-        mRealm.createOrUpdateAllFromJson(clazz, jsonArray);
-        mRealm.commitTransaction();
-    }
-
-    /**
-     * 同上
-     *
-     * @param clazz
-     * @param jsonArray
-     */
-    public void createOrUpdateAllFromJson(Class<? extends RealmObject> clazz, String jsonArray) {
-        mRealm.beginTransaction();
-        mRealm.createOrUpdateAllFromJson(clazz, jsonArray);
-        mRealm.commitTransaction();
-    }
-
-    /**
-     * 同上
-     *
-     * @param clazz
-     * @param inputStream
-     */
-    public void createOrUpdateAllFromJson(Class<? extends RealmObject> clazz, InputStream inputStream) {
-        mRealm.beginTransaction();
-        try {
-            mRealm.createOrUpdateAllFromJson(clazz, inputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        mRealm.commitTransaction();
-    }
-
-    // ---------------------------       -----------------------//
-
-    public void createObjectFromJson(Class<? extends RealmObject> clazz, JSONObject jsonObject) {
-        mRealm.beginTransaction();
-        mRealm.createObjectFromJson(clazz, jsonObject);
-        mRealm.commitTransaction();
-    }
-
-    public void createObjectFromJson(Class<? extends RealmObject> clazz, String jsonObject) {
-        mRealm.beginTransaction();
-        mRealm.createObjectFromJson(clazz, jsonObject);
-        mRealm.commitTransaction();
-    }
-
-    public void createOrUpdateObjectFromJson(Class<? extends RealmObject> clazz, JSONObject jsonObject) {
-        mRealm.beginTransaction();
-        mRealm.createOrUpdateObjectFromJson(clazz, jsonObject);
-        mRealm.commitTransaction();
-    }
-
-    public void createOrUpdateObjectFromJson(Class<? extends RealmObject> clazz, String jsonObject) {
-        mRealm.beginTransaction();
-        mRealm.createOrUpdateObjectFromJson(clazz, jsonObject);
-        mRealm.commitTransaction();
-    }
-
-    // ----------------------      -----------------------//
+    // ----------------------   增   -----------------------//
     public void copyToRealm(RealmObject object) {
         mRealm.beginTransaction();
         mRealm.copyToRealm(object);
@@ -170,6 +77,8 @@ public class RealmHelper {
         mRealm.commitTransaction();
     }
 
+    // -------------------------  增 / 改 ---------------------------//
+
     /**
      * @param collection
      */
@@ -195,6 +104,10 @@ public class RealmHelper {
         return mRealm.copyFromRealm(results);
     }
 
+    public <T extends RealmObject> T queryFirstData(Class<T> clazz) {
+        return mRealm.where(clazz).findFirst();
+    }
+
     public <T extends RealmObject> T queryDataById(Class<T> clazz, String id) {
         RealmResults<T> results = mRealm.where(clazz).equalTo("id", id).findAll();
         List<T> list = mRealm.copyToRealm(results);
@@ -214,21 +127,35 @@ public class RealmHelper {
     }
 
     public <T extends RealmObject> void deleteAllData(Class<T> clazz) {
+        mRealm.beginTransaction();
         RealmResults<T> results = mRealm.where(clazz).findAll();
         results.deleteAllFromRealm();
+        mRealm.commitTransaction();
     }
 
+    public <T extends RealmObject> void deleteFirstData(Class<T> clazz) {
+        mRealm.beginTransaction();
+        T t = mRealm.where(clazz).findFirst();
+        t.deleteFromRealm();
+        mRealm.commitTransaction();
+    }
+
+
     public <T extends RealmObject> void deleteDataById(Class<T> clazz, String id) {
+        mRealm.beginTransaction();
         RealmResults<T> results = mRealm.where(clazz).equalTo("id", id).findAll();
         results.deleteAllFromRealm();
+        mRealm.commitTransaction();
     }
 
     public <T extends RealmObject> void deleteDataById(Class<T> clazz, int id) {
+        mRealm.beginTransaction();
         RealmResults<T> results = mRealm.where(clazz).equalTo("id", id).findAll();
         results.deleteAllFromRealm();
+        mRealm.commitTransaction();
     }
 
-    //------------------------ 异步系列   -------------------------//
+    //------------------------ 异步系列 增 / 改 感觉还是用insertOrUpdate比较好 -------------------------//
 
     public RealmAsyncTask syncAddData(final Collection<? extends RealmObject> collection, final CommonCallBack callBack) {
         return mRealm.executeTransactionAsync(new Realm.Transaction() {
@@ -268,7 +195,9 @@ public class RealmHelper {
         });
     }
 
-    public <T extends RealmObject> RealmAsyncTask syncQueryData(final Class<T> clazz, final ResultCallBack resultCallBack) {
+    //------------------------ 异步系列 查 -------------------------//
+
+    public <T extends RealmObject> RealmAsyncTask syncQueryData(final Class<T> clazz, final ResultCallBack<T> resultCallBack) {
         return mRealm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -288,7 +217,8 @@ public class RealmHelper {
         });
     }
 
-    public <T extends RealmObject> RealmAsyncTask syncQueryData(final Class<T> clazz, final String id, final ResultCallBack resultCallBack) {
+
+    public <T extends RealmObject> RealmAsyncTask syncQueryData(final Class<T> clazz, final String id, final ResultCallBack<T> resultCallBack) {
         return mRealm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -308,7 +238,16 @@ public class RealmHelper {
         });
     }
 
-    public <T extends RealmObject> RealmAsyncTask syncQueryData(final Class<T> clazz, final int id, final ResultCallBack resultCallBack) {
+    /**
+     * 根据id异步查找
+     *
+     * @param clazz
+     * @param id
+     * @param resultCallBack
+     * @param <T>
+     * @return
+     */
+    public <T extends RealmObject> RealmAsyncTask syncQueryData(final Class<T> clazz, final int id, final ResultCallBack<T> resultCallBack) {
         return mRealm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -327,6 +266,8 @@ public class RealmHelper {
             }
         });
     }
+
+    //------------------------ 异步系列 删 -------------------------//
 
     public <T extends RealmObject> RealmAsyncTask syncDeleteAllData(final Class<T> clazz, final CommonCallBack callBack) {
         return mRealm.executeTransactionAsync(new Realm.Transaction() {
@@ -334,6 +275,26 @@ public class RealmHelper {
             public void execute(Realm realm) {
                 RealmResults<T> results = realm.where(clazz).findAll();
                 results.deleteAllFromRealm();
+            }
+        }, new Realm.Transaction.OnSuccess() {
+            @Override
+            public void onSuccess() {
+                callBack.success();
+            }
+        }, new Realm.Transaction.OnError() {
+            @Override
+            public void onError(Throwable error) {
+                callBack.error();
+            }
+        });
+    }
+
+    public <T extends RealmObject> RealmAsyncTask syncDeleteFirstData(final Class<T> clazz, final CommonCallBack callBack) {
+        return mRealm.executeTransactionAsync(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                T t = realm.where(clazz).findFirst();
+                t.deleteFromRealm();
             }
         }, new Realm.Transaction.OnSuccess() {
             @Override
@@ -387,5 +348,98 @@ public class RealmHelper {
             }
         });
     }
+
+
+    //  -----------  将json串 或 数据流 写入数据库 感觉用不到 ---------- //
+//    // ------------------------  增/改 --------------------------//
+//
+//    public void createAllFromJson(Class<? extends RealmObject> clazz, JSONArray jsonArray) {
+//        mRealm.beginTransaction();
+//        mRealm.createAllFromJson(clazz, jsonArray);
+//        mRealm.commitTransaction();
+//    }
+//
+//    public void createAllFromJson(Class<? extends RealmObject> clazz, String jsonArray) {
+//        mRealm.beginTransaction();
+//        mRealm.createAllFromJson(clazz, jsonArray);
+//        mRealm.commitTransaction();
+//    }
+//
+//    public void createAllFromJson(Class<? extends RealmObject> clazz, InputStream inputStream) {
+//        mRealm.beginTransaction();
+//        try {
+//            mRealm.createAllFromJson(clazz, inputStream);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        mRealm.commitTransaction();
+//    }
+//
+//    /**
+//     * @param clazz
+//     * @param jsonArray
+//     * @see #createAllFromJson(Class, JSONArray) 不同的是这个的RealmObject 必须要有主键
+//     */
+//    public void createOrUpdateAllFromJson(Class<? extends RealmObject> clazz, JSONArray jsonArray) {
+//        mRealm.beginTransaction();
+//        mRealm.createOrUpdateAllFromJson(clazz, jsonArray);
+//        mRealm.commitTransaction();
+//    }
+//
+//    /**
+//     * 同上
+//     *
+//     * @param clazz
+//     * @param jsonArray
+//     */
+//    public void createOrUpdateAllFromJson(Class<? extends RealmObject> clazz, String jsonArray) {
+//        mRealm.beginTransaction();
+//        mRealm.createOrUpdateAllFromJson(clazz, jsonArray);
+//        mRealm.commitTransaction();
+//    }
+//
+//    /**
+//     * 同上
+//     *
+//     * @param clazz
+//     * @param inputStream
+//     */
+//    public void createOrUpdateAllFromJson(Class<? extends RealmObject> clazz, InputStream inputStream) {
+//        mRealm.beginTransaction();
+//        try {
+//            mRealm.createOrUpdateAllFromJson(clazz, inputStream);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        mRealm.commitTransaction();
+//    }
+//
+//    // ---------------------------       -----------------------//
+//
+//    public void createObjectFromJson(Class<? extends RealmObject> clazz, JSONObject jsonObject) {
+//        mRealm.beginTransaction();
+//        mRealm.createObjectFromJson(clazz, jsonObject);
+//        mRealm.commitTransaction();
+//    }
+//
+//    public void createObjectFromJson(Class<? extends RealmObject> clazz, String jsonObject) {
+//        mRealm.beginTransaction();
+//        mRealm.createObjectFromJson(clazz, jsonObject);
+//        mRealm.commitTransaction();
+//    }
+//
+//    public void createOrUpdateObjectFromJson(Class<? extends RealmObject> clazz, JSONObject jsonObject) {
+//        mRealm.beginTransaction();
+//        mRealm.createOrUpdateObjectFromJson(clazz, jsonObject);
+//        mRealm.commitTransaction();
+//    }
+//
+//    public void createOrUpdateObjectFromJson(Class<? extends RealmObject> clazz, String jsonObject) {
+//        mRealm.beginTransaction();
+//        mRealm.createOrUpdateObjectFromJson(clazz, jsonObject);
+//        mRealm.commitTransaction();
+//    }
 }
+
+
 

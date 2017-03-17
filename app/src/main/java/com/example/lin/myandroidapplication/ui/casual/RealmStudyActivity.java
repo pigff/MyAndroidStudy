@@ -5,28 +5,33 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.lin.myandroidapplication.R;
+import com.example.lin.myandroidapplication.realm.CommonCallBack;
+import com.example.lin.myandroidapplication.realm.ResultCallBack;
 import com.example.lin.myandroidapplication.realm.data.Dog;
+import com.example.lin.myandroidapplication.util.RealmHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import io.realm.Realm;
 import io.realm.RealmAsyncTask;
-import io.realm.RealmChangeListener;
-import io.realm.RealmResults;
 
 public class RealmStudyActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Realm mRealm;
+    private static final String TAG = "RealmStudyActivity";
+    private static final String SUCCESS = "成功啦";
+    private static final String FAILURE = "失败了";
+
     private RealmAsyncTask mAsyncTask;
+
+    private String[] dogNames = {"萨摩耶", "金毛", "柴田犬", "阿拉斯加"};
+    private String[] updateDogNames = {"萨摩耶2", "金毛2", "柴田犬2", "阿拉斯加2"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realm_study);
-        mRealm = Realm.getDefaultInstance();
         Button addBtn = (Button) findViewById(R.id.btn_add_data);
         Button deleteBtn = (Button) findViewById(R.id.btn_delete_data);
         Button queryBtn = (Button) findViewById(R.id.btn_query_data);
@@ -43,8 +48,6 @@ public class RealmStudyActivity extends AppCompatActivity implements View.OnClic
         syncDeleteBtn.setOnClickListener(this);
         syncQueryBtn.setOnClickListener(this);
         syncUpdateBtn.setOnClickListener(this);
-        Button clearBtn = (Button) findViewById(R.id.btn_clear_data);
-        clearBtn.setOnClickListener(this);
     }
 
     @Override
@@ -74,105 +77,150 @@ public class RealmStudyActivity extends AppCompatActivity implements View.OnClic
             case R.id.btn_sync_update_data:
                 syncUpdateData();
                 break;
-            case R.id.btn_clear_data:
-                clearData();
             default:
                 break;
         }
     }
 
-    private void clearData() {
-        final RealmResults<Dog> dogs = mRealm.where(Dog.class).findAll();
-        mRealm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                dogs.deleteAllFromRealm();
 
-            }
-        });
-    }
-
+    /**
+     * RealmResults<Dog> dogs = mRealm.where(Dog.class).findAllAsync();
+     * dogs.addChangeListener(new RealmChangeListener<RealmResults<Dog>>() {
+     *
+     * @Override public void onChange(RealmResults<Dog> element) {
+     * List<Dog> dogList = mRealm.copyFromRealm(element);
+     * for (Dog dog : dogList) {
+     * Log.d("RealmStudyActivity", dog.toString());
+     * }
+     * }
+     * });
+     */
     private void syncQueryData() {
-        RealmResults<Dog> dogs = mRealm.where(Dog.class).findAllAsync();
-        dogs.addChangeListener(new RealmChangeListener<RealmResults<Dog>>() {
+        mAsyncTask = RealmHelper.getInstance().syncQueryData(Dog.class, new ResultCallBack<Dog>() {
             @Override
-            public void onChange(RealmResults<Dog> element) {
-                List<Dog> dogList = mRealm.copyFromRealm(element);
-                for (Dog dog : dogList) {
-                    Log.d("RealmStudyActivity", dog.toString());
+            public void execute(List<Dog> list) {
+                for (Dog dog : list) {
+                    Log.d(TAG, dog.toString());
                 }
             }
+
+            @Override
+            public void success() {
+                Log.d(TAG, SUCCESS);
+            }
+
+            @Override
+            public void error() {
+                Log.d(TAG, FAILURE);
+            }
         });
     }
 
+
+    /**
+     * mAsyncTask = mRealm.executeTransactionAsync(new Realm.Transaction() {
+     *
+     * @Override public void execute(Realm realm) {
+     * Dog dog = realm.where(Dog.class).findFirst();
+     * dog.deleteFromRealm();
+     * }
+     * }, new Realm.Transaction.OnSuccess() {
+     * @Override public void onSuccess() {
+     * Toast.makeText(RealmStudyActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
+     * }
+     * }, new Realm.Transaction.OnError() {
+     * @Override public void onError(Throwable error) {
+     * Toast.makeText(RealmStudyActivity.this, "删除失败", Toast.LENGTH_SHORT).show();
+     * }
+     * });
+     */
     private void syncDeleteData() {
-        mAsyncTask = mRealm.executeTransactionAsync(new Realm.Transaction() {
+        mAsyncTask = RealmHelper.getInstance().syncDeleteAllData(Dog.class, new CommonCallBack() {
             @Override
-            public void execute(Realm realm) {
-                Dog dog = realm.where(Dog.class).findFirst();
-                dog.deleteFromRealm();
+            public void success() {
+                Log.d(TAG, SUCCESS);
             }
-        }, new Realm.Transaction.OnSuccess() {
+
             @Override
-            public void onSuccess() {
-                Toast.makeText(RealmStudyActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
-            }
-        }, new Realm.Transaction.OnError() {
-            @Override
-            public void onError(Throwable error) {
-                Toast.makeText(RealmStudyActivity.this, "删除失败", Toast.LENGTH_SHORT).show();
+            public void error() {
+                Log.d(TAG, FAILURE);
             }
         });
     }
 
+    /**
+     * mAsyncTask = mRealm.executeTransactionAsync(new Realm.Transaction() {
+     *
+     * @Override public void execute(Realm realm) {
+     * Dog dog = realm.where(Dog.class).findFirst();
+     * dog.setName("我是新的狗狗");
+     * }
+     * }, new Realm.Transaction.OnSuccess() {
+     * @Override public void onSuccess() {
+     * Toast.makeText(RealmStudyActivity.this, "更新成功", Toast.LENGTH_SHORT).show();
+     * }
+     * }, new Realm.Transaction.OnError() {
+     * @Override public void onError(Throwable error) {
+     * Toast.makeText(RealmStudyActivity.this, "更新失败", Toast.LENGTH_SHORT).show();
+     * }
+     * });
+     */
     private void syncUpdateData() {
-        mAsyncTask = mRealm.executeTransactionAsync(new Realm.Transaction() {
+        mAsyncTask = RealmHelper.getInstance().syncAddData(getUpdateDatas(), new CommonCallBack() {
             @Override
-            public void execute(Realm realm) {
-                Dog dog = realm.where(Dog.class).findFirst();
-                dog.setName("我是新的狗狗");
+            public void success() {
+                Log.d(TAG, SUCCESS);
             }
-        }, new Realm.Transaction.OnSuccess() {
+
             @Override
-            public void onSuccess() {
-                Toast.makeText(RealmStudyActivity.this, "更新成功", Toast.LENGTH_SHORT).show();
-            }
-        }, new Realm.Transaction.OnError() {
-            @Override
-            public void onError(Throwable error) {
-                Toast.makeText(RealmStudyActivity.this, "更新失败", Toast.LENGTH_SHORT).show();
+            public void error() {
+                Log.d(TAG, FAILURE);
             }
         });
     }
 
+    /**
+     * mAsyncTask = mRealm.executeTransactionAsync(new Realm.Transaction() {
+     *
+     * @Override public void execute(Realm realm) {
+     * Dog dog = new Dog();
+     * dog.setName("我是新的阿拉斯加");
+     * dog.setAge(2);
+     * realm.copyToRealm(dog);
+     * }
+     * }, new Realm.Transaction.OnSuccess() {
+     * @Override public void onSuccess() {
+     * Toast.makeText(RealmStudyActivity.this, "添加成功", Toast.LENGTH_SHORT).show();
+     * }
+     * }, new Realm.Transaction.OnError() {
+     * @Override public void onError(Throwable error) {
+     * Toast.makeText(RealmStudyActivity.this, "添加失败", Toast.LENGTH_SHORT).show();
+     * }
+     * });
+     */
     private void syncAddData() {
-        mAsyncTask = mRealm.executeTransactionAsync(new Realm.Transaction() {
+        mAsyncTask = RealmHelper.getInstance().syncAddData(getDatas(), new CommonCallBack() {
             @Override
-            public void execute(Realm realm) {
-                Dog dog = new Dog();
-                dog.setName("我是新的阿拉斯加");
-                dog.setAge(2);
-                realm.copyToRealm(dog);
+            public void success() {
+                Log.d(TAG, SUCCESS);
             }
-        }, new Realm.Transaction.OnSuccess() {
+
             @Override
-            public void onSuccess() {
-                Toast.makeText(RealmStudyActivity.this, "添加成功", Toast.LENGTH_SHORT).show();
-            }
-        }, new Realm.Transaction.OnError() {
-            @Override
-            public void onError(Throwable error) {
-                Toast.makeText(RealmStudyActivity.this, "添加失败", Toast.LENGTH_SHORT).show();
+            public void error() {
+                Log.d(TAG, FAILURE);
             }
         });
     }
 
+    /**
+     * 同样也可以用事务块来更新数据
+     * Dog dog = mRealm.where(Dog.class).equalTo("name", "阿拉斯加").findFirst();
+     * mRealm.beginTransaction();
+     * dog.setName("藏獒");
+     * mRealm.commitTransaction();
+     */
     private void updateData() {
-        //同样也可以用事务块来更新数据
-        Dog dog = mRealm.where(Dog.class).equalTo("name", "阿拉斯加").findFirst();
-        mRealm.beginTransaction();
-        dog.setName("藏獒");
-        mRealm.commitTransaction();
+        RealmHelper.getInstance().insertOrUpdate(getUpdateDatas());
     }
 
     /**
@@ -182,59 +230,96 @@ public class RealmStudyActivity extends AppCompatActivity implements View.OnClic
      * contains(), beginsWith(), endsWith()
      * isNull(), isNotNull()
      * isEmpty(), isNotEmpty()
+     * <p>
+     * RealmResults<Dog> dogs = mRealm.where(Dog.class).findAll();
+     * List<Dog> dogList = mRealm.copyFromRealm(dogs);
+     * for (Dog dog : dogList) {
+     * Log.d("RealmStudyActivity", dog.toString());
+     * }
      */
     private void queryData() {
-        RealmResults<Dog> dogs = mRealm.where(Dog.class).findAll();
-        List<Dog> dogList = mRealm.copyFromRealm(dogs);
-        for (Dog dog : dogList) {
+        List<Dog> dogs = RealmHelper.getInstance().queryAllData(Dog.class);
+        for (Dog dog : dogs) {
             Log.d("RealmStudyActivity", dog.toString());
         }
     }
 
+    /**
+     * final RealmResults<Dog> dogs = mRealm.where(Dog.class).findAll();
+     * mRealm.executeTransaction(new Realm.Transaction() {
+     *
+     * @Override public void execute(Realm realm) {
+     * 第一种
+     * Dog dog = dogs.get(4);
+     * dog.deleteFromRealm();
+     * 第二种
+     * dogs.deleteFirstFromRealm();
+     * dogs.deleteLastFromRealm();
+     * dogs.deleteFromRealm(1);
+     * dogs.deleteAllFromRealm();
+     * 除此之外还可以使用同上的beginTransaction和commitTransaction方法进行删除
+     * }
+     * });
+     */
     private void deleteData() {
-        final RealmResults<Dog> dogs = mRealm.where(Dog.class).findAll();
-        mRealm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                //第一种
-//                Dog dog = dogs.get(4);
-//                dog.deleteFromRealm();
-                //第二种
-                dogs.deleteFirstFromRealm();
-//                dogs.deleteLastFromRealm();
-//                dogs.deleteFromRealm(1);
-//                dogs.deleteAllFromRealm();
-                //除此之外还可以使用同上的beginTransaction和commitTransaction方法进行删除
-            }
-        });
+        RealmHelper.getInstance().deleteAllData(Dog.class);
     }
 
+    /**
+     * mRealm.beginTransaction();
+     * // 新建一个对象并进行存储
+     * String id = "3";
+     * Dog dog = mRealm.createObject(Dog.class, id);
+     * dog.setName("阿拉斯加");
+     * dog.setAge(1);
+     * mRealm.commitTransaction();
+     * //复制一个对象到Realm数据库
+     * Dog dog1 = new Dog();
+     * dog1.setName("萨摩耶");
+     * dog1.setAge(5);
+     * dog1.setId("2");
+     * mRealm.beginTransaction();
+     * mRealm.copyToRealm(dog1);
+     * mRealm.commitTransaction();
+     * //使用事务块
+     * final Dog dog2 = new Dog();
+     * dog2.setName("金毛");
+     * dog2.setAge(2);
+     * dog2.setId("1");
+     * mRealm.executeTransaction(new Realm.Transaction() {
+     *
+     * @Override public void execute(Realm realm) {
+     * realm.copyToRealm(dog2);
+     * }
+     * });
+     */
     private void addData() {
-//        mRealm.beginTransaction();
-//        // 新建一个对象并进行存储
-//        Dog dog = mRealm.createObject(Dog.class, new Dog());
-//        dog.setName("阿拉斯加");
-//        dog.setAge(1);
-//        mRealm.commitTransaction();
-        //复制一个对象到Realm数据库
-        Dog dog1 = new Dog();
-        dog1.setName("萨摩耶");
-        dog1.setAge(5);
-        dog1.setId("2");
-        mRealm.beginTransaction();
-        mRealm.copyToRealm(dog1);
-        mRealm.commitTransaction();
-        //使用事务块
-        final Dog dog2 = new Dog();
-        dog2.setName("金毛");
-        dog2.setAge(2);
-        dog2.setId("1");
-        mRealm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                realm.copyToRealm(dog2);
-            }
-        });
+//        RealmHelper.getInstance().copyToRealm(getDatas());
+        RealmHelper.getInstance().insertOrUpdate(getDatas());
+    }
+
+    private List<Dog> getDatas() {
+        List<Dog> dogs = new ArrayList<>();
+        for (int i = 0; i < dogNames.length; i++) {
+            Dog dog = new Dog();
+            dog.setId(String.valueOf(i + 1));
+            dog.setAge(i);
+            dog.setName(dogNames[i]);
+            dogs.add(dog);
+        }
+        return dogs;
+    }
+
+    private List<Dog> getUpdateDatas() {
+        List<Dog> dogs = new ArrayList<>();
+        for (int i = 0; i < updateDogNames.length; i++) {
+            Dog dog = new Dog();
+            dog.setId(String.valueOf(i + 1));
+            dog.setAge(i);
+            dog.setName(updateDogNames[i]);
+            dogs.add(dog);
+        }
+        return dogs;
     }
 
     @Override
