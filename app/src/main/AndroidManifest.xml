@@ -123,6 +123,8 @@
         </activity>
         <activity android:name=".ui.aige.AigeThirdActivity">
         </activity>
+        <activity android:name=".ui.aige.AigeFourthActivity">
+        </activity>
     </application>
 
 </manifest>

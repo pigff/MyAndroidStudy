@@ -55,6 +55,7 @@ public class AigeViewListActivity extends BaseRecyclerActivity<ActivityData> {
         mContents.add(new ActivityData("自定义View学习1/12", "圆形", AigeViewOneActivity.class));
         mContents.add(new ActivityData("自定义View学习1/6", "色彩偏移矩阵", AigeViewSecondActivity.class));
         mContents.add(new ActivityData("自定义View学习1/4", "色彩偏移矩阵", AigeThirdActivity.class));
+        mContents.add(new ActivityData("自定义View学习1/3", "色彩偏移矩阵", AigeFourthActivity.class));
         mAdapter.setNewData(mContents);
     }
 
