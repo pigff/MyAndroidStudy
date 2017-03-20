@@ -6,14 +6,23 @@
     android:orientation="vertical">
 
     <!--<com.example.lin.myandroidapplication.widget.aigeWidget.fourth.ShaderView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"/>-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"/>-->
 
     <!--<com.example.lin.myandroidapplication.widget.aigeWidget.fourth.BrickView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"/>-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
 
-    <com.example.lin.myandroidapplication.widget.aigeWidget.fourth.ReflectView
+    <!--<com.example.lin.myandroidapplication.widget.aigeWidget.fourth.ReflectView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
+
+    <!--<com.example.lin.myandroidapplication.widget.aigeWidget.fourth.DreamEffectView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
+
+    <com.example.lin.myandroidapplication.widget.aigeWidget.fourth.MatrixImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:scaleType="matrix"/>
 </LinearLayout>

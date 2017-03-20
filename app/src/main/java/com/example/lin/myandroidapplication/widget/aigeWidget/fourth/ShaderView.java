@@ -17,6 +17,7 @@ import com.example.lin.myandroidapplication.util.AppUtils;
 
 /**
  * Created by greedy on 17/3/18.
+ * BitmapShader是从画布的左上方开始着色
  */
 
 public class ShaderView extends View {
@@ -24,7 +25,6 @@ public class ShaderView extends View {
     private static final int RECT_SIZE = 300;
 
     private Paint mPaint;
-    private Paint mLinePaint;
     private int left, top, right, bottom;  //  矩形左上右下坐标
 
     public ShaderView(Context context, AttributeSet attrs) {
@@ -51,8 +51,6 @@ public class ShaderView extends View {
                 new int[]{Color.RED, Color.YELLOW, Color.GREEN, Color.CYAN, Color.BLUE},
                 null, Shader.TileMode.MIRROR));
 //        mPaint.setShader(new LinearGradient(left, top, right - RECT_SIZE, bottom - RECT_SIZE, Color.RED, Color.YELLOW, Shader.TileMode.REPEAT));
-        mLinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mLinePaint.setColor(Color.RED);
     }
 
     private void initRes() {
