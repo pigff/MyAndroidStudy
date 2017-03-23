@@ -1,4 +1,4 @@
-package com.example.lin.myandroidapplication.ui;
+package com.example.lin.myandroidapplication.ui.hongyang;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,16 +10,13 @@ import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.adapter.ShowAdapter;
 import com.example.lin.myandroidapplication.base.BaseRecyclerActivity;
 import com.example.lin.myandroidapplication.data.ActivityData;
-import com.example.lin.myandroidapplication.ui.aige.AigeViewListActivity;
-import com.example.lin.myandroidapplication.ui.hongyang.YangViewListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomizeViewActivity extends BaseRecyclerActivity<ActivityData> {
+public class YangViewListActivity extends BaseRecyclerActivity<ActivityData> {
 
     private List<ActivityData> mContents;
-
     @Override
     protected BaseQuickAdapter<ActivityData, BaseViewHolder> getAdapter() {
         return new ShowAdapter(R.layout.rv_card_item);
@@ -28,14 +25,13 @@ public class CustomizeViewActivity extends BaseRecyclerActivity<ActivityData> {
     @Override
     protected void getData() {
         mContents = new ArrayList<>();
-        mContents.add(new ActivityData("爱哥的自定义", "爱哥自定义文章学习", AigeViewListActivity.class));
-        mContents.add(new ActivityData("鸿洋的自定义", "鸿洋自定义文章学习", YangViewListActivity.class));
+        mContents.add(new ActivityData("鸿洋自定义view学习01", "鸿洋自定义view学习01", YangViewFirstActivity.class));
         mAdapter.setNewData(mContents);
     }
 
     @Override
     protected String getToolbarTitle() {
-        return "自定义View学习系列";
+        return "鸿洋自定义view学习";
     }
 
     @Override
@@ -45,6 +41,4 @@ public class CustomizeViewActivity extends BaseRecyclerActivity<ActivityData> {
         textView.setText(des);
         return view;
     }
-
-
 }

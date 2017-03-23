@@ -64,11 +64,13 @@ public class MainActivity extends BaseRecyclerActivity<ActivityData> {
         return "我的首页列表";
     }
 
-    private  View getDialogView(String des) {
+    @Override
+    protected View getDialogView(String des) {
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_text_item, null, false);
         TextView textView = (TextView) view.findViewById(R.id.tv_dialog);
         textView.setText(des);
         return view;
     }
+
 
 }
