@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.lin.myandroidapplication.widget.yangWidget.CustomImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        app:image="@mipmap/ic_launcher"
+        app:imageScaleType="center"
+        app:imgTitleText="hello android!"
+        app:imgTitleTextColor="@color/orange"
+        app:imgTitleTextSize="30sp"/>
+
+    <com.example.lin.myandroidapplication.widget.yangWidget.CustomImageView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        app:image="@mipmap/ic_launcher"
+        app:imageScaleType="center"
+        app:imgTitleText="hello_world !!!!!"
+        app:imgTitleTextColor="@color/red"
+        app:imgTitleTextSize="30sp"/>
+
+    <com.example.lin.myandroidapplication.widget.yangWidget.CustomImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        app:image="@drawable/image"
+        app:imageScaleType="fillXY"
+        app:imgTitleText="妹子~"
+        app:imgTitleTextColor="@color/cardview_shadow_start_color"
+        app:imgTitleTextSize="12sp"/>
+
+</LinearLayout>

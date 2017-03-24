@@ -26,6 +26,7 @@ public class YangViewListActivity extends BaseRecyclerActivity<ActivityData> {
     protected void getData() {
         mContents = new ArrayList<>();
         mContents.add(new ActivityData("鸿洋自定义view学习01", "鸿洋自定义view学习01", YangViewFirstActivity.class));
+        mContents.add(new ActivityData("鸿洋自定义view学习02", "鸿洋自定义view学习02", YangViewSecondActivity.class));
         mAdapter.setNewData(mContents);
     }
 
