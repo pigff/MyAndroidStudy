@@ -9,6 +9,7 @@
     tools:context="com.example.lin.myandroidapplication.ui.hongyang.YangViewThirdActivity">
 
     <com.example.lin.myandroidapplication.widget.yangWidget.CustomProgressView
+        android:id="@+id/view_yang_progress01"
         android:layout_width="200dp"
         android:layout_height="200dp"
         app:circleWidth="1dp"
@@ -17,6 +18,7 @@
         app:speed="20"/>
 
     <com.example.lin.myandroidapplication.widget.yangWidget.CustomProgressView
+        android:id="@+id/view_yang_progress02"
         android:layout_width="200dp"
         android:layout_height="200dp"
         app:circleWidth="1dp"

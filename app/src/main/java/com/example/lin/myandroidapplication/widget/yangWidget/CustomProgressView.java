@@ -17,7 +17,7 @@ import com.example.lin.myandroidapplication.R;
  * Created by greedy on 17/3/25.
  */
 
-public class CustomProgressView extends View{
+public class CustomProgressView extends View implements Runnable{
     //第一圈的颜色
     private int mFirstColor;
     //第二圈的颜色
@@ -69,29 +69,29 @@ public class CustomProgressView extends View{
         a.recycle();
         init();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    mProgress++;
-                    if (mProgress == 360) {
-                        mProgress = 0;
-                        if (!isNext) {
-                            isNext = true;
-                        } else {
-                            isNext = false;
-                        }
-                    }
-                    postInvalidate();
-
-                    try {
-                        Thread.sleep(mSpeed);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                while (true) {
+//                    mProgress++;
+//                    if (mProgress == 360) {
+//                        mProgress = 0;
+//                        if (!isNext) {
+//                            isNext = true;
+//                        } else {
+//                            isNext = false;
+//                        }
+//                    }
+//                    postInvalidate();
+//
+//                    try {
+//                        Thread.sleep(mSpeed);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        }).start();
     }
 
     private void init() {
@@ -121,5 +121,27 @@ public class CustomProgressView extends View{
             canvas.drawArc(mRectF, -90, mProgress, false, mPaint);
         }
 
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            mProgress++;
+            if (mProgress == 360) {
+                mProgress = 0;
+                if (!isNext) {
+                    isNext = true;
+                } else {
+                    isNext = false;
+                }
+            }
+            postInvalidate();
+
+            try {
+                Thread.sleep(mSpeed);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
