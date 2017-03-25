@@ -131,6 +131,8 @@
         </activity>
         <activity android:name=".ui.hongyang.YangViewSecondActivity">
         </activity>
+        <activity android:name=".ui.hongyang.YangViewThirdActivity">
+        </activity>
     </application>
 
 </manifest>
