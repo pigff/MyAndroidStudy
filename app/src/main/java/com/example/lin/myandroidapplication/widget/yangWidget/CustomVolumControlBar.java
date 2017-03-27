@@ -177,6 +177,7 @@ public class CustomVolumControlBar extends View {
         for (int i = 0; i < mCurrentCount; i++) {
             canvas.drawArc(oval, i * (itemSize + mSplitSize), itemSize, false, mPaint);
         }
+
     }
 
     public void up() {
