@@ -133,6 +133,8 @@
         </activity>
         <activity android:name=".ui.hongyang.YangViewThirdActivity">
         </activity>
+        <activity android:name=".ui.hongyang.YangViewFourActivity">
+        </activity>
     </application>
 
 </manifest>
