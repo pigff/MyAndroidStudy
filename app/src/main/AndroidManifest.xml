@@ -55,7 +55,9 @@
         </activity>
         <activity android:name=".ui.casual.CoordinaLayoutActivity">
         </activity>
-        <activity android:name=".ui.casual.CoordinaLayout2Activity">
+        <activity
+            android:name=".ui.casual.CoordinaLayout2Activity"
+            android:theme="@style/MyAppTheme">
         </activity>
         <activity android:name=".ui.casual.LruCacheStudyActivity">
         </activity>
@@ -101,25 +103,23 @@
         </activity>
         <activity android:name=".ui.aige.AigeViewListActivity">
         </activity>
-        <activity android:name=".ui.TestActivity">
+        <activity
+            android:name=".ui.TestActivity"
+            android:theme="@style/MyAppTheme">
         </activity>
         <activity android:name=".ui.casual.DownloadActivity">
         </activity>
-        <activity android:name=".ui.activity.RealmActivity">
+        <activity android:name=".ui.casual.RealmStudyActivity">
         </activity>
         <activity android:name=".ui.casual.ExpandRvActivity">
         </activity>
         <activity android:name=".ui.casual.CheckinActivity">
-        </activity>
-        <activity android:name=".ui.casual.MdActivity">
         </activity>
         <activity android:name=".ui.aige.AigeViewOneActivity">
         </activity>
         <activity android:name=".ui.aige.AigeViewSecondActivity">
         </activity>
         <activity android:name=".ui.CustomizeViewActivity">
-        </activity>
-        <activity android:name=".ui.casual.RealmStudyActivity">
         </activity>
         <activity android:name=".ui.aige.AigeThirdActivity">
         </activity>
@@ -136,6 +136,10 @@
         <activity android:name=".ui.hongyang.YangViewFourActivity">
         </activity>
         <activity android:name=".ui.hongyang.YangViewFifthActivity">
+        </activity>
+        <activity android:name=".ui.qijian.QiJianViewListActivity">
+        </activity>
+        <activity android:name=".ui.qijian.QiViewFirstActivity">
         </activity>
     </application>
 

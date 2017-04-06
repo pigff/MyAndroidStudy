@@ -1,4 +1,4 @@
-package com.example.lin.myandroidapplication.widget.aigeWidget.third;
+package com.example.lin.myandroidapplication.widget.aige.third;
 
 import android.content.Context;
 import android.graphics.Bitmap;

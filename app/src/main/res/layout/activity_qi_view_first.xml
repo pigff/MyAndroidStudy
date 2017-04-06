@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.lin.myandroidapplication.widget.qijian.FlowLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/FlowTextStyle"
+            android:text="Welcome"/>
+
+        <TextView
+            style="@style/FlowTextStyle"
+            android:text="IT工程师"/>
+
+        <TextView
+            style="@style/FlowTextStyle"
+            android:text="我真是可以的"/>
+
+        <TextView
+            style="@style/FlowTextStyle"
+            android:text="你觉得呢你觉得呢你觉得呢你觉得呢你觉得呢你觉得呢"/>
+
+        <TextView
+            style="@style/FlowTextStyle"
+            android:text="不要只知道挣钱"/>
+
+        <TextView
+            style="@style/FlowTextStyle"
+            android:text="努力ing"/>
+    </com.example.lin.myandroidapplication.widget.qijian.FlowLayout>
+
+</LinearLayout>

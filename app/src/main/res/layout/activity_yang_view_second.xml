@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.example.lin.myandroidapplication.widget.yangWidget.CustomImageView
+    <com.example.lin.myandroidapplication.widget.yang.CustomImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/dp_10"
@@ -16,7 +16,7 @@
         app:imgTitleTextColor="@color/orange"
         app:imgTitleTextSize="30sp"/>
 
-    <com.example.lin.myandroidapplication.widget.yangWidget.CustomImageView
+    <com.example.lin.myandroidapplication.widget.yang.CustomImageView
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:padding="@dimen/dp_10"
@@ -26,7 +26,7 @@
         app:imgTitleTextColor="@color/red"
         app:imgTitleTextSize="30sp"/>
 
-    <com.example.lin.myandroidapplication.widget.yangWidget.CustomImageView
+    <com.example.lin.myandroidapplication.widget.yang.CustomImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/dp_10"

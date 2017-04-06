@@ -10,6 +10,10 @@
         <item name="windowActionBar">false</item>
     </style>
 
+    <style name="MyAppTheme" parent="AppTheme">
+
+    </style>
+
 
     <style name="MyCheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:button">@drawable/check_bg</item>
@@ -56,5 +60,12 @@
         <item name="android:track">@drawable/ekong_switch_selector</item>
     </style>
 
-
+    <style name="FlowTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/button_white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>

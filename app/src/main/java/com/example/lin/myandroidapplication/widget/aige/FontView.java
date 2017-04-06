@@ -1,4 +1,4 @@
-package com.example.lin.myandroidapplication.widget.aigeWidget;
+package com.example.lin.myandroidapplication.widget.aige;
 
 import android.content.Context;
 import android.graphics.Canvas;

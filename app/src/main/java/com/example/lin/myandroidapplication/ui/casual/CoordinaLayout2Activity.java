@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Window;
 
 import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.ui.fragment.Blank1Fragment;
@@ -24,7 +23,6 @@ public class CoordinaLayout2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
 //        setContentView(R.layout.activity_coordina_layout2);
         setContentView(R.layout.activity_coordina_layout3);
         init();

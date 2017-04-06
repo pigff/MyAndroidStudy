@@ -2,4 +2,8 @@
 <resources>
 
     <style name="MyButtonStyle" parent="android:Widget.Material.Button"></style>
+
+    <style name="MyAppTheme" parent="AppTheme">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
 </resources>

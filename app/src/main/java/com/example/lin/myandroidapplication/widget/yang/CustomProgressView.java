@@ -1,4 +1,4 @@
-package com.example.lin.myandroidapplication.widget.yangWidget;
+package com.example.lin.myandroidapplication.widget.yang;
 
 import android.content.Context;
 import android.content.res.TypedArray;

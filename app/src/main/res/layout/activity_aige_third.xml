@@ -22,7 +22,7 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"/>-->
 
-    <com.example.lin.myandroidapplication.widget.aigeWidget.third.ShadowView
+    <com.example.lin.myandroidapplication.widget.aige.third.ShadowView
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </RelativeLayout>

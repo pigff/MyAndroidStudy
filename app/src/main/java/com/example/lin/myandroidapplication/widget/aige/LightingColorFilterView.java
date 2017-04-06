@@ -1,13 +1,11 @@
-package com.example.lin.myandroidapplication.widget.aigeWidget;
+package com.example.lin.myandroidapplication.widget.aige;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
+import android.graphics.LightingColorFilter;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -16,10 +14,10 @@ import com.example.lin.myandroidapplication.util.AppUtils;
 
 /**
  * Created by greedy on 17/3/14.
- * PorterDuffColorFilter
+ * LightingColorFilter bitmap
  */
 
-public class PorterDuffColorFilterView extends View {
+public class LightingColorFilterView extends View {
 
     private Paint mPaint;
 
@@ -27,15 +25,31 @@ public class PorterDuffColorFilterView extends View {
 
     private Context mContext;
 
-    public PorterDuffColorFilterView(Context context) {
+    private boolean isClick;
+
+    public LightingColorFilterView(Context context) {
         super(context, null);
     }
 
-    public PorterDuffColorFilterView(Context context, AttributeSet attrs) {
+    public LightingColorFilterView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         initPaint();
         initRes();
+        setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isClick) {
+                    mPaint.setColorFilter(null);
+                    isClick = false;
+                } else {
+                    mPaint.setColorFilter(new LightingColorFilter(0xFFFFFFFF, 0X00FFFF00));
+                    isClick = true;
+                }
+
+                invalidate();
+            }
+        });
     }
 
     private void initRes() {
@@ -46,8 +60,7 @@ public class PorterDuffColorFilterView extends View {
         mPaint = new Paint();
         mPaint.setAntiAlias(true); //抗锯齿
 
-        PorterDuffColorFilter filter = new PorterDuffColorFilter(Color.RED, PorterDuff.Mode.DARKEN);
-        mPaint.setColorFilter(filter);
+
         /**
          * 设置描边的粗细，单位:像素px
          * 注意:当setStrokeWidth(0)的时候描边的宽度并不为0而是占一个像素

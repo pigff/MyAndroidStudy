@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.lin.myandroidapplication.R;
-import com.example.lin.myandroidapplication.widget.yangWidget.CustomProgressView;
+import com.example.lin.myandroidapplication.widget.yang.CustomProgressView;
 
 public class YangViewThirdActivity extends AppCompatActivity {
 

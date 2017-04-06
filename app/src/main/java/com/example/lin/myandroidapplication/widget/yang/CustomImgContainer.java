@@ -1,4 +1,4 @@
-package com.example.lin.myandroidapplication.widget.yangWidget;
+package com.example.lin.myandroidapplication.widget.yang;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -23,6 +23,7 @@ public class CustomImgContainer extends ViewGroup {
         super(context, attrs, defStyleAttr);
     }
 
+    //不重写这个方法marin属性失效
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attributeSet) {
         return new MarginLayoutParams(getContext(), attributeSet);
