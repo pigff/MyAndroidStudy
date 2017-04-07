@@ -141,6 +141,8 @@
         </activity>
         <activity android:name=".ui.qijian.QiViewFirstActivity">
         </activity>
+        <activity android:name=".ui.qijian.QiViewSecondActivity">
+        </activity>
     </application>
 
 </manifest>
