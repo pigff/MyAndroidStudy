@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.example.lin.myandroidapplication.R;
-import com.example.lin.myandroidapplication.widget.qijian.CanvasView;
+import com.example.lin.myandroidapplication.widget.qijian.PaintAdvancedView;
 
 public class QiViewSecondActivity extends AppCompatActivity {
 
@@ -28,8 +28,11 @@ public class QiViewSecondActivity extends AppCompatActivity {
 //        RegionView regionView = new RegionView(this);
 //        regionView.setLayoutParams(layoutParams);
 //        layout.addView(regionView);
-        CanvasView canvasView = new CanvasView(this);
-        canvasView.setLayoutParams(layoutParams);
-        layout.addView(canvasView);
+//        CanvasView canvasView = new CanvasView(this);
+//        canvasView.setLayoutParams(layoutParams);
+//        layout.addView(canvasView);
+        PaintAdvancedView advancedView = new PaintAdvancedView(this);
+        advancedView.setLayoutParams(layoutParams);
+        layout.addView(advancedView);
     }
 }
