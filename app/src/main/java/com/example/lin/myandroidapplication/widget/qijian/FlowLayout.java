@@ -1,7 +1,9 @@
 package com.example.lin.myandroidapplication.widget.qijian;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -10,6 +12,8 @@ import android.view.ViewGroup;
  */
 
 public class FlowLayout extends ViewGroup {
+
+    private static final String TAG = "FlowLayout";
 
     public FlowLayout(Context context) {
         this(context, null);
@@ -24,6 +28,18 @@ public class FlowLayout extends ViewGroup {
     }
 
     @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        Log.d(TAG, "onDraw: onDraw");
+    }
+
+    @Override
+    protected void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Log.d(TAG, "dispatchDraw: dispatchDraw");
+    }
+
+    @Override
     public LayoutParams generateLayoutParams(AttributeSet attributeSet) {
         return new MarginLayoutParams(getContext(), attributeSet);
     }
@@ -31,6 +47,7 @@ public class FlowLayout extends ViewGroup {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Log.d(TAG, "onMeasure: onMeasure");
         int wideMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int wideSize = MeasureSpec.getSize(widthMeasureSpec);
@@ -73,6 +90,7 @@ public class FlowLayout extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        Log.d(TAG, "onLayout: onLayout");
         int count = getChildCount();
         int lineWidth = 0; // 累加当前行的行宽
         int lineHeight = 0; // 当前行的行高
