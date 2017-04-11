@@ -149,6 +149,10 @@
         </activity>
         <activity android:name=".ui.qijian.QiViewFifthActivity">
         </activity>
+        <activity android:name=".ui.qijian.QiviewSixthActivity">
+        </activity>
+        <activity android:name=".ui.qijian.QiViewSeventhActivity">
+        </activity>
     </application>
 
 </manifest>
