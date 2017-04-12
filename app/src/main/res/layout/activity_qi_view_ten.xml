@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.example.lin.myandroidapplication.widget.qijian.ShimmerTextView
+        android:id="@+id/shimmertextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="嘻嘻嘻嘻 大瓜皮"
+        android:textSize="18sp"
+        android:textColor="@color/orange"/>
+
+    <com.example.lin.myandroidapplication.ui.qijian.RippleView
+        android:layout_width="match_parent"
+        android:text="嘻嘻"
+        android:background="@color/grey"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
