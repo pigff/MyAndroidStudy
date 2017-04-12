@@ -35,6 +35,7 @@ public class QiJianViewListActivity extends BaseRecyclerActivity<ActivityData> {
         mContents.add(new ActivityData("启舰自定义view学习06", "启舰自定义view学习06", QiviewSixActivity.class));
         mContents.add(new ActivityData("启舰自定义view学习07", "启舰自定义view学习07", QiViewSevenActivity.class));
         mContents.add(new ActivityData("启舰自定义view学习08", "启舰自定义view学习08", QiViewEightActivity.class));
+        mContents.add(new ActivityData("启舰自定义view学习09", "启舰自定义view学习09", QiViewNineActivity.class));
         mAdapter.setNewData(mContents);
     }
 
