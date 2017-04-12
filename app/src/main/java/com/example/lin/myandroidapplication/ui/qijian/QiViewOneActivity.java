@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.lin.myandroidapplication.R;
 
-public class QiViewFirstActivity extends AppCompatActivity {
+public class QiViewOneActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

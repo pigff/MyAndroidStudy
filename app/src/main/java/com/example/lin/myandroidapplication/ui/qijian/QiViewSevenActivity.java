@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.example.lin.myandroidapplication.R;
 
-public class QiViewSeventhActivity extends AppCompatActivity implements View.OnClickListener{
+public class QiViewSevenActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

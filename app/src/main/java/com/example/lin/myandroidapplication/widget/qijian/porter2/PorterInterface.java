@@ -26,4 +26,5 @@ package com.example.lin.myandroidapplication.widget.qijian.porter2;
  */
 
 public interface PorterInterface {
+
 }

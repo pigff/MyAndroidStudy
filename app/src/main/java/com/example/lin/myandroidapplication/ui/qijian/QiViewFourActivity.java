@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.widget.qijian.WaterRipple;
 
-public class QiViewFourthActivity extends AppCompatActivity {
+public class QiViewFourActivity extends AppCompatActivity {
 
     private WaterRipple mWaterRipple;
 

@@ -35,7 +35,7 @@ import com.example.lin.myandroidapplication.R;
  * PorterDuffColorFilter
  * 图形混合滤镜       参考爱哥的记录学习
  */
-public class QiViewFifthActivity extends AppCompatActivity {
+public class QiViewFiveActivity extends AppCompatActivity {
 
     private ImageView mMatrixIv;
     private SeekBar mMatrixFirstSeebar;

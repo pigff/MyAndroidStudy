@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.widget.qijian.PaintAdvancedView;
 
-public class QiViewSecondActivity extends AppCompatActivity {
+public class QiViewTwoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

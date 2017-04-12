@@ -8,7 +8,7 @@ import android.widget.Button;
 import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.widget.qijian.TouchDrawView;
 
-public class QiViewThirdActivity extends AppCompatActivity implements View.OnClickListener {
+public class QiViewThreeActivity extends AppCompatActivity implements View.OnClickListener {
 
     /**
      * Button

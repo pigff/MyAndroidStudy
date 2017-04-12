@@ -139,19 +139,21 @@
         </activity>
         <activity android:name=".ui.qijian.QiJianViewListActivity">
         </activity>
-        <activity android:name=".ui.qijian.QiViewFirstActivity">
+        <activity android:name=".ui.qijian.QiViewOneActivity">
         </activity>
-        <activity android:name=".ui.qijian.QiViewSecondActivity">
+        <activity android:name=".ui.qijian.QiViewTwoActivity">
         </activity>
-        <activity android:name=".ui.qijian.QiViewThirdActivity">
+        <activity android:name=".ui.qijian.QiViewThreeActivity">
         </activity>
-        <activity android:name=".ui.qijian.QiViewFourthActivity">
+        <activity android:name=".ui.qijian.QiViewFourActivity">
         </activity>
-        <activity android:name=".ui.qijian.QiViewFifthActivity">
+        <activity android:name=".ui.qijian.QiViewFiveActivity">
         </activity>
-        <activity android:name=".ui.qijian.QiviewSixthActivity">
+        <activity android:name=".ui.qijian.QiviewSixActivity">
         </activity>
-        <activity android:name=".ui.qijian.QiViewSeventhActivity">
+        <activity android:name=".ui.qijian.QiViewSevenActivity">
+        </activity>
+        <activity android:name=".ui.qijian.QiViewEightActivity">
         </activity>
     </application>
 
