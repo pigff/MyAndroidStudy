@@ -18,11 +18,7 @@ public class AigeViewListActivity extends BaseRecyclerActivity<ActivityData> {
 
     private List<ActivityData> mContents;
 
-
-    @Override
-    public void initListener() {
-
-    }
+    
 
     @Override
     protected BaseQuickAdapter<ActivityData, BaseViewHolder> getAdapter() {

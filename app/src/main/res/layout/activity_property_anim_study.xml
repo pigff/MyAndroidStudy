@@ -3,37 +3,75 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/obj_anim_btn_01"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="scale"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/obj_anim_btn_02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="alpha"/>
+        <Button
+            android:id="@+id/obj_anim_btn_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scale"/>
 
-    <Button
-        android:id="@+id/obj_anim_btn_03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="translate"/>
+        <Button
+            android:id="@+id/obj_anim_btn_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="alpha"/>
 
-    <Button
-        android:id="@+id/obj_anim_btn_04"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="rotate"/>
+        <Button
+            android:id="@+id/obj_anim_btn_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="translate"/>
 
-    <Button
-        android:id="@+id/obj_anim_btn_05"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="set"/>
+        <Button
+            android:id="@+id/obj_anim_btn_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rotate"/>
+
+        <Button
+            android:id="@+id/obj_anim_btn_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="set"/>
+
+        <Button
+            android:id="@+id/value_anim_btn_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="value_translate"/>
+
+        <Button
+            android:id="@+id/value_anim_btn_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="value_bounce_translate"/>
+
+        <Button
+            android:id="@+id/value_anim_btn_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="value_translate"/>
+
+        <Button
+            android:id="@+id/value_anim_btn_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="value_rotate"/>
+
+        <Button
+            android:id="@+id/value_anim_btn_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="value_set"/>
+
+    </LinearLayout>
+
 
     <ImageView
         android:id="@+id/obj_anim_test_img"

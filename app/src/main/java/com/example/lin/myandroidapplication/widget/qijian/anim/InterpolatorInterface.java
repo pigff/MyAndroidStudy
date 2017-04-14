@@ -4,7 +4,7 @@ package com.example.lin.myandroidapplication.widget.qijian.anim;
  * 记录插值器相关
  */
 
-public interface Interpolator {
+public interface InterpolatorInterface {
 
     /**
      * AccelerateDecelerateInterpolator 在动画开始的地方速率改变比较慢，在中间的时候加速
