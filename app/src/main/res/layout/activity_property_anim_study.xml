@@ -56,19 +56,19 @@
             android:id="@+id/value_anim_btn_03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="value_translate"/>
+            android:text="value_1"/>
 
         <Button
             android:id="@+id/value_anim_btn_04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="value_rotate"/>
+            android:text="value_2"/>
 
         <Button
             android:id="@+id/value_anim_btn_05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="value_set"/>
+            android:text="value_3"/>
 
     </LinearLayout>
 

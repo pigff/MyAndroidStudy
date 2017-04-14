@@ -1,11 +1,14 @@
 package com.example.lin.myandroidapplication.ui.pig;
 
 import android.animation.AnimatorSet;
+import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.BounceInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -125,6 +128,7 @@ public class PropertyAnimStudyActivity extends AppCompatActivity implements View
      * 通过ofxxx系列方法获得ValueAnimator(ObjectAnimator是ValueAnimator子类)
      * 其中ValueAnimator还需要调用addUpdateListener监听数值的变化，并将这些变化的数值作用于对应的View上
      * 传什么进去 通过 getAnimatedValue(方法就获得什么)
+     *
      * @param v
      */
     @Override
@@ -167,7 +171,7 @@ public class PropertyAnimStudyActivity extends AppCompatActivity implements View
                     public void onAnimationUpdate(ValueAnimator animation) {
                         int curValueInt = (int) animation.getAnimatedValue();
                         mImageView.layout(curValueInt, curValueInt,
-                                curValueInt + mImageView.getWidth(),curValueInt + mImageView.getHeight());
+                                curValueInt + mImageView.getWidth(), curValueInt + mImageView.getHeight());
                     }
                 });
                 mValueAnimator.start();
@@ -180,15 +184,25 @@ public class PropertyAnimStudyActivity extends AppCompatActivity implements View
                     public void onAnimationUpdate(ValueAnimator animation) {
                         int curValueInt = (int) animation.getAnimatedValue();
                         mImageView.layout(curValueInt, curValueInt,
-                                curValueInt + mImageView.getWidth(),curValueInt + mImageView.getHeight());
+                                curValueInt + mImageView.getWidth(), curValueInt + mImageView.getHeight());
                     }
                 });
                 mValueAnimator.setInterpolator(new BounceInterpolator());
                 mValueAnimator.start();
                 break;
             case R.id.value_anim_btn_03:
+                PropertyValuesHolder rotationHolder = PropertyValuesHolder.ofFloat("rotation", 0, 60f, 0, -60f, 0);
+                PropertyValuesHolder translateHolder = PropertyValuesHolder.ofFloat("translationX", 200, -200, 200, -200);
+                mAnimator = ObjectAnimator.ofPropertyValuesHolder(mImageView, rotationHolder, translateHolder);
+                mAnimator.setInterpolator(new AccelerateInterpolator());
+                mAnimator.setDuration(10000);
+                mAnimator.start();
                 break;
             case R.id.value_anim_btn_04:
+                PropertyValuesHolder holder = getHolder();
+                mAnimator = ObjectAnimator.ofPropertyValuesHolder(mImageView, holder);
+                mAnimator.setDuration(10000);
+                mAnimator.start();
                 break;
             case R.id.value_anim_btn_05:
                 break;
@@ -208,5 +222,15 @@ public class PropertyAnimStudyActivity extends AppCompatActivity implements View
         mValueAnimBtn04.setOnClickListener(this);
         mValueAnimBtn05 = (Button) findViewById(R.id.value_anim_btn_05);
         mValueAnimBtn05.setOnClickListener(this);
+    }
+
+    private PropertyValuesHolder getHolder() {
+        Keyframe keyframe = Keyframe.ofFloat(0f, 0);
+        Keyframe keyframe1 = Keyframe.ofFloat(0.25f, -20f);
+        Keyframe keyframe2 = Keyframe.ofFloat(0.5f, 0);
+        Keyframe keyframe3 = Keyframe.ofFloat(0.75f, 20f);
+        Keyframe keyframe4 = Keyframe.ofFloat(1, 0);
+        return PropertyValuesHolder.ofKeyframe("rotation", keyframe, keyframe1,
+                keyframe2, keyframe3, keyframe4);
     }
 }

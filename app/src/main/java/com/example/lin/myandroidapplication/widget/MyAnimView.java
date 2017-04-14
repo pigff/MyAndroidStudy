@@ -2,7 +2,7 @@ package com.example.lin.myandroidapplication.widget;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
+import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -73,20 +73,33 @@ public class MyAnimView extends View {
     public void startAnimation() {
         Point startPoint = new Point(getWidth() / 2, RADIUS);
         Point endPoint = new Point(getWidth() / 2, getHeight() - RADIUS);
-        ValueAnimator animator = ValueAnimator.ofObject(new PointEvaluator(), startPoint, endPoint);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                mCurrentPoint = (Point) animation.getAnimatedValue();
-                invalidate();
-            }
-        });
-        ObjectAnimator animator1 = ObjectAnimator.ofObject(this, "color", new ColorEvaluator(), Color.WHITE, Color.BLACK);
-        AnimatorSet set = new AnimatorSet();
-        set.play(animator).with(animator1);
-        set.setInterpolator(new BounceInterpolator());
-        set.setDuration(5000);
-        set.start();
+//        ValueAnimator animator = ValueAnimator.ofObject(new PointEvaluator(), startPoint, endPoint);
+//        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//            @Override
+//            public void onAnimationUpdate(ValueAnimator animation) {
+//                mCurrentPoint = (Point) animation.getAnimatedValue();
+//                invalidate();
+//            }
+//        });
+//        ObjectAnimator animator1 = ObjectAnimator.ofObject(this, "color", new ColorEvaluator(), Color.WHITE, Color.BLACK);
+//        AnimatorSet set = new AnimatorSet();
+//        set.play(animator).with(animator1);
+//        set.setInterpolator(new BounceInterpolator());
+//        set.setDuration(5000);
+//        set.start();
+
+        PropertyValuesHolder pointHolder = PropertyValuesHolder.
+                ofObject("point", new PointEvaluator(), startPoint, endPoint);
+        PropertyValuesHolder colorHolder = PropertyValuesHolder.
+                ofObject("color", new ColorEvaluator(), Color.WHITE, Color.BLACK);
+        AnimatorSet set2 = new AnimatorSet();
+        set2.play(ObjectAnimator.ofPropertyValuesHolder(this, pointHolder))
+                .with(ObjectAnimator.ofPropertyValuesHolder(this, colorHolder));
+        set2.setInterpolator(new BounceInterpolator());
+        set2.setDuration(5000);
+        //为什么会无效呢
+//        set2.setTarget(this);
+        set2.start();
     }
 
     public int getColor() {
@@ -96,6 +109,11 @@ public class MyAnimView extends View {
     public void setColor(int color) {
         mColor = color;
         mPaint.setColor(mColor);
+        invalidate();
+    }
+
+    public void setPoint(Point point) {
+        mCurrentPoint = point;
         invalidate();
     }
 }
