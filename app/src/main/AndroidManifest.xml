@@ -161,6 +161,8 @@
         </activity>
         <activity android:name=".ui.qijian.QiviewElevenActivity">
         </activity>
+        <activity android:name=".ui.casual.CustomViewActivity">
+        </activity>
     </application>
 
 </manifest>

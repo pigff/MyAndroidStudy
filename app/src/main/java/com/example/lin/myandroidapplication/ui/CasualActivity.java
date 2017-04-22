@@ -15,6 +15,7 @@ import com.example.lin.myandroidapplication.ui.casual.BehaviorStudyActivity;
 import com.example.lin.myandroidapplication.ui.casual.CheckinActivity;
 import com.example.lin.myandroidapplication.ui.casual.CoordinaLayout2Activity;
 import com.example.lin.myandroidapplication.ui.casual.CoordinaLayoutActivity;
+import com.example.lin.myandroidapplication.ui.casual.CustomViewActivity;
 import com.example.lin.myandroidapplication.ui.casual.DownloadActivity;
 import com.example.lin.myandroidapplication.ui.casual.EventStudyActivity;
 import com.example.lin.myandroidapplication.ui.casual.ExpandRvActivity;
@@ -73,6 +74,7 @@ public class CasualActivity extends BaseRecyclerActivity<ActivityData> {
         mContents.add(new ActivityData("Download", "......", DownloadActivity.class));
         mContents.add(new ActivityData("Check In", "......", CheckinActivity.class));
         mContents.add(new ActivityData("RealmStudy", "Realm数据库的使用练习", RealmStudyActivity.class));
+        mContents.add(new ActivityData("自己的自定义View", "自己的自定义View学习", CustomViewActivity.class));
         mAdapter.setNewData(mContents);
     }
 
