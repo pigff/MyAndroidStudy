@@ -7,11 +7,25 @@ public class ActivityData {
     private String name;
     private String description;
     private Class<?> ClassName;
+    private int type;
 
     public ActivityData(String name, String description, Class<?> contentClass) {
+        this(name, description, contentClass, 0);
+    }
+
+    public ActivityData(String name, String description, Class<?> contentClass, int type) {
         this.name = name;
         this.description = description;
         this.ClassName = contentClass;
+        this.type = type;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     public String getName() {

@@ -12,7 +12,6 @@ import com.example.lin.myandroidapplication.base.BaseRecyclerActivity;
 import com.example.lin.myandroidapplication.data.ActivityData;
 import com.example.lin.myandroidapplication.ui.casual.ToggleStudy;
 import com.example.lin.myandroidapplication.ui.pig.AnimStudyActivity;
-import com.example.lin.myandroidapplication.ui.pig.ButtonStudy;
 import com.example.lin.myandroidapplication.ui.pig.DialogStudy;
 import com.example.lin.myandroidapplication.ui.pig.DrawableActivity;
 import com.example.lin.myandroidapplication.ui.pig.EditTextStudy;
@@ -49,7 +48,7 @@ public class CodePigActivity extends BaseRecyclerActivity<ActivityData> {
     protected void getData() {
         mContents = new ArrayList<>();
         mContents.add(new ActivityData("TextView", "......", TextViewStudy.class));
-        mContents.add(new ActivityData("Button", "......", ButtonStudy.class));
+        mContents.add(new ActivityData("Button", "......", ContainerActivity.class, ContainerActivity.BUTTON));
         mContents.add(new ActivityData("EditText", "......", EditTextStudy.class));
         mContents.add(new ActivityData("ImageView", "......", ImageViewStudy.class));
         mContents.add(new ActivityData("RadioButton and CheckBox", "......", RadioAndCheckBtnStudy.class));

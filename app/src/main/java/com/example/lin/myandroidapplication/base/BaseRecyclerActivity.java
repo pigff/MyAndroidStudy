@@ -13,7 +13,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.data.ActivityData;
-import com.example.lin.myandroidapplication.ui.aige.AigeViewListActivity;
+import com.example.lin.myandroidapplication.util.Constants;
 
 /**
  * Created by greedy on 17/3/15.
@@ -65,6 +65,7 @@ public abstract class BaseRecyclerActivity<T> extends BaseToolbarActivity {
                 switch (view.getId()) {
                     case R.id.rv_card_title:
                         Intent intent = new Intent(BaseRecyclerActivity.this, item.getClassName());
+                        intent.putExtra(Constants.DATA, item.getType());
                         startActivity(intent);
                         break;
                     case R.id.rv_card_des:

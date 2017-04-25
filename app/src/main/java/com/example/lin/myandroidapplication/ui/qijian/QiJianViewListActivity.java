@@ -10,6 +10,7 @@ import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.adapter.ShowAdapter;
 import com.example.lin.myandroidapplication.base.BaseRecyclerActivity;
 import com.example.lin.myandroidapplication.data.ActivityData;
+import com.example.lin.myandroidapplication.ui.ContainerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,14 +28,14 @@ public class QiJianViewListActivity extends BaseRecyclerActivity<ActivityData> {
     @Override
     protected void getData() {
         mContents = new ArrayList<>();
-        mContents.add(new ActivityData("启舰自定义view学习01", "启舰自定义view学习01", QiViewOneActivity.class));
+        mContents.add(new ActivityData("启舰自定义view学习01", "启舰自定义view学习01", ContainerActivity.class, ContainerActivity.QI_ONE));
         mContents.add(new ActivityData("启舰自定义view学习02", "启舰自定义view学习02", QiViewTwoActivity.class));
         mContents.add(new ActivityData("启舰自定义view学习03", "启舰自定义view学习03", QiViewThreeActivity.class));
         mContents.add(new ActivityData("启舰自定义view学习04", "启舰自定义view学习04", QiViewFourActivity.class));
         mContents.add(new ActivityData("启舰自定义view学习05", "启舰自定义view学习05", QiViewFiveActivity.class));
         mContents.add(new ActivityData("启舰自定义view学习06", "启舰自定义view学习06", QiviewSixActivity.class));
         mContents.add(new ActivityData("启舰自定义view学习07", "启舰自定义view学习07", QiViewSevenActivity.class));
-        mContents.add(new ActivityData("启舰自定义view学习08", "启舰自定义view学习08", QiViewEightActivity.class));
+        mContents.add(new ActivityData("启舰自定义view学习08", "启舰自定义view学习08", ContainerActivity.class, ContainerActivity.QI_EIGHT));
         mContents.add(new ActivityData("启舰自定义view学习09", "启舰自定义view学习09", QiViewNineActivity.class));
         mContents.add(new ActivityData("启舰自定义view学习10", "启舰自定义view学习10", QiViewTenActivity.class));
         mContents.add(new ActivityData("启舰自定义view学习11", "启舰自定义view学习11", QiviewElevenActivity.class));

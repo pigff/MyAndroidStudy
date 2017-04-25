@@ -10,6 +10,7 @@ import com.example.lin.myandroidapplication.R;
 import com.example.lin.myandroidapplication.adapter.ShowAdapter;
 import com.example.lin.myandroidapplication.base.BaseRecyclerActivity;
 import com.example.lin.myandroidapplication.data.ActivityData;
+import com.example.lin.myandroidapplication.ui.ContainerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,11 +26,11 @@ public class YangViewListActivity extends BaseRecyclerActivity<ActivityData> {
     @Override
     protected void getData() {
         mContents = new ArrayList<>();
-        mContents.add(new ActivityData("鸿洋自定义view学习01", "鸿洋自定义view学习01", YangViewFirstActivity.class));
-        mContents.add(new ActivityData("鸿洋自定义view学习02", "鸿洋自定义view学习02", YangViewSecondActivity.class));
+        mContents.add(new ActivityData("鸿洋自定义view学习01", "鸿洋自定义view学习01", ContainerActivity.class, ContainerActivity.YANG_ONE));
+        mContents.add(new ActivityData("鸿洋自定义view学习02", "鸿洋自定义view学习02", ContainerActivity.class, ContainerActivity.YANG_SECOND));
         mContents.add(new ActivityData("鸿洋自定义view学习03", "鸿洋自定义view学习03", YangViewThirdActivity.class));
-        mContents.add(new ActivityData("鸿洋自定义view学习04", "鸿洋自定义view学习04", YangViewFourActivity.class));
-        mContents.add(new ActivityData("鸿洋自定义view学习05", "鸿洋自定义view学习05", YangViewFifthActivity.class));
+        mContents.add(new ActivityData("鸿洋自定义view学习04", "鸿洋自定义view学习04", ContainerActivity.class, ContainerActivity.YANG_FOUR));
+        mContents.add(new ActivityData("鸿洋自定义view学习05", "鸿洋自定义view学习05", ContainerActivity.class, ContainerActivity.YANG_FIFTH));
         mAdapter.setNewData(mContents);
     }
 

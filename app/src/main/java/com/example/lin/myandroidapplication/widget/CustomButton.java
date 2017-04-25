@@ -1,22 +1,21 @@
 package com.example.lin.myandroidapplication.widget;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.SystemClock;
+import android.support.v7.widget.AppCompatImageButton;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
-import android.widget.ImageButton;
 
 import com.example.lin.myandroidapplication.R;
 
 /**
  * Created by lin on 2016/10/26.
  */
-public class CustomButton extends ImageButton {
+public class CustomButton extends AppCompatImageButton {
 
     public static final int INVALLDATE_DURATION = 15;  //每次刷新的时间间隔
     public static  int DIFFUSE_GAP = 10;          //扩散半径增量
@@ -77,25 +76,28 @@ public class CustomButton extends ImageButton {
     @Override
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        if (!isPushButton) {
-            return;
-        }
+        if(!isPushButton) return; //如果按钮没有被按下则返回
+        //绘制按下后的整个背景
         canvas.drawRect(pointX, pointY, pointX + viewWidth, pointY + viewHeight, bottomPaint);
-        canvas.save();
-        canvas.clipRect(pointX, pointY, pointX + viewWidth, pointY + viewHeight);
+//        canvas.save();
+        //绘制扩散圆形背景
+//        canvas.clipRect(pointX, pointY, pointX + viewWidth, pointY + viewHeight);
         canvas.drawCircle(eventX, eventY, shaderRadio, colorPaint);
-        canvas.restore();
-        if (shaderRadio < maxRadio) {
-            postInvalidateDelayed(INVALLDATE_DURATION, pointX, pointY,
-                    pointX + viewWidth, pointY + viewHeight);
+//        canvas.restore();
+        Log.d("xixi", viewHeight + " height" + viewWidth + " width");
+        Log.d("xixi", pointY + " Pheight" + pointX + " Pwidth");
+        //直到半径等于最大半径
+        if(shaderRadio < maxRadio){
+            postInvalidateDelayed(INVALLDATE_DURATION,
+                    pointX, pointY, pointX + viewWidth, pointY + viewHeight);
             shaderRadio += DIFFUSE_GAP;
-        } else {
+        }else{
             clearData();
         }
     }
 
     private void countMaxRadio() {
-        if (viewWidth < viewHeight) {
+        if (viewWidth > viewHeight) {
             if (eventX < viewWidth / 2) {
                 maxRadio = viewWidth - eventX;
             } else {
@@ -105,7 +107,7 @@ public class CustomButton extends ImageButton {
             if (eventY < viewHeight / 2) {
                 maxRadio = viewHeight - eventY;
             } else {
-                maxRadio = viewHeight / 2 +eventY;
+                maxRadio = viewHeight / 2 + eventY;
             }
         }
     }

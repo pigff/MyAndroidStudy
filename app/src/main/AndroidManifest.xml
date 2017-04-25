@@ -26,7 +26,6 @@
 
         <activity android:name=".ui.pig.TextViewStudy"/>
         <activity android:name=".ui.pig.EditTextStudy"/>
-        <activity android:name=".ui.pig.ButtonStudy"/>
         <activity android:name=".ui.pig.ImageViewStudy"/>
         <activity android:name=".ui.pig.RadioAndCheckBtnStudy"/>
         <activity android:name=".ui.casual.ToggleStudy"/>
@@ -121,25 +120,11 @@
         </activity>
         <activity android:name=".ui.CustomizeViewActivity">
         </activity>
-        <activity android:name=".ui.aige.AigeThirdActivity">
-        </activity>
-        <activity android:name=".ui.aige.AigeFourthActivity">
-        </activity>
         <activity android:name=".ui.hongyang.YangViewListActivity">
-        </activity>
-        <activity android:name=".ui.hongyang.YangViewFirstActivity">
-        </activity>
-        <activity android:name=".ui.hongyang.YangViewSecondActivity">
         </activity>
         <activity android:name=".ui.hongyang.YangViewThirdActivity">
         </activity>
-        <activity android:name=".ui.hongyang.YangViewFourActivity">
-        </activity>
-        <activity android:name=".ui.hongyang.YangViewFifthActivity">
-        </activity>
         <activity android:name=".ui.qijian.QiJianViewListActivity">
-        </activity>
-        <activity android:name=".ui.qijian.QiViewOneActivity">
         </activity>
         <activity android:name=".ui.qijian.QiViewTwoActivity">
         </activity>
@@ -153,8 +138,6 @@
         </activity>
         <activity android:name=".ui.qijian.QiViewSevenActivity">
         </activity>
-        <activity android:name=".ui.qijian.QiViewEightActivity">
-        </activity>
         <activity android:name=".ui.qijian.QiViewNineActivity">
         </activity>
         <activity android:name=".ui.qijian.QiViewTenActivity">
@@ -162,6 +145,8 @@
         <activity android:name=".ui.qijian.QiviewElevenActivity">
         </activity>
         <activity android:name=".ui.casual.CustomViewActivity">
+        </activity>
+        <activity android:name=".ui.ContainerActivity">
         </activity>
     </application>
 
