@@ -47,12 +47,29 @@
         <attr name="shadowRadius" format="float"/>
     </declare-styleable>
 
+    <attr name="selectColor" format="color"/>
+    <attr name="unselectColor" format="color"/>
+    <attr name="underlineColor" format="color"/>
+    <attr name="backgroudColor" format="color"/>
+    <attr name="texts" format="string"/>
+    <attr name="tabTextSize" format="dimension"/>
+
     <declare-styleable name="SelectLayout">
-        <attr name="selectColor" format="color"/>
-        <attr name="unselectColor" format="color"/>
-        <attr name="underlineColor" format="color"/>
-        <attr name="backgroudColor" format="color"/>
-        <attr name="tabTextSize" format="dimension"/>
+        <attr name="selectColor"/>
+        <attr name="unselectColor"/>
+        <attr name="underlineColor"/>
+        <attr name="backgroudColor"/>
+        <attr name="texts"/>
+        <attr name="tabTextSize"/>
+    </declare-styleable>
+
+    <declare-styleable name="NewSelectLayout">
+        <attr name="selectColor"/>
+        <attr name="unselectColor"/>
+        <attr name="underlineColor"/>
+        <attr name="backgroudColor"/>
+        <attr name="texts"/>
+        <attr name="tabTextSize"/>
     </declare-styleable>
 
 </resources>

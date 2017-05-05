@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.lin.myandroidapplication.R;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -32,6 +34,7 @@ public class SelectLayout extends LinearLayout {
     private int backgroudColor;
     private LinearLayout mLinearLayout;
     private int currentPosition = -1;
+    private String[] mTexts;
 
     public SelectLayout(Context context) {
         super(context);
@@ -46,6 +49,13 @@ public class SelectLayout extends LinearLayout {
         setOrientation(VERTICAL);
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SelectLayout);
+        String textArray = a.getString(R.styleable.SelectLayout_texts);
+        if (textArray != null) {
+            mTexts = textArray.split("\\|");
+            for (String s : mTexts) {
+                Log.d("SelectLayout", s);
+            }
+        }
         unSelectColor = a.getColor(R.styleable.SelectLayout_unselectColor, defColor);
         selectColor = a.getColor(R.styleable.SelectLayout_selectColor, defColor);
         underlineColor = a.getColor(R.styleable.SelectLayout_underlineColor, defColor);
@@ -66,9 +76,12 @@ public class SelectLayout extends LinearLayout {
         underLine.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dpTpPx(0.5f)));
         underLine.setBackgroundColor(underlineColor);
         addView(underLine, 1);
+        if (mTexts.length > 0) {
+            addTab(Arrays.asList(mTexts));
+        }
     }
 
-    public void addTab(List<String> text) {
+    private void addTab(List<String> text) {
         for (int i = 0; i < text.size(); i++) {
             TextView tab = new TextView(getContext());
             tab.setSingleLine();
@@ -114,6 +127,7 @@ public class SelectLayout extends LinearLayout {
             }
         }
     }
+
 
     public int dpTpPx(float value) {
         DisplayMetrics dm = getResources().getDisplayMetrics();
