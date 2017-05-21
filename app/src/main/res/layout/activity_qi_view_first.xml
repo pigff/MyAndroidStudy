@@ -8,9 +8,10 @@
     android:orientation="vertical">
 
     <com.example.lin.myandroidapplication.widget.qijian.FlowLayout
+        android:id="@+id/flowlayout"
         android:layout_width="match_parent"
-        android:background="@color/colorAccent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
 
         <TextView
             style="@style/FlowTextStyle"

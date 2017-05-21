@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 /**
  * Created by greedy on 2017/4/6.
  */
@@ -42,6 +44,12 @@ public class FlowLayout extends ViewGroup {
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attributeSet) {
         return new MarginLayoutParams(getContext(), attributeSet);
+    }
+
+    public void addItems(List<View> views) {
+        for (View view : views) {
+            addView(view);
+        }
     }
 
     @Override

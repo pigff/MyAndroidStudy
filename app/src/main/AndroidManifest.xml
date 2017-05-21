@@ -148,6 +148,8 @@
         </activity>
         <activity android:name=".ui.ContainerActivity">
         </activity>
+        <activity android:name=".ui.casual.ViewSwitcherActivity">
+        </activity>
     </application>
 
 </manifest>

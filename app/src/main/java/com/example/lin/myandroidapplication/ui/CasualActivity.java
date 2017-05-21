@@ -34,6 +34,7 @@ import com.example.lin.myandroidapplication.ui.casual.TabStudyActivity;
 import com.example.lin.myandroidapplication.ui.casual.ToolbarActivity;
 import com.example.lin.myandroidapplication.ui.casual.TurnSaveStudy;
 import com.example.lin.myandroidapplication.ui.casual.VFStudyActivity;
+import com.example.lin.myandroidapplication.ui.casual.ViewSwitcherActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +74,7 @@ public class CasualActivity extends BaseRecyclerActivity<ActivityData> {
         mContents.add(new ActivityData("RxJava", "......", RxJavaStudyActivity.class));
         mContents.add(new ActivityData("Download", "......", DownloadActivity.class));
         mContents.add(new ActivityData("Check In", "......", CheckinActivity.class));
+        mContents.add(new ActivityData("ViewSwitcher", "......", ViewSwitcherActivity.class));
         mContents.add(new ActivityData("RealmStudy", "Realm数据库的使用练习", RealmStudyActivity.class));
         mContents.add(new ActivityData("自己的自定义View", "自己的自定义View学习", CustomViewActivity.class));
         mAdapter.setNewData(mContents);
