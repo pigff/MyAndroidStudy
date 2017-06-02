@@ -19,6 +19,7 @@ import com.example.lin.myandroidapplication.ui.casual.CustomViewActivity;
 import com.example.lin.myandroidapplication.ui.casual.DownloadActivity;
 import com.example.lin.myandroidapplication.ui.casual.EventStudyActivity;
 import com.example.lin.myandroidapplication.ui.casual.ExpandRvActivity;
+import com.example.lin.myandroidapplication.ui.casual.GsonStudyActivity;
 import com.example.lin.myandroidapplication.ui.casual.LoadTestActivity;
 import com.example.lin.myandroidapplication.ui.casual.LoadingActivity;
 import com.example.lin.myandroidapplication.ui.casual.LruCacheStudyActivity;
@@ -76,6 +77,7 @@ public class CasualActivity extends BaseRecyclerActivity<ActivityData> {
         mContents.add(new ActivityData("Check In", "......", CheckinActivity.class));
         mContents.add(new ActivityData("ViewSwitcher", "......", ViewSwitcherActivity.class));
         mContents.add(new ActivityData("RealmStudy", "Realm数据库的使用练习", RealmStudyActivity.class));
+        mContents.add(new ActivityData("GsonStudy", "Json数据转换联系", GsonStudyActivity.class));
         mContents.add(new ActivityData("自己的自定义View", "自己的自定义View学习", CustomViewActivity.class));
         mAdapter.setNewData(mContents);
     }

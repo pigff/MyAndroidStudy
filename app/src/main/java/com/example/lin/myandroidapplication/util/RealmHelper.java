@@ -349,6 +349,13 @@ public class RealmHelper {
         });
     }
 
+    // --------------------- 清空数据库 --------------------- //
+    public void clearDatabase() {
+        mRealm.beginTransaction();
+        mRealm.deleteAll();
+        mRealm.commitTransaction();
+    }
+
 
     //  -----------  将json串 或 数据流 写入数据库 感觉用不到 ---------- //
 //    // ------------------------  增/改 --------------------------//
