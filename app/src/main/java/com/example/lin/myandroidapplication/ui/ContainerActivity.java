@@ -17,6 +17,7 @@ public class ContainerActivity extends AppCompatActivity {
     public static final int YANG_FIFTH = 6;
     public static final int AIGE_THIRD = 7;
     public static final int AIGE_FOUR = 8;
+    public static final int GCS_ONE = 9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,8 @@ public class ContainerActivity extends AppCompatActivity {
             case AIGE_FOUR:
                 setContentView(R.layout.activity_aige_fourth);
                 break;
+            case GCS_ONE:
+                setContentView(R.layout.activity_gcs_one);
         }
     }
 }

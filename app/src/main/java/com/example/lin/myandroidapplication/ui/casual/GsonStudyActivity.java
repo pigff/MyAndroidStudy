@@ -10,18 +10,25 @@ import com.example.lin.myandroidapplication.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
 public class GsonStudyActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String JSON_STRING_01 = "{'name':'John', 'age':20}";
-    public static final String JSON_STRING_03 = "[{'name':'John', 'grade':[{'course':'English','score':100},{'course':'Math','score':78}]},{'name':'Tom', 'grade':[{'course':'English','score':86},{'course':'Math','score':90}]}]";
+    public static final String JSON_STRING_03 = "[{'name':'John','age': 14, 'grade':[{'course':'English','score':100},{'course':'Math','score':78}]},{'name':'Tom', 'age': 15, 'grade':[{'course':'English','score':86},{'course':'Math','score':90}]}]";
     public static final String JSON_STRING_04 = "{'name':'tom','score':{'Math':98,'English':90}}";
 
     private Button mGsonBtn01;
     private Button mGsonBtn02;
     private Button mGsonBtn03;
+    /**
+     * object转换gson(array)
+     */
+    private Button mGsonBtn04;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,8 @@ public class GsonStudyActivity extends AppCompatActivity implements View.OnClick
         mGsonBtn02.setOnClickListener(this);
         mGsonBtn03 = (Button) findViewById(R.id.gson_btn_03);
         mGsonBtn03.setOnClickListener(this);
+        mGsonBtn04 = (Button) findViewById(R.id.gson_btn_04);
+        mGsonBtn04.setOnClickListener(this);
     }
 
     private static final String TAG = "GsonStudyActivity";
@@ -59,23 +68,34 @@ public class GsonStudyActivity extends AppCompatActivity implements View.OnClick
                 }
                 break;
             case R.id.gson_btn_03:
-                Student student3 = new Student();
-                Student.Grade grade1 = new Student.Grade();
-                Student.Grade grade2 = new Student.Grade();
-                grade1.setCourse("语文");
-                grade1.setLevel("B");
-                grade1.setScore(81);
-                grade2.setCourse("数学");
-                grade2.setScore(92);
-                grade2.setLevel("A");
-                student3.setName("小王");
-                student3.setAge(14);
-                List<Student.Grade> grades = new ArrayList<>();
-                grades.add(grade1);
-                grades.add(grade2);
-                student3.setGrade(grades);
-                String json = gson.toJson(student3);
-                Log.d(TAG, json);
+                try {
+                    JSONObject jsonObject = new JSONObject(JSON_STRING_01);
+                    String name = (String) jsonObject.get("name");
+                    int age = (int) jsonObject.get("age");
+                    Log.d(TAG, "name: " + name + "  age: " + age);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.gson_btn_04:
+                try {
+                    JSONArray jsonArray = new JSONArray(JSON_STRING_03);
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject object = jsonArray.getJSONObject(i);
+                        String name = object.getString("name");
+                        int age = object.getInt("age");
+                        JSONArray array = object.getJSONArray("grade");
+                        for (int j = 0; j < array.length(); j++) {
+                            JSONObject gradeObject = array.getJSONObject(j);
+                            String gradeName = gradeObject.getString("course");
+                            int gradeScore = gradeObject.getInt("score");
+                            Log.d(TAG, "name: " + name + "  age: " + age
+                                    + "  gradeName: " + gradeName + "  gradeScore: " + gradeScore);
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 break;
         }
     }

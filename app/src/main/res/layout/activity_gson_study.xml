@@ -18,11 +18,17 @@
         android:id="@+id/gson_btn_02"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="json转object(list)"/>
+        android:text="json转object(array)"/>
 
     <Button
         android:id="@+id/gson_btn_03"
-        android:text="object转换gson"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="object转换gson"/>
+
+    <Button
+        android:id="@+id/gson_btn_04"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="object转换gson(array)"/>
 </LinearLayout>
