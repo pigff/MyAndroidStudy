@@ -88,7 +88,7 @@ public class LinkedListView extends FrameLayout {
             public void onSimpleItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 String name = ((AreaItem) adapter.getItem(position)).getName();
                 if (TextUtils.equals("不限", name) && mCallBack != null) {
-                    mCallBack.clickCallBack();
+                    mCallBack.clickCallBack(proadApter.getIndexData());
                 }
                 areaAdapter.clearPosition();
                 areaAdapter.setNewDatas(mProAreas.get(name));
@@ -99,9 +99,12 @@ public class LinkedListView extends FrameLayout {
         areaRv.addOnItemTouchListener(new OnItemChildClickListener() {
             @Override
             public void onSimpleItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                String name = ((AreaItem) adapter.getItem(position)).getName();
                 areaAdapter.notifyItem(position);
-                if (mCallBack != null) {
-                    mCallBack.clickCallBack();
+                if (mCallBack != null && TextUtils.equals("不限", name)) {
+                    mCallBack.clickCallBack(proadApter.getIndexData() + cityAdapter.getIndexData());
+                } else if (mCallBack != null) {
+                    mCallBack.clickCallBack(proadApter.getIndexData() + cityAdapter.getIndexData() + areaAdapter.getIndexData());
                 }
             }
         });
@@ -281,18 +284,25 @@ public class LinkedListView extends FrameLayout {
         }
 
         public void clearPosition() {
-            Log.d(TAG, "进来了");
+//            Log.d(TAG, "进来了");
             if (currentPosition != -1) {
-                Log.d(TAG, "okok");
+//                Log.d(TAG, "okok");
                 getData().get(currentPosition).setChecked(false);
 //                notifyItemChanged(currentPosition);
                 notifyDataSetChanged();
             }
             currentPosition = -1;
         }
+
+        public String getIndexData() {
+            if (currentPosition == -1) {
+                return "";
+            }
+            return getData().get(currentPosition).getName();
+        }
     }
 
     public interface LinkedCallBack {
-        void clickCallBack();
+        void clickCallBack(String text);
     }
 }

@@ -7,9 +7,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.example.lin.myandroidapplication.widget.LinkedListView
-        android:id="@+id/linked"
+    <FrameLayout
+        android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+    <!--<com.example.lin.myandroidapplication.widget.LinkedListView-->
+        <!--android:id="@+id/linked"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
 
 </LinearLayout>
