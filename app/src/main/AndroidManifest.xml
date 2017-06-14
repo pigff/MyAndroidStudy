@@ -152,8 +152,6 @@
         </activity>
         <activity android:name=".ui.casual.GsonStudyActivity">
         </activity>
-        <activity android:name=".ui.casual.ListActivity">
-        </activity>
         <activity android:name=".ui.casual.ListTestActivity">
         </activity>
     </application>

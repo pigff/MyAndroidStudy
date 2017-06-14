@@ -41,30 +41,8 @@
     <string name="webview3">webview3</string>
     <string name="turn">旋转</string>
     <string name="loading">第三方loading</string>
-    <string name="drawable">drawable</string>
-    <string name="toolbar">toolbar</string>
-    <string name="multirv">multiRv</string>
-    <string name="coordinatorlayout">CoordinatorLayout</string>
 
-    <string name="coordinatorlayout2">CoordinatorLayout2</string>
-    <string name="disklrucache">DiskLruCache</string>
-    <string name="retrofit">retrofit</string>
-    <string name="expandlv">ExpandLv</string>
-    <string name="popright">PopRight</string>
-    <string name="animstudy">AnimStudy</string>
-    <string name="proanimstudy">ProAnimStudy</string>
-    <string name="proanimstudy2">proanimstudy2</string>
-    <string name="eventstudy">eventstudy</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="animviewpager">AnimViewPager</string>
-    <string name="behaviorstudy1">BehaviorStudy1</string>
-    <string name="viewfilpperstudy">ViewFilpperStudy</string>
-    <string name="rvscrollstudy">RVScrollStudy</string>
-    <string name="rvloadstudy">RvLoadStudy</string>
-    <string name="mpchartstudy">MPChartStudy</string>
-    <string name="mpchartstudy2">MPChartStudy2</string>
-    <string name="tabstudy">TabStudy</string>
-    <string name="rxjavastudy">RxJavaStudy</string>
+
 </resources>
